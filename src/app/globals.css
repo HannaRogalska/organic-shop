@@ -1,26 +1,92 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #FFFFFF;
+  --foreground: #0a1931;
+  --soft-primary: #84D187;
+  --primary: #00B207;
+  --hard-primary: #2C742F;
+  --warning: #FF8A00;
+  --danger: #EA4B48;
+
+  --gray-900: #1A1A1A;
+  --gray-800: #333333;
+  --gray-700: #4D4D4D;
+  --gray-600: #666666;
+  --gray-500: #808080;
+  --gray-400: #999999;
+  --gray-300: #B3B3B3;
+  --gray-200: #CCCCCC;
+  --gray-100: #E6E6E6;
+  --gray-50: #F2F2F2;
+
+  --green-gray-900: #002603;
+  --green-gray-800: #173B1A;
+  --green-gray-700: #2B572E;
+  --green-gray-600: #406B42;
+  --green-gray-500: #618062;
+  --green-gray-400: #7A997C;
+  --green-gray-300: #96B297;
+  --green-gray-200: #B4CCB4;
+  --green-gray-100: #DAE5DA;
+  --green-gray-50: #EDF2EE;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+
+  --shadow-shopery: 0 0 12px 0 rgba(32, 181, 38, 0.32);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-poppins-sans);
+
+  --color-soft-primary: var(--soft-primary);
+  --color-primary: var(--primary);
+  --color-hard-primary: var(--hard-primary);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  --color-gray-900: var(--gray-900);
+  --color-gray-800: var(--gray-800);
+  --color-gray-700: var(--gray-700);
+  --color-gray-600: var(--gray-600);
+  --color-gray-500: var(--gray-500);
+  --color-gray-400: var(--gray-400);
+  --color-gray-300: var(--gray-300);
+  --color-gray-200: var(--gray-200);
+  --color-gray-100: var(--gray-100);
+  --color-gray-50: var(--gray-50);
+
+  --color-green-gray-900: var(--green-gray-900);
+  --color-green-gray-800: var(--green-gray-800);
+  --color-green-gray-700: var(--green-gray-700);
+  --color-green-gray-600: var(--green-gray-600);
+  --color-green-gray-500: var(--green-gray-500);
+  --color-green-gray-400: var(--green-gray-400);
+  --color-green-gray-300: var(--green-gray-300);
+  --color-green-gray-200: var(--green-gray-200);
+  --color-green-gray-100: var(--green-gray-100);
+  --color-green-gray-50: var(--green-gray-50);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  --shadow: var(--shadow-shopery);
+
+  --container-padding: 1rem;
+  --container-padding-sm: 2rem;
+  --container-padding-lg: 4rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-poppins-sans);
 }
