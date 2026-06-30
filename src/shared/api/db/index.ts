@@ -1,8 +1,9 @@
+import 'server-only';
 import { Pool, neonConfig } from '@neondatabase/serverless';
 import ws from 'ws';
 import { drizzle } from 'drizzle-orm/neon-serverless';
 
-if (process.env.NODE_ENV === 'development') {
+if (typeof WebSocket === 'undefined') {
   neonConfig.webSocketConstructor = ws;
 }
 if (!process.env.DATABASE_URL) {
