@@ -32,4 +32,4 @@ if (process.env.NODE_ENV === 'production') {
   pool = globalThis.globalDbPool;
 }
 
-export const db = drizzle({ client: pool });
+export const db = drizzle({ client: pool, casing: 'snake_case' });
