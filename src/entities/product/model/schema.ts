@@ -10,6 +10,7 @@ import {
   integer,
   numeric,
   index,
+  check,
 } from 'drizzle-orm/pg-core';
 
 export const categoriesTable = pgTable(
@@ -57,6 +58,7 @@ export const productsTable = pgTable(
     uniqueIndex('products_slug_lower_idx').on(sql`lower(${table.slug})`),
     index('products_category_id_idx').on(table.categoryId),
     index('products_price_idx').on(table.price),
+    check('product_stock_check', sql`${table.stock} >= 0`),
   ]
 );
 
