@@ -22,7 +22,9 @@ export const mockProducts = [
     price: '3.99',
     salePrice: '2.99',
     rating: '4.80',
-    images: ['https://unsplash.com'],
+    images: [
+      'https://unsplash.com/photos/a-green-apple-sitting-on-top-of-a-white-table-lKWL2esVNlQ',
+    ],
     categorySlug: 'fruits',
   },
   {
@@ -33,7 +35,9 @@ export const mockProducts = [
     price: '1.49',
     salePrice: null,
     rating: '4.70',
-    images: ['https://unsplash.com'],
+    images: [
+      'https://unsplash.com/photos/a-group-of-carrots-sitting-on-top-of-a-white-table-zMBnM72c2A0',
+    ],
     categorySlug: 'vegetables',
   },
   {
@@ -44,7 +48,9 @@ export const mockProducts = [
     price: '2.19',
     salePrice: null,
     rating: '4.50',
-    images: ['https://unsplash.com'],
+    images: [
+      'https://unsplash.com/photos/a-wooden-bowl-filled-with-white-powdered-sugar-K0c49C5ApKE',
+    ],
     categorySlug: 'cooking',
   },
   {
@@ -55,7 +61,9 @@ export const mockProducts = [
     price: '2.99',
     salePrice: '2.49',
     rating: '4.30',
-    images: ['https://unsplash.com'],
+    images: [
+      'https://unsplash.com/photos/a-bag-of-potato-chips-next-to-three-pieces-of-potato-1DNF5zonRFk',
+    ],
     categorySlug: 'snacks',
   },
   {
@@ -66,7 +74,7 @@ export const mockProducts = [
     price: '4.50',
     salePrice: null,
     rating: '4.90',
-    images: ['https://unsplash.com'],
+    images: ['https://unsplash.com/photos/unks-organic-hot-sauce-hFVjgO8JGSU'],
     categorySlug: 'beverages',
   },
 
@@ -78,7 +86,7 @@ export const mockProducts = [
     price: '12.99',
     salePrice: '9.99',
     rating: '4.60',
-    images: ['https://unsplash.com'],
+    images: ['https://unsplash.com/photos/a-group-of-eggs-and-a-bottle-nisLBqXFPcA'],
     categorySlug: 'beauty_health',
   },
 
@@ -90,7 +98,7 @@ export const mockProducts = [
     price: '1.89',
     salePrice: null,
     rating: '4.95',
-    images: ['https://unsplash.com'],
+    images: ['https://unsplash.com/photos/brown-bread-on-white-table-dCKQMAzy8II'],
     categorySlug: 'bakery',
   },
   {
@@ -101,7 +109,9 @@ export const mockProducts = [
     price: '18.99',
     salePrice: '15.49',
     rating: '4.85',
-    images: ['https://unsplash.com'],
+    images: [
+      'https://unsplash.com/photos/fresh-raw-salmon-food-photography-recipe-idea-bvXbjOcE6SI',
+    ],
     categorySlug: 'meet_and_fish',
   },
 
@@ -113,7 +123,9 @@ export const mockProducts = [
     price: '3.49',
     salePrice: null,
     rating: '4.75',
-    images: ['https://unsplash.com'],
+    images: [
+      'https://unsplash.com/photos/a-wooden-bowl-filled-with-white-powder-next-to-a-bottle-of-honey--STVybdfXvE',
+    ],
     categorySlug: 'needs',
   },
   {
@@ -124,7 +136,7 @@ export const mockProducts = [
     price: '5.99',
     salePrice: null,
     rating: '4.40',
-    images: ['https://unsplash.com'],
+    images: ['https://unsplash.com/photos/spoon-of-food-h2UH2674Bg4'],
     categorySlug: 'diabetic',
   },
   {
@@ -135,7 +147,9 @@ export const mockProducts = [
     price: '4.25',
     salePrice: '3.75',
     rating: '4.65',
-    images: ['https://unsplash.com'],
+    images: [
+      'https://unsplash.com/photos/two-bars-of-soap-with-packaging-on-white-background-mJq3-OFcmdQ',
+    ],
     categorySlug: 'detergents',
   },
   {
@@ -146,7 +160,9 @@ export const mockProducts = [
     price: '14.99',
     salePrice: null,
     rating: '4.90',
-    images: ['https://unsplash.com'],
+    images: [
+      'https://unsplash.com/photos/a-branch-with-olives-and-leaves-on-a-white-background-FdblEGc532shttps://unsplash.com',
+    ],
     categorySlug: 'oil',
   },
 ];
