@@ -2,7 +2,7 @@ import { PRODUCT_CARD_COUNT, ProductSkeleton } from '@/widgets/loading/loading-s
 
 export function LoadingProducts() {
   return (
-    <section className="space-y-7 py-6" aria-label="Loading products">
+    <div className="space-y-7 py-6">
       <div className="mx-auto h-8 w-72 rounded-sm bg-green-gray-50" />
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-5">
         <div className="hidden min-h-84 bg-green-gray-100 lg:block" />
@@ -11,6 +11,6 @@ export function LoadingProducts() {
         ))}
         <div className="hidden min-h-84 bg-green-gray-100 lg:block" />
       </div>
-    </section>
+    </div>
   );
 }
