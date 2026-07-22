@@ -7,17 +7,19 @@ export function CategoriesMenu({ mobile = false }: { mobile?: boolean }) {
   return (
     <details className={`group relative ${mobile ? 'w-full' : ''}`}>
       <summary
-        className={`flex cursor-pointer list-none items-center gap-3 text-sm font-medium text-white marker:content-none ${
-          mobile ? 'justify-between py-3' : 'h-14 bg-gray-800 px-5'
+        className={`flex cursor-pointer list-none items-center gap-3 text-sm font-medium marker:content-none ${
+          mobile ? 'justify-between py-3 text-gray-900' : 'h-14 bg-gray-800 px-5 text-white'
         }`}
       >
-        <Image
-          src="/images/header/burger.svg"
-          alt=""
-          width={24}
-          height={24}
-          className="brightness-0 invert"
-        />
+        {!mobile ? (
+          <Image
+            src="/images/header/burger.svg"
+            alt=""
+            width={24}
+            height={24}
+            className="brightness-0 invert"
+          />
+        ) : null}
 
         <div className="flex-1">All Categories</div>
 

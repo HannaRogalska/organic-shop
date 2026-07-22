@@ -11,10 +11,10 @@ export const categories = [
 ];
 
 export const navigation = [
-  { label: 'Home', href: '/', hasMenu: true },
-  { label: 'Shop', href: '/shop', hasMenu: true },
-  { label: 'Pages', href: '/pages', hasMenu: true },
-  { label: 'Blog', href: '/blog', hasMenu: true },
-  { label: 'About Us', href: '/about', hasMenu: false },
-  { label: 'Contact Us', href: '/contact', hasMenu: false },
+  { label: 'Home', href: '/' },
+  { label: 'Shop', href: '/shop' },
+  { label: 'Pages', href: '/pages' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Contact Us', href: '/contact' },
 ];

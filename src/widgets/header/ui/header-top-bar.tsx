@@ -12,14 +12,20 @@ export function HeaderTopBar() {
         <div className="flex items-center gap-5">
           <label className="flex items-center gap-1.5">
             <span className="sr-only">Language</span>
-            <select className="appearance-none bg-transparent pr-3 outline-none" defaultValue="ENG">
+            <select
+              className="appearance-none bg-transparent pr-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              defaultValue="ENG"
+            >
               <option>ENG</option>
               <option>POL</option>
             </select>
           </label>
           <label className="flex items-center gap-1.5">
             <span className="sr-only">Currency</span>
-            <select className="appearance-none bg-transparent pr-3 outline-none" defaultValue="USD">
+            <select
+              className="appearance-none bg-transparent pr-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              defaultValue="USD"
+            >
               <option>USD</option>
               <option>EUR</option>
             </select>
