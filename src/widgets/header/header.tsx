@@ -1,4 +1,4 @@
-import { Brand } from './ui/brand';
+import { Brand } from '@/shared/ui/brand/brand';
 import { CartActions } from './ui/cart-actions';
 import { HeaderTopBar } from './ui/header-top-bar';
 import { MainNavBar } from './ui/main-nav-bar';
