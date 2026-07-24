@@ -2,28 +2,28 @@ export const footerColumns = [
   {
     title: 'My Account',
     links: [
-      ['My Account', '/account'],
-      ['Order History', '/orders'],
-      ['Shopping Cart', '/cart'],
-      ['Wishlist', '/wishlist'],
+      { label: 'My Account', href: '/account' },
+      { label: 'Order History', href: '/orders' },
+      { label: 'Shopping Cart', href: '/cart' },
+      { label: 'Wishlist', href: '/wishlist' },
     ],
   },
   {
     title: 'Helps',
     links: [
-      ['Contact', '/contact'],
-      ['Faqs', '/faqs'],
-      ['Terms & Condition', '/terms'],
-      ['Privacy Policy', '/privacy'],
+      { label: 'Contact', href: '/contact' },
+      { label: 'Faqs', href: '/faqs' },
+      { label: 'Terms & Condition', href: '/terms' },
+      { label: 'Privacy Policy', href: '/privacy' },
     ],
   },
   {
     title: 'Shopery',
     links: [
-      ['About', '/about'],
-      ['Shop', '/shop'],
-      ['Product', '/products'],
-      ['Track Order', '/track-order'],
+      { label: 'About', href: '/about' },
+      { label: 'Shop', href: '/shop' },
+      { label: 'Product', href: '/products' },
+      { label: 'Track Order', href: '/track-order' },
     ],
   },
 ] as const;
