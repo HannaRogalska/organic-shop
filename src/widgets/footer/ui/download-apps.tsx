@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export function DownloadApps() {
   return (
-    <div className="text-center sm:text-left">
+    <div className="text-center lg:text-left">
       <h3 className="text-base font-medium text-gray-900">Download Mobile App</h3>
       <div className="mt-4 flex flex-row flex-wrap justify-center gap-2 lg:justify-start">
         <a href="#app-store" className="flex items-center gap-2 bg-background p-3">
