@@ -6,7 +6,7 @@ import { CategoriesMenu } from './categories-menu';
 
 export function MainNavBar() {
   return (
-    <nav className="hidden bg-gray-800 lg:block" aria-label="Primary navigation">
+    <nav className="hidden bg-gray-900 lg:block" aria-label="Primary navigation">
       <div className="mx-auto flex h-14 w-full max-w-330 items-center justify-between px-6 xl:px-0">
         <div className="flex h-full items-center gap-8">
           <CategoriesMenu />
