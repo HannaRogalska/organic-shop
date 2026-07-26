@@ -3,7 +3,7 @@ import { ProductRating } from './product-rating';
 
 type ProductCardInfoProps = {
   title: string;
-  price: number;
+  price: number | null;
   rating: number;
   currency: string;
   locale: string;

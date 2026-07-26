@@ -22,7 +22,7 @@ export function ProductCard({
   onQuickView,
   onAddToWishlist,
 }: ProductCardProps) {
-  const price = toAmount(product.price) ?? 0;
+  const price = toAmount(product.price);
   const rating = toAmount(product.rating) ?? 0;
 
   return (

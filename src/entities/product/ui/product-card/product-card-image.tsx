@@ -21,7 +21,6 @@ export function ProductCardImage({
         alt={title}
         fill
         sizes="248px"
-        unoptimized
         className="size-full object-contain transition-transform duration-300 group-hover/product:scale-[1.03]"
       />
 

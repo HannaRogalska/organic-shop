@@ -25,12 +25,14 @@ export function AddToCartButton({
           src="/images/product/bag-dark.svg"
           alt=""
           fill
+          sizes="20px"
           className="opacity-100 transition-opacity group-hover/cart:opacity-0 group-focus-visible/cart:opacity-0 group-hover/product:opacity-0"
         />
         <Image
           src="/images/product/bag.svg"
           alt=""
           fill
+          sizes="20px"
           className="opacity-0 transition-opacity group-hover/cart:opacity-100 group-focus-visible/cart:opacity-100 group-hover/product:opacity-100"
         />
       </span>
