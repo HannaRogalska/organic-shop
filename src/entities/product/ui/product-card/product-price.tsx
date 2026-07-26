@@ -6,7 +6,7 @@ type ProductPriceProps = {
 
 export function ProductPrice({ price, currency, locale }: ProductPriceProps) {
   if (price === null) {
-    return <span className="text-sm leading-normal text-gray-500">Цена недоступна</span>;
+    return <span className="text-sm leading-normal text-gray-500">Price unavailable</span>;
   }
 
   const formatter = new Intl.NumberFormat(locale, {
