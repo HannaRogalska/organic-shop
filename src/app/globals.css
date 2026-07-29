@@ -90,3 +90,17 @@ body {
   color: var(--foreground);
   font-family: var(--font-poppins-sans);
 }
+
+@media (min-width: 64rem) {
+  .home-hero-stage {
+    column-gap: 0;
+    transition:
+      grid-template-columns 300ms ease,
+      column-gap 300ms ease;
+  }
+
+  body:has(.categories-menu--desktop[open]) .home-hero-stage {
+    grid-template-columns: 312px minmax(0, 1fr);
+    column-gap: 24px;
+  }
+}

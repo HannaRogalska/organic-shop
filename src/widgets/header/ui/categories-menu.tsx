@@ -5,7 +5,9 @@ import { categories } from '../model/constants';
 
 export function CategoriesMenu({ mobile = false }: { mobile?: boolean }) {
   return (
-    <details className={`group relative ${mobile ? 'w-full' : ''}`}>
+    <details
+      className={`group relative ${mobile ? 'w-full' : 'categories-menu--desktop w-78 shrink-0'}`}
+    >
       <summary
         className={`flex cursor-pointer list-none items-center gap-3 text-sm font-medium marker:content-none ${
           mobile ? 'justify-between py-3 text-gray-900' : 'h-14 bg-gray-800 px-5 text-white'
@@ -32,13 +34,19 @@ export function CategoriesMenu({ mobile = false }: { mobile?: boolean }) {
         />
       </summary>
       <ul
-        className={`z-20 divide-y divide-gray-100 bg-background shadow-lg ${mobile ? 'static' : 'absolute top-full left-0 w-72'}`}
+        className={`z-20 divide-y divide-gray-100 bg-background shadow-lg ${
+          mobile
+            ? 'static'
+            : 'absolute top-[calc(100%+24px)] left-0 h-140 w-78 overflow-hidden border border-gray-100'
+        }`}
       >
         {categories.map((category) => (
-          <li key={category.id}>
+          <li key={category.id} className={mobile ? '' : 'h-14'}>
             <Link
-              href={`/shop?category=${encodeURIComponent(category.img)}`}
-              className="block px-5 py-3 text-sm text-gray-800 hover:bg-green-gray-50 hover:text-primary"
+              href={`/shop?category=${encodeURIComponent(category.name)}`}
+              className={`block px-5 text-sm text-gray-800 hover:bg-green-gray-50 hover:text-primary ${
+                mobile ? 'py-3' : 'flex h-full items-center'
+              }`}
             >
               <div className="flex items-center gap-3">
                 {category.img ? (
