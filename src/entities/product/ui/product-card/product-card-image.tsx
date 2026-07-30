@@ -4,6 +4,7 @@ import { ProductCardAction } from './product-card-action';
 type ProductCardImageProps = {
   image: string;
   title: string;
+  eager?: boolean;
   onAddToWishlist?: () => void;
   onQuickView?: () => void;
 };
@@ -11,17 +12,19 @@ type ProductCardImageProps = {
 export function ProductCardImage({
   image,
   title,
+  eager = false,
   onAddToWishlist,
   onQuickView,
 }: ProductCardImageProps) {
   return (
-    <div className="relative h-62 shrink-0 overflow-hidden p-px">
+    <div className="relative h-60 shrink-0 overflow-hidden">
       <Image
         src={image}
         alt={title}
         fill
         sizes="248px"
-        className="size-full object-contain transition-transform duration-300 group-hover/product:scale-[1.03]"
+        loading={eager ? 'eager' : 'lazy'}
+        className="object-contain transition-transform duration-300 group-hover/product:scale-[1.03]"
       />
 
       <div className="absolute top-4 right-4 flex translate-x-2 flex-col gap-3 opacity-0 duration-200 group-hover/product:translate-x-0 group-hover/product:opacity-100 group-focus-within/product:translate-x-0 group-focus-within/product:opacity-100">
