@@ -23,7 +23,7 @@ export const mockProducts = [
     salePrice: '2.99',
     rating: '4.80',
     images: [
-      'https://unsplash.com/photos/a-green-apple-sitting-on-top-of-a-white-table-lKWL2esVNlQ',
+      'https://images.unsplash.com/photo-1678942946279-c83e37f32304?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ],
     categorySlug: 'fruits',
   },
@@ -36,7 +36,7 @@ export const mockProducts = [
     salePrice: null,
     rating: '4.70',
     images: [
-      'https://unsplash.com/photos/a-group-of-carrots-sitting-on-top-of-a-white-table-zMBnM72c2A0',
+      'https://images.unsplash.com/photo-1666595162324-df6f452108e7?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ],
     categorySlug: 'vegetables',
   },
@@ -49,7 +49,7 @@ export const mockProducts = [
     salePrice: null,
     rating: '4.50',
     images: [
-      'https://unsplash.com/photos/a-wooden-bowl-filled-with-white-powdered-sugar-K0c49C5ApKE',
+      'https://images.unsplash.com/photo-1667803552102-00de1188d66f?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ],
     categorySlug: 'cooking',
   },
@@ -62,7 +62,7 @@ export const mockProducts = [
     salePrice: '2.49',
     rating: '4.30',
     images: [
-      'https://unsplash.com/photos/a-bag-of-potato-chips-next-to-three-pieces-of-potato-1DNF5zonRFk',
+      'https://images.unsplash.com/photo-1708746333830-6a40a841e810?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8T3JnYW5pYyUyMFBvdGF0byUyMENoaXBzfGVufDB8MnwwfHx8MA%3D%3D',
     ],
     categorySlug: 'snacks',
   },
@@ -74,7 +74,9 @@ export const mockProducts = [
     price: '4.50',
     salePrice: null,
     rating: '4.90',
-    images: ['https://unsplash.com/photos/unks-organic-hot-sauce-hFVjgO8JGSU'],
+    images: [
+      'https://images.unsplash.com/photo-1638176093577-81646507e3ae?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fEFwcGxlJTIwSnVpY2V8ZW58MHwyfDB8fHww',
+    ],
     categorySlug: 'beverages',
   },
 
@@ -86,7 +88,9 @@ export const mockProducts = [
     price: '12.99',
     salePrice: '9.99',
     rating: '4.60',
-    images: ['https://unsplash.com/photos/a-group-of-eggs-and-a-bottle-nisLBqXFPcA'],
+    images: [
+      'https://images.unsplash.com/photo-1559265125-9bcc4f302460?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjZ8fEhlcmJhbCUyMFNoYW1wb298ZW58MHwyfDB8fHww',
+    ],
     categorySlug: 'beauty_health',
   },
 
@@ -98,7 +102,9 @@ export const mockProducts = [
     price: '1.89',
     salePrice: null,
     rating: '4.95',
-    images: ['https://unsplash.com/photos/brown-bread-on-white-table-dCKQMAzy8II'],
+    images: [
+      'https://images.unsplash.com/photo-1667848249714-b5f120a74b22?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fENyb2lzc2FudHxlbnwwfDJ8MHx8fDA%3D',
+    ],
     categorySlug: 'bakery',
   },
   {
@@ -110,7 +116,7 @@ export const mockProducts = [
     salePrice: '15.49',
     rating: '4.85',
     images: [
-      'https://unsplash.com/photos/fresh-raw-salmon-food-photography-recipe-idea-bvXbjOcE6SI',
+      'https://images.unsplash.com/photo-1739785938093-c2b6befeca2f?q=80&w=1160&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ],
     categorySlug: 'meet_and_fish',
   },
@@ -124,7 +130,7 @@ export const mockProducts = [
     salePrice: null,
     rating: '4.75',
     images: [
-      'https://unsplash.com/photos/a-wooden-bowl-filled-with-white-powder-next-to-a-bottle-of-honey--STVybdfXvE',
+      'https://images.unsplash.com/photo-1581268497089-7a975fb491a3?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fE9yZ2FuaWMlMjBXaGVhdCUyMEZsb3VyfGVufDB8MnwwfHx8MA%3D%3D',
     ],
     categorySlug: 'needs',
   },
@@ -136,7 +142,9 @@ export const mockProducts = [
     price: '5.99',
     salePrice: null,
     rating: '4.40',
-    images: ['https://unsplash.com/photos/spoon-of-food-h2UH2674Bg4'],
+    images: [
+      'https://images.unsplash.com/photo-1704369354376-a6defd8e840d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTB8fFplcm8lMjBTdWdhciUyMEdyYW5vbGF8ZW58MHwyfDB8fHww',
+    ],
     categorySlug: 'diabetic',
   },
   {
@@ -148,7 +156,7 @@ export const mockProducts = [
     salePrice: '3.75',
     rating: '4.65',
     images: [
-      'https://unsplash.com/photos/two-bars-of-soap-with-packaging-on-white-background-mJq3-OFcmdQ',
+      'https://images.unsplash.com/photo-1552862623-ba280cd94315?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDR8fEVjbyUyMERpc2glMjBTb2FwfGVufDB8MnwwfHx8MA%3D%3D',
     ],
     categorySlug: 'detergents',
   },
@@ -161,7 +169,7 @@ export const mockProducts = [
     salePrice: null,
     rating: '4.90',
     images: [
-      'https://unsplash.com/photos/a-branch-with-olives-and-leaves-on-a-white-background-FdblEGc532shttps://unsplash.com',
+      'https://images.unsplash.com/photo-1627894005682-166e8687356a?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8RXh0cmElMjBWaXJnaW4lMjBPbGl2ZSUyME9pbHxlbnwwfDJ8MHx8fDA%3D',
     ],
     categorySlug: 'oil',
   },
