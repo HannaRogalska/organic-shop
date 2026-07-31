@@ -11,6 +11,7 @@ export type ProductCardProps = {
   currency?: string;
   locale?: string;
   className?: string;
+  eagerImage?: boolean;
   onAddToCart?: (product: ProductCardProduct) => void;
   onQuickView?: (product: ProductCardProduct) => void;
   onAddToWishlist?: (product: ProductCardProduct) => void;
