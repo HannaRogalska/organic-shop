@@ -6,7 +6,7 @@ import { orderItemsTable, ordersTable } from '@/entities/order/model/schema';
 import { productsTable } from '@/entities/product/model/schema';
 import type { ProductCardProduct } from '@/entities/product/ui/product-card';
 import { db } from '@/shared/api/db';
-import { redis } from '@/shared/api/redis/client';
+import { redis } from '@/shared/api/upstash-redis/client';
 
 const CACHE_VERSION = 'v1';
 const FRESH_TTL_SECONDS = 60;
@@ -61,24 +61,22 @@ async function writeCache(key: string, products: ProductCardProduct[]) {
     products,
   };
 
-  await redis.set(key, JSON.stringify(value), { ex: STALE_TTL_SECONDS });
+  await redis.set(key, value, { ex: STALE_TTL_SECONDS });
 }
 
 async function refreshCache(limit: number) {
   const cacheKey = getCacheKey(limit);
   const lockKey = `${cacheKey}:refresh-lock`;
-  let lockAcquired: 'OK' | null;
 
   try {
-    lockAcquired = await redis.set(lockKey, '1', {
+    const lockAcquired = await redis.set(lockKey, '1', {
       ex: REFRESH_LOCK_SECONDS,
       nx: true,
     });
+    if (lockAcquired !== 'OK') return;
   } catch {
     return;
   }
-
-  if (!lockAcquired) return;
 
   const products = await queryPopularProducts(limit);
   await writeCache(cacheKey, products);
@@ -86,22 +84,21 @@ async function refreshCache(limit: number) {
 
 export async function getPopularProducts(limit = DEFAULT_LIMIT): Promise<ProductCardProduct[]> {
   const cacheKey = getCacheKey(limit);
-  let cachedValue: string | null = null;
+  let cachedValue: PopularProductsCache | null = null;
 
   try {
-    cachedValue = await redis.get(cacheKey);
+    cachedValue = await redis.get<PopularProductsCache>(cacheKey);
   } catch {
     // Redis is optional; Neon remains the source of truth.
   }
 
   if (cachedValue) {
     try {
-      const cached = JSON.parse(cachedValue) as PopularProductsCache;
-      if (!Array.isArray(cached.products) || typeof cached.cachedAt !== 'number') {
+      if (!Array.isArray(cachedValue.products) || typeof cachedValue.cachedAt !== 'number') {
         throw new Error('Invalid popular products cache');
       }
 
-      const ageSeconds = (Date.now() - cached.cachedAt) / 1000;
+      const ageSeconds = (Date.now() - cachedValue.cachedAt) / 1000;
       if (ageSeconds > FRESH_TTL_SECONDS) {
         after(async () => {
           try {
@@ -112,7 +109,7 @@ export async function getPopularProducts(limit = DEFAULT_LIMIT): Promise<Product
         });
       }
 
-      return cached.products;
+      return cachedValue.products;
     } catch {
       try {
         await redis.del(cacheKey);
