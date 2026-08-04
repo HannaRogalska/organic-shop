@@ -1,9 +1,7 @@
 import { LoadingHeader } from '@/widgets/loading/loading-header';
 import { LoadingPreview } from '@/widgets/loading/loading-preview';
 import { LoadingStats } from '@/widgets/loading/loading-stats';
-import { LoadingFeaturedCards } from '@/widgets/loading/loading-featured';
-import { LoadingCategories } from '@/widgets/loading/loading-categories';
-import { LoadingProducts } from '@/widgets/loading/loading-products';
+import { LoadingFeaturedProducts } from '@/widgets/loading/loading-featured';
 
 export default function Loading() {
   return (
@@ -13,9 +11,7 @@ export default function Loading() {
           <LoadingHeader />
           <LoadingPreview />
           <LoadingStats />
-          <LoadingFeaturedCards />
-          <LoadingCategories />
-          <LoadingProducts />
+          <LoadingFeaturedProducts />
         </div>
       </div>
     </div>
