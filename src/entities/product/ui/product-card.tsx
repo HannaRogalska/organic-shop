@@ -29,7 +29,7 @@ export function ProductCard({
 
   return (
     <div
-      className={`group/product relative flex h-82 w-full max-w-66 min-w-0 flex-col overflow-hidden border border-gray-100 bg-background transition-[border-color,box-shadow] duration-200 hover:z-10 hover:border-hard-primary hover:shadow focus-within:z-10 focus-within:border-hard-primary focus-within:shadow ${className}`}
+      className={`group/product relative flex h-82 w-full max-w-66 min-w-0 flex-col overflow-hidden border border-gray-100 bg-background transition-[border-color,box-shadow] duration-200 hover:z-10 hover:border-hard-primary hover:shadow focus-within:z-10 focus-within:border-hard-primary focus-within:shadow ${className} p-2`}
     >
       <ProductCardImage
         image={product.image}
