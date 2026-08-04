@@ -22,7 +22,7 @@ export function ProductCardImage({
         src={image}
         alt={title}
         fill
-        sizes="248px"
+        sizes="(min-width: 1448px) 254px, (min-width: 1280px) calc((100vw - 176px) / 5), (min-width: 1024px) calc((100vw - 164px) / 4), (min-width: 768px) calc((100vw - 88px) / 3), (min-width: 640px) calc((100vw - 76px) / 2), (min-width: 520px) calc((100vw - 44px) / 2), calc(100vw - 32px)"
         loading={eager ? 'eager' : 'lazy'}
         className="object-contain transition-transform duration-300 group-hover/product:scale-[1.03]"
       />

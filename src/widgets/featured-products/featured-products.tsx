@@ -21,7 +21,7 @@ function SaleBanner() {
         src="/images/product/sale-bag.png"
         alt=""
         fill
-        sizes="265px"
+        sizes="(min-width: 1448px) 254px, (min-width: 1280px) calc((100vw - 176px) / 5), (min-width: 1024px) calc((100vw - 164px) / 4), (min-width: 768px) calc((100vw - 88px) / 3), (min-width: 640px) calc((100vw - 76px) / 2), (min-width: 520px) calc((100vw - 44px) / 2), calc(100vw - 32px)"
         loading="eager"
         className="object-contain object-bottom"
       />
@@ -40,18 +40,18 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
         <p className="text-sm leading-normal font-medium tracking-[0.08em] text-primary uppercase">
           Products
         </p>
-        <h1
+        <h2
           id="featured-products-title"
           className="mt-1 text-[32px] leading-[1.075] font-semibold text-gray-900 sm:text-[40px]"
         >
           Our Featured Products
-        </h1>
+        </h2>
       </header>
 
       <div className="grid grid-cols-1 gap-3 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         <SaleBanner />
         {products.map((product) => (
-          <ProductCard key={product.id} product={product} eagerImage className="max-w-none" />
+          <ProductCard key={product.id} product={product} className="max-w-none" />
         ))}
       </div>
     </section>
