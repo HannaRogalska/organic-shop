@@ -18,6 +18,8 @@ export function ProductCard({
   product,
   currency = 'USD',
   locale = 'en-US',
+  className = '',
+  eagerImage = false,
   onAddToCart,
   onQuickView,
   onAddToWishlist,
@@ -27,13 +29,12 @@ export function ProductCard({
 
   return (
     <div
-      className={
-        'group/product relative flex h-85 w-full min-w-0 flex-col overflow-hidden border border-gray-100 bg-background transition-[border-color,border-radius,box-shadow] duration-200 hover:z-10 hover:rounded-lg hover:border-hard-primary hover:shadow focus-within:z-10 focus-within:rounded-lg focus-within:border-hard-primary focus-within:shadow max-w-62'
-      }
+      className={`group/product relative flex h-82 w-full max-w-66 min-w-0 flex-col overflow-hidden border border-gray-100 bg-background transition-[border-color,box-shadow] duration-200 hover:z-10 hover:border-hard-primary hover:shadow focus-within:z-10 focus-within:border-hard-primary focus-within:shadow ${className} p-2`}
     >
       <ProductCardImage
         image={product.image}
         title={product.title}
+        eager={eagerImage}
         onAddToWishlist={() => onAddToWishlist?.(product)}
         onQuickView={() => onQuickView?.(product)}
       />

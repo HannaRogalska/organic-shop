@@ -7,6 +7,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useState } from 'react';
 
 import { AUTOPLAY_DELAY, heroSlides } from '../model/constants';
+import { ShopNowLink } from '@/shared/ui/shop-now-link/shop-now-link';
 
 export function HeroBanner() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -89,21 +90,7 @@ export function HeroBanner() {
                     <span className="text-white">{slide.discount}</span> off
                   </p>
                 </div>
-
-                <Link
-                  href="/shop"
-                  tabIndex={activeSlide === index ? 0 : -1}
-                  className="mt-8 inline-flex items-center justify-center gap-4 rounded-full bg-primary px-10 py-4 text-base leading-[1.2] font-semibold text-white transition-colors hover:bg-hard-primary"
-                >
-                  Shop now
-                  <Image
-                    src="/images/home/arrow-right.svg"
-                    alt=""
-                    width={16.5}
-                    height={13.549}
-                    className="h-auto w-4"
-                  />
-                </Link>
+                <ShopNowLink tabIndex={activeSlide === index ? 0 : -1} color="primary" />
               </div>
             </article>
           ))}
