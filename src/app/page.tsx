@@ -4,6 +4,7 @@ import { Header } from '@/widgets/header/header';
 import { Footer } from '@/widgets/footer/footer';
 import { HomeHero } from '@/widgets/home-hero/home-hero';
 import { FeaturedProducts } from '@/widgets/featured-products/featured-products';
+import { ProfessionalMembers } from '@/widgets/professional-members/professional-members';
 
 export default async function Home() {
   await connection();
@@ -15,6 +16,7 @@ export default async function Home() {
       <main className="w-full flex-1 px-4 py-15 sm:px-8 lg:px-16">
         <HomeHero />
         <FeaturedProducts products={popularProducts} />
+        <ProfessionalMembers />
       </main>
       <Footer />
     </div>
