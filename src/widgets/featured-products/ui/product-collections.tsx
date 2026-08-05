@@ -65,6 +65,7 @@ export function ProductCollections({ products }: { products: ProductCardProduct[
         imageClassName="object-cover"
         linkSize="medium"
         linkClassName="mt-5"
+        eagerImage
       />
     </section>
   );
