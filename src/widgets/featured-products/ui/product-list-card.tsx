@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import type { ProductCardProduct } from '@/entities/product/ui/product-card';
-import { ProductRating } from '@/entities/product/ui/product-card/product-rating';
+import { StarRating } from '@/shared/ui/star-rating/star-rating';
 
 function toAmount(value: number | string | null | undefined) {
   if (value === null || value === undefined || value === '') return 0;
@@ -40,7 +40,7 @@ export function ProductListCard({ product }: { product: ProductCardProduct }) {
             {formatPrice(product.price)}
           </p>
         </div>
-        <ProductRating value={toAmount(product.rating)} />
+        <StarRating value={toAmount(product.rating)} />
       </div>
     </article>
   );
