@@ -1,5 +1,5 @@
 import { ProductPrice } from './product-price';
-import { ProductRating } from './product-rating';
+import { StarRating } from '@/shared/ui/star-rating/star-rating';
 
 type ProductCardInfoProps = {
   title: string;
@@ -16,7 +16,7 @@ export function ProductCardInfo({ title, price, rating, currency, locale }: Prod
         {title}
       </h3>
       <ProductPrice price={price} currency={currency} locale={locale} />
-      <ProductRating value={rating} />
+      <StarRating value={rating} />
     </div>
   );
 }

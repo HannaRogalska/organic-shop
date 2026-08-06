@@ -5,6 +5,7 @@ import { Footer } from '@/widgets/footer/footer';
 import { HomeHero } from '@/widgets/home-hero/home-hero';
 import { FeaturedProducts } from '@/widgets/featured-products/featured-products';
 import { ProfessionalMembers } from '@/widgets/professional-members/professional-members';
+import { Testimonials } from '@/widgets/testimonials/testimonials';
 
 export default async function Home() {
   await connection();
@@ -17,6 +18,7 @@ export default async function Home() {
         <HomeHero />
         <FeaturedProducts products={popularProducts} />
         <ProfessionalMembers />
+        <Testimonials />
       </main>
       <Footer />
     </div>
