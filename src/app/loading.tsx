@@ -4,6 +4,7 @@ import { LoadingStats } from '@/widgets/loading/loading-stats';
 import { LoadingFeaturedProducts } from '@/widgets/loading/loading-featured';
 import { LoadingMembers } from '@/widgets/loading/loading-members';
 import { LoadingTestimonials } from '@/widgets/loading/loading-testimonials';
+import { LoadingSponsors } from '@/widgets/loading/loading-sponsors';
 
 export default function Loading() {
   return (
@@ -16,6 +17,7 @@ export default function Loading() {
           <LoadingFeaturedProducts />
           <LoadingMembers />
           <LoadingTestimonials />
+          <LoadingSponsors />
         </div>
       </div>
     </div>

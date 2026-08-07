@@ -91,6 +91,25 @@ body {
   font-family: var(--font-poppins-sans);
 }
 
+@keyframes sponsors-marquee-left-to-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.sponsors-marquee__track {
+  animation: sponsors-marquee-left-to-right 28s linear infinite;
+}
+
+.sponsors-marquee__track:hover {
+  animation-play-state: paused;
+}
+
+
 @media (min-width: 64rem) {
   .home-hero-stage {
     column-gap: 0;

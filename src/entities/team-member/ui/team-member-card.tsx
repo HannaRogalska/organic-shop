@@ -8,6 +8,7 @@ export type TeamMember = {
 
 type TeamMemberCardProps = {
   member: TeamMember;
+  eager?: boolean;
 };
 
 const socialActions = [
@@ -17,7 +18,7 @@ const socialActions = [
   { name: 'Instagram', icon: '/images/footer/instagram.svg' },
 ] as const;
 
-export function TeamMemberCard({ member }: TeamMemberCardProps) {
+export function TeamMemberCard({ member, eager = false }: TeamMemberCardProps) {
   return (
     <article
       className="group overflow-hidden border border-gray-100 bg-background transition-[border-color,box-shadow,transform] duration-200 hover:-translate-y-0.5 hover:border-transparent hover:shadow-[0_20px_48px_rgba(0,38,3,0.08)] focus-visible:border-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary focus-within:-translate-y-0.5 focus-within:shadow-[0_20px_48px_rgba(0,38,3,0.08)]"
@@ -29,6 +30,7 @@ export function TeamMemberCard({ member }: TeamMemberCardProps) {
           src={member.image}
           alt={`${member.name}, ${member.position}`}
           fill
+          loading={eager ? 'eager' : 'lazy'}
           sizes="(min-width: 1280px) 312px, (min-width: 768px) 33vw, (min-width: 520px) 50vw, 100vw"
           className="object-cover object-center transition-transform duration-300 group-hover:scale-[1.02] group-focus-within:scale-[1.02]"
         />
