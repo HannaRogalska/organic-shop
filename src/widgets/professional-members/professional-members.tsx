@@ -17,8 +17,8 @@ export function ProfessionalMembers() {
       </header>
 
       <div className="grid grid-cols-1 gap-6 min-[520px]:grid-cols-2 lg:grid-cols-4">
-        {TEAM_MEMBERS.map((member) => (
-          <TeamMemberCard key={member.name} member={member} />
+        {TEAM_MEMBERS.map((member, index) => (
+          <TeamMemberCard eager={index === 0} key={member.name} member={member} />
         ))}
       </div>
     </section>
