@@ -26,6 +26,7 @@ export function Newsletter() {
               id="newsletter-email"
               name="email"
               type="email"
+              autoComplete="email"
               placeholder="Your email address"
               className="min-w-0 flex-1 bg-transparent px-6 py-3.5 text-base text-background outline-none placeholder:text-gray-400"
             />
