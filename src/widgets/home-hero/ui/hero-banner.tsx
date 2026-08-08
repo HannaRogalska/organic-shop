@@ -84,11 +84,11 @@ export function HeroBanner() {
                       {slide.title[1]}
                     </h1>
                   ) : (
-                    <p className="max-w-120 text-4xl leading-[1.2] font-semibold text-white sm:text-5xl">
+                    <h2 className="max-w-120 text-4xl leading-[1.2] font-semibold text-white sm:text-5xl">
                       {slide.title[0]}
                       <br />
                       {slide.title[1]}
-                    </p>
+                    </h2>
                   )}
 
                   <p className="border-l-2 border-primary pl-3 text-2xl leading-[1.2] font-medium text-white/60 uppercase">

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { OrganicFarmVideoDialog } from './organic-farm-video-dialog';
 
 export function OrganicFarmBanner() {
   return (
@@ -22,9 +23,7 @@ export function OrganicFarmBanner() {
         >
           We’re the Best Organic Farm in the World
         </h2>
-        <button type="button" className="relative mt-6 size-20" aria-label="Play farm video">
-          <Image src="/images/product/organic-farm-play.svg" alt="" fill sizes="80px" />
-        </button>
+        <OrganicFarmVideoDialog />
       </div>
     </section>
   );
