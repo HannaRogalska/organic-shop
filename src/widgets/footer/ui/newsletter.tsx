@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { socialLinks } from '../model/constants';
+import { NewsletterForm } from './newsletter-form';
 
 export function Newsletter() {
   return (
@@ -18,26 +19,7 @@ export function Newsletter() {
         </div>
 
         <div className="flex w-full flex-col items-center gap-5 xl:flex-row xl:items-center">
-          <form className="flex w-full max-w-115 overflow-hidden rounded-full bg-gray-800 sm:w-115">
-            <label className="sr-only" htmlFor="newsletter-email">
-              Email address
-            </label>
-            <input
-              id="newsletter-email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              placeholder="Your email address"
-              className="min-w-0 flex-1 bg-transparent px-6 py-3.5 text-base text-background outline-none placeholder:text-gray-400"
-            />
-            <button
-              type="submit"
-              disabled
-              className="m-1 shrink-0 rounded-full bg-primary px-6 text-sm font-semibold text-background transition-colors hover:bg-hard-primary sm:px-10 sm:text-base"
-            >
-              Subscribe
-            </button>
-          </form>
+          <NewsletterForm />
 
           <nav className="flex justify-center gap-2" aria-label="Social media links">
             {socialLinks.map((s) => (
