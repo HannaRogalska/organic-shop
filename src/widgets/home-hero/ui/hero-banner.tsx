@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import Autoplay from 'embla-carousel-autoplay';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useState } from 'react';
@@ -78,11 +77,19 @@ export function HeroBanner() {
 
               <div className="relative z-10 flex min-h-105 flex-col items-start justify-center px-6 py-12 sm:min-h-120 sm:px-10 lg:min-h-140 lg:px-12">
                 <div className="flex flex-col gap-5">
-                  <h1 className="max-w-120 text-4xl leading-[1.2] font-semibold text-white sm:text-5xl">
-                    {slide.title[0]}
-                    <br />
-                    {slide.title[1]}
-                  </h1>
+                  {index === 0 ? (
+                    <h1 className="max-w-120 text-4xl leading-[1.2] font-semibold text-white sm:text-5xl">
+                      {slide.title[0]}
+                      <br />
+                      {slide.title[1]}
+                    </h1>
+                  ) : (
+                    <h2 className="max-w-120 text-4xl leading-[1.2] font-semibold text-white sm:text-5xl">
+                      {slide.title[0]}
+                      <br />
+                      {slide.title[1]}
+                    </h2>
+                  )}
 
                   <p className="border-l-2 border-primary pl-3 text-2xl leading-[1.2] font-medium text-white/60 uppercase">
                     {slide.eyebrow}
