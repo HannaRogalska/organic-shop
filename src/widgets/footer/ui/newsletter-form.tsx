@@ -11,6 +11,8 @@ export function NewsletterForm() {
   async function handleSubmit(e: SyntheticEvent<HTMLFormElement, SubmitEvent>) {
     e.preventDefault();
 
+    if (status === 'submitting') return;
+
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY;
 
     if (!accessKey) {
