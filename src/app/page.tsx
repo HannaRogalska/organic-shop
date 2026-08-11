@@ -1,4 +1,5 @@
 import { connection } from 'next/server';
+import { getHotDeals } from '@/entities/product/api/get-hot-deals';
 import { getPopularProducts } from '@/entities/product/api/get-popular-products';
 import { Header } from '@/widgets/header/header';
 import { Footer } from '@/widgets/footer/footer';
@@ -10,14 +11,14 @@ import { Sponsors } from '@/widgets/sponsors/sponsors';
 
 export default async function Home() {
   await connection();
-  const popularProducts = await getPopularProducts(4);
+  const [popularProducts, hotDeals] = await Promise.all([getPopularProducts(4), getHotDeals(3)]);
 
   return (
     <div className="flex min-h-screen flex-col bg-background font-sans">
       <Header />
       <main className="w-full flex-1 px-4 py-15 sm:px-8 lg:px-16">
         <HomeHero />
-        <FeaturedProducts products={popularProducts} />
+        <FeaturedProducts products={popularProducts} hotDeals={hotDeals} />
         <ProfessionalMembers />
         <Testimonials />
         <Sponsors />
