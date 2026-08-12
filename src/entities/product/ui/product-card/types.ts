@@ -19,6 +19,5 @@ export type ProductCardProps = {
 };
 
 export type HotDealProduct = ProductCardProduct & {
-  salePrice: number | string | null;
   discountRate: number;
 };
