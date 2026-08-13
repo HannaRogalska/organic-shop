@@ -5,7 +5,7 @@ import { ProductCardImage } from './product-card/product-card-image';
 import { ProductCardInfo } from './product-card/product-card-info';
 import type { ProductCardProps } from './product-card/types';
 
-export type { ProductCardProduct } from './product-card/types';
+export type { HotDealProduct, ProductCardProduct } from './product-card/types';
 
 function toAmount(value: number | string | null | undefined) {
   if (value === null || value === undefined || value === '') return null;

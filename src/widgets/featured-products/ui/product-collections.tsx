@@ -1,10 +1,15 @@
-import type { ProductCardProduct } from '@/entities/product/ui/product-card';
+import type { HotDealProduct, ProductCardProduct } from '@/entities/product/ui/product-card';
 import { ProductListCard } from './product-list-card';
 import { SaleBanner } from './sale-banner';
 
 type ProductCollectionProps = {
   title: string;
   products: ProductCardProduct[];
+};
+
+type ProductCollectionsProps = {
+  products: ProductCardProduct[];
+  hotDeals: HotDealProduct[];
 };
 
 function toRating(value: number | string | null | undefined) {
@@ -34,8 +39,7 @@ function ProductCollection({ title, products }: ProductCollectionProps) {
   );
 }
 
-export function ProductCollections({ products }: { products: ProductCardProduct[] }) {
-  const hotDeals = rotateProducts(products, 0);
+export function ProductCollections({ products, hotDeals }: ProductCollectionsProps) {
   const bestSellers = rotateProducts(products, 1);
   const topRated = [...products]
     .sort((left, right) => toRating(right.rating) - toRating(left.rating))

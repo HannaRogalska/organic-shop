@@ -17,6 +17,10 @@ function formatPrice(value: number | string) {
 }
 
 export function ProductListCard({ product }: { product: ProductCardProduct }) {
+  const originalPrice = toAmount(product.price);
+  const salePrice = toAmount(product.salePrice);
+  const isOnSale = product.salePrice != null && salePrice < originalPrice;
+
   return (
     <article className="group/list-product flex min-h-28 overflow-hidden rounded-md border border-gray-100 bg-background transition-[border-color,box-shadow] hover:border-hard-primary hover:shadow">
       <div className="shrink-0 p-[5px]">
@@ -36,8 +40,11 @@ export function ProductListCard({ product }: { product: ProductCardProduct }) {
           <h4 className="truncate text-sm leading-normal font-normal text-gray-700 transition-colors group-hover/list-product:text-hard-primary">
             {product.title}
           </h4>
-          <p className="text-base leading-normal font-medium text-gray-900">
-            {formatPrice(product.price)}
+          <p className="flex items-baseline gap-1.5 text-base leading-normal font-medium text-gray-900">
+            <span>{formatPrice(isOnSale ? salePrice : originalPrice)}</span>
+            {isOnSale && (
+              <del className="text-sm font-normal text-gray-400">{formatPrice(originalPrice)}</del>
+            )}
           </p>
         </div>
         <StarRating value={toAmount(product.rating)} />

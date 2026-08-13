@@ -1,13 +1,18 @@
-import { ProductCard, type ProductCardProduct } from '@/entities/product/ui/product-card';
+import {
+  ProductCard,
+  type HotDealProduct,
+  type ProductCardProduct,
+} from '@/entities/product/ui/product-card';
 import { OrganicFarmBanner } from './ui/organic-farm-banner';
 import { ProductCollections } from './ui/product-collections';
 import { SaleBanner } from './ui/sale-banner';
 
 type FeaturedProductsProps = {
   products: ProductCardProduct[];
+  hotDeals: HotDealProduct[];
 };
 
-export function FeaturedProducts({ products }: FeaturedProductsProps) {
+export function FeaturedProducts({ products, hotDeals }: FeaturedProductsProps) {
   if (products.length === 0) {
     return <p className="text-center text-gray-500">No products available yet.</p>;
   }
@@ -45,7 +50,7 @@ export function FeaturedProducts({ products }: FeaturedProductsProps) {
         </div>
       </section>
 
-      <ProductCollections products={products} />
+      <ProductCollections hotDeals={hotDeals} products={products} />
 
       <OrganicFarmBanner />
     </div>
