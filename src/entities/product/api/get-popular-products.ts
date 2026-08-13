@@ -3,6 +3,7 @@ import 'server-only';
 import { desc, eq, sql } from 'drizzle-orm';
 import { orderItemsTable, ordersTable } from '@/entities/order/model/schema';
 import { productsTable } from '@/entities/product/model/schema';
+import { isNumberOrString, isOptionalAmount } from '@/entities/product/model/validation';
 import type { ProductCardProduct } from '@/entities/product/ui/product-card';
 import { db } from '@/shared/api/db';
 import { getCachedData } from '@/shared/api/upstash-redis/cache';
@@ -14,14 +15,6 @@ const REFRESH_LOCK_SECONDS = 15;
 const DEFAULT_LIMIT = 5;
 
 const getCacheKey = (limit: number) => `home:popular-products:${CACHE_VERSION}:${limit}`;
-
-function isNumberOrString(value: unknown): value is number | string {
-  return typeof value === 'string' || (typeof value === 'number' && Number.isFinite(value));
-}
-
-function isOptionalAmount(value: unknown): value is number | string | null | undefined {
-  return value === null || value === undefined || isNumberOrString(value);
-}
 
 function isProductCardProduct(value: unknown): value is ProductCardProduct {
   if (typeof value !== 'object' || value === null) return false;
