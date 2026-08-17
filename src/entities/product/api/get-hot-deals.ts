@@ -2,6 +2,7 @@ import 'server-only';
 
 import { and, desc, gt, isNotNull, lt, sql } from 'drizzle-orm';
 import { productsTable } from '@/entities/product/model/schema';
+import { isNumberOrString, isOptionalAmount } from '@/entities/product/model/validation';
 import type { HotDealProduct } from '@/entities/product/ui/product-card';
 import { db } from '@/shared/api/db';
 import { getCachedData } from '@/shared/api/upstash-redis/cache';
@@ -12,14 +13,6 @@ const CACHE_VERSION = 'v1';
 const FRESH_TTL_SECONDS = 60;
 const STALE_TTL_SECONDS = 5 * 60;
 const REFRESH_LOCK_SECONDS = 15;
-
-function isNumberOrString(value: unknown): value is number | string {
-  return typeof value === 'string' || (typeof value === 'number' && Number.isFinite(value));
-}
-
-function isOptionalAmount(value: unknown): value is number | string | null | undefined {
-  return value === null || value === undefined || isNumberOrString(value);
-}
 
 function isHotDealProduct(value: unknown): value is HotDealProduct {
   if (typeof value !== 'object' || value === null) return false;

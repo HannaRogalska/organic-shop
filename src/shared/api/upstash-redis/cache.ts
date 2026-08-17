@@ -21,6 +21,9 @@ type SetCacheParams<T> = {
   ttlSeconds: number;
 };
 
+const CACHE_WAIT_ATTEMPTS = 20;
+const CACHE_WAIT_INTERVAL_MS = 50;
+
 async function setCache<T>(params: SetCacheParams<T>): Promise<void> {
   await redis.set(params.key, params.value, { ex: params.ttlSeconds });
 }
@@ -44,6 +47,29 @@ function isCacheEntry<T>(
   );
 }
 
+async function acquireLock(key: string, ttlSeconds: number): Promise<boolean> {
+  const lockAcquired = await redis.set(`${key}:refresh-lock`, '1', {
+    ex: ttlSeconds,
+    nx: true,
+  });
+
+  return lockAcquired === 'OK';
+}
+
+async function waitForCache<T>(
+  key: string,
+  isValid: (data: unknown) => data is T
+): Promise<T | null> {
+  for (let attempt = 0; attempt < CACHE_WAIT_ATTEMPTS; attempt += 1) {
+    await new Promise((resolve) => setTimeout(resolve, CACHE_WAIT_INTERVAL_MS));
+
+    const cachedValue = await getCache<unknown>(key);
+    if (isCacheEntry(cachedValue, isValid)) return cachedValue.data;
+  }
+
+  return null;
+}
+
 export async function getCachedData<T>({
   key,
   loadData,
@@ -64,8 +90,8 @@ export async function getCachedData<T>({
         },
         ttlSeconds: staleTtlSeconds,
       });
-    } catch {
-      // Redis is optional; the loaded data can still be returned.
+    } catch (error) {
+      console.error('Failed to write Redis cache', { key, error });
     }
 
     return data;
@@ -81,21 +107,20 @@ export async function getCachedData<T>({
   if (isCacheEntry(cachedValue, isValid)) {
     const ageSeconds = (Date.now() - cachedValue.cachedAt) / 1000;
     if (ageSeconds > freshTtlSeconds) {
-      after(async () => {
-        const lockKey = `${key}:refresh-lock`;
+      try {
+        after(async () => {
+          try {
+            const lockAcquired = await acquireLock(key, refreshLockSeconds);
+            if (!lockAcquired) return;
 
-        try {
-          const lockAcquired = await redis.set(lockKey, '1', {
-            ex: refreshLockSeconds,
-            nx: true,
-          });
-          if (lockAcquired !== 'OK') return;
-
-          await loadAndCache();
-        } catch {
-          // The stale value remains available until its Redis TTL expires.
-        }
-      });
+            await loadAndCache();
+          } catch {
+            // The stale value remains available until its Redis TTL expires.
+          }
+        });
+      } catch {
+        // after() requires an active request or prerender scope; stale data remains usable.
+      }
     }
 
     return cachedValue.data;
@@ -106,6 +131,16 @@ export async function getCachedData<T>({
     } catch {
       // A malformed value can safely expire without blocking data loading.
     }
+  }
+
+  try {
+    const lockAcquired = await acquireLock(key, refreshLockSeconds);
+    if (lockAcquired) return loadAndCache();
+
+    const cachedData = await waitForCache(key, isValid);
+    if (cachedData !== null) return cachedData;
+  } catch {
+    // Redis is optional; loadData remains the source of truth.
   }
 
   return loadAndCache();
