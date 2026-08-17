@@ -21,7 +21,6 @@ type SetCacheParams<T> = {
   ttlSeconds: number;
 };
 
-const CACHE_WAIT_ATTEMPTS = 20;
 const CACHE_WAIT_INTERVAL_MS = 50;
 
 async function setCache<T>(params: SetCacheParams<T>): Promise<void> {
@@ -58,9 +57,12 @@ async function acquireLock(key: string, ttlSeconds: number): Promise<boolean> {
 
 async function waitForCache<T>(
   key: string,
-  isValid: (data: unknown) => data is T
+  isValid: (data: unknown) => data is T,
+  waitSeconds: number
 ): Promise<T | null> {
-  for (let attempt = 0; attempt < CACHE_WAIT_ATTEMPTS; attempt += 1) {
+  const attempts = Math.ceil((waitSeconds * 1000) / CACHE_WAIT_INTERVAL_MS);
+
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
     await new Promise((resolve) => setTimeout(resolve, CACHE_WAIT_INTERVAL_MS));
 
     const cachedValue = await getCache<unknown>(key);
@@ -134,11 +136,13 @@ export async function getCachedData<T>({
   }
 
   try {
-    const lockAcquired = await acquireLock(key, refreshLockSeconds);
-    if (lockAcquired) return loadAndCache();
+    while (true) {
+      const lockAcquired = await acquireLock(key, refreshLockSeconds);
+      if (lockAcquired) return loadAndCache();
 
-    const cachedData = await waitForCache(key, isValid);
-    if (cachedData !== null) return cachedData;
+      const cachedData = await waitForCache(key, isValid, refreshLockSeconds);
+      if (cachedData !== null) return cachedData;
+    }
   } catch {
     // Redis is optional; loadData remains the source of truth.
   }

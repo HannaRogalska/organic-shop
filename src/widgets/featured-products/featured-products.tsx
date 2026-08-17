@@ -1,18 +1,15 @@
-import {
-  ProductCard,
-  type HotDealProduct,
-  type ProductCardProduct,
-} from '@/entities/product/ui/product-card';
+import { type HotDealProduct, type ProductCardProduct } from '@/entities/product/ui/product-card';
 import { OrganicFarmBanner } from './ui/organic-farm-banner';
+import { FeaturedProductsCarousel } from './ui/featured-products-carousel';
 import { ProductCollections } from './ui/product-collections';
-import { SaleBanner } from './ui/sale-banner';
 
 type FeaturedProductsProps = {
   products: ProductCardProduct[];
+  bestSellers: ProductCardProduct[];
   hotDeals: HotDealProduct[];
 };
 
-export function FeaturedProducts({ products, hotDeals }: FeaturedProductsProps) {
+export function FeaturedProducts({ products, bestSellers, hotDeals }: FeaturedProductsProps) {
   if (products.length === 0) {
     return <p className="text-center text-gray-500">No products available yet.</p>;
   }
@@ -32,25 +29,10 @@ export function FeaturedProducts({ products, hotDeals }: FeaturedProductsProps) 
           </h2>
         </header>
 
-        <div className="grid grid-cols-1 gap-3 min-[520px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-          <SaleBanner
-            eyebrow="Summer Sale"
-            title={
-              <p className="mt-1 text-3xl leading-[1.2] font-semibold text-primary">75% off</p>
-            }
-            image="/images/product/sale-bag.png"
-            imageSizes="(min-width: 1448px) 254px, (min-width: 1280px) calc((100vw - 176px) / 5), (min-width: 1024px) calc((100vw - 164px) / 4), (min-width: 768px) calc((100vw - 88px) / 3), (min-width: 640px) calc((100vw - 76px) / 2), (min-width: 520px) calc((100vw - 44px) / 2), calc(100vw - 32px)"
-            className="min-h-82"
-            contentClassName="px-5 pt-6"
-            eagerImage
-          />
-          {products.map((product) => (
-            <ProductCard key={product.id} product={product} className="max-w-none" />
-          ))}
-        </div>
+        <FeaturedProductsCarousel products={products} />
       </section>
 
-      <ProductCollections hotDeals={hotDeals} products={products} />
+      <ProductCollections bestSellers={bestSellers} hotDeals={hotDeals} products={products} />
 
       <OrganicFarmBanner />
     </div>

@@ -9,17 +9,13 @@ type ProductCollectionProps = {
 
 type ProductCollectionsProps = {
   products: ProductCardProduct[];
+  bestSellers: ProductCardProduct[];
   hotDeals: HotDealProduct[];
 };
 
 function toRating(value: number | string | null | undefined) {
   const rating = Number(value);
   return Number.isFinite(rating) ? rating : 0;
-}
-
-function rotateProducts(products: ProductCardProduct[], offset: number) {
-  const count = Math.min(3, products.length);
-  return Array.from({ length: count }, (_, index) => products[(offset + index) % products.length]);
 }
 
 function ProductCollection({ title, products }: ProductCollectionProps) {
@@ -39,8 +35,7 @@ function ProductCollection({ title, products }: ProductCollectionProps) {
   );
 }
 
-export function ProductCollections({ products, hotDeals }: ProductCollectionsProps) {
-  const bestSellers = rotateProducts(products, 1);
+export function ProductCollections({ products, bestSellers, hotDeals }: ProductCollectionsProps) {
   const topRated = [...products]
     .sort((left, right) => toRating(right.rating) - toRating(left.rating))
     .slice(0, 3);
