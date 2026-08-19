@@ -16,10 +16,6 @@ export function FeaturedProducts({
   hotDeals,
   topRated,
 }: FeaturedProductsProps) {
-  if (products.length === 0) {
-    return <p className="text-center text-gray-500">No products available yet.</p>;
-  }
-
   return (
     <div className="mx-auto max-w-330">
       <section aria-labelledby="featured-products-title">
@@ -35,7 +31,11 @@ export function FeaturedProducts({
           </h2>
         </header>
 
-        <FeaturedProductsCarousel products={products} />
+        {products.length > 0 ? (
+          <FeaturedProductsCarousel products={products} />
+        ) : (
+          <p className="text-center text-gray-500">No featured products available yet.</p>
+        )}
       </section>
 
       <ProductCollections bestSellers={bestSellers} hotDeals={hotDeals} topRated={topRated} />
