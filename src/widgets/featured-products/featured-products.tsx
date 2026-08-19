@@ -7,9 +7,15 @@ type FeaturedProductsProps = {
   products: ProductCardProduct[];
   bestSellers: ProductCardProduct[];
   hotDeals: HotDealProduct[];
+  topRated: ProductCardProduct[];
 };
 
-export function FeaturedProducts({ products, bestSellers, hotDeals }: FeaturedProductsProps) {
+export function FeaturedProducts({
+  products,
+  bestSellers,
+  hotDeals,
+  topRated,
+}: FeaturedProductsProps) {
   if (products.length === 0) {
     return <p className="text-center text-gray-500">No products available yet.</p>;
   }
@@ -32,7 +38,7 @@ export function FeaturedProducts({ products, bestSellers, hotDeals }: FeaturedPr
         <FeaturedProductsCarousel products={products} />
       </section>
 
-      <ProductCollections bestSellers={bestSellers} hotDeals={hotDeals} products={products} />
+      <ProductCollections bestSellers={bestSellers} hotDeals={hotDeals} topRated={topRated} />
 
       <OrganicFarmBanner />
     </div>

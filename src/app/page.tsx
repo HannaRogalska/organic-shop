@@ -2,6 +2,7 @@ import { connection } from 'next/server';
 import { getFeaturedProducts } from '@/entities/product/api/get-featured-products';
 import { getHotDeals } from '@/entities/product/api/get-hot-deals';
 import { getPopularProducts } from '@/entities/product/api/get-popular-products';
+import { getTopRatedProducts } from '@/entities/product/api/get-top-rated-products';
 import { Header } from '@/widgets/header/header';
 import { Footer } from '@/widgets/footer/footer';
 import { HomeHero } from '@/widgets/home-hero/home-hero';
@@ -12,10 +13,11 @@ import { Sponsors } from '@/widgets/sponsors/sponsors';
 
 export default async function Home() {
   await connection();
-  const [featuredProducts, bestSellers, hotDeals] = await Promise.all([
+  const [featuredProducts, bestSellers, hotDeals, topRated] = await Promise.all([
     getFeaturedProducts(4),
     getPopularProducts(3),
     getHotDeals(3),
+    getTopRatedProducts(3),
   ]);
 
   return (
@@ -27,6 +29,7 @@ export default async function Home() {
           products={featuredProducts}
           bestSellers={bestSellers}
           hotDeals={hotDeals}
+          topRated={topRated}
         />
         <ProfessionalMembers />
         <Testimonials />
