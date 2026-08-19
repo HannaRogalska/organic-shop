@@ -8,15 +8,10 @@ type ProductCollectionProps = {
 };
 
 type ProductCollectionsProps = {
-  products: ProductCardProduct[];
   bestSellers: ProductCardProduct[];
   hotDeals: HotDealProduct[];
+  topRated: ProductCardProduct[];
 };
-
-function toRating(value: number | string | null | undefined) {
-  const rating = Number(value);
-  return Number.isFinite(rating) ? rating : 0;
-}
 
 function ProductCollection({ title, products }: ProductCollectionProps) {
   const titleId = `${title.toLowerCase().replaceAll(' ', '-')}-title`;
@@ -35,11 +30,7 @@ function ProductCollection({ title, products }: ProductCollectionProps) {
   );
 }
 
-export function ProductCollections({ products, bestSellers, hotDeals }: ProductCollectionsProps) {
-  const topRated = [...products]
-    .sort((left, right) => toRating(right.rating) - toRating(left.rating))
-    .slice(0, 3);
-
+export function ProductCollections({ bestSellers, hotDeals, topRated }: ProductCollectionsProps) {
   return (
     <section
       className="mt-15 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4"
