@@ -1,0 +1,46 @@
+{
+  "Header": {
+    "topBar": {
+      "storeLocation": "Store Location: Lincoln- 344, Illinois, Chicago, USA",
+      "language": "Language",
+      "currency": "Currency",
+      "signIn": "Sign In",
+      "signUp": "Sign Up"
+    },
+    "search": {
+      "label": "Search products",
+      "placeholder": "Search",
+      "submit": "Search"
+    },
+    "cart": {
+      "wishlist": "Wishlist",
+      "shoppingCart": "Shopping cart",
+      "cart": "Cart",
+      "openCart": "Open cart",
+      "summary": "Shopping cart, {count} items, total {total}"
+    },
+    "navigation": {
+      "label": "Primary navigation",
+      "mobileLabel": "Mobile navigation",
+      "menu": "Menu",
+      "home": "Home",
+      "shop": "Shop",
+      "pages": "Pages",
+      "blog": "Blog",
+      "aboutUs": "About Us",
+      "contactUs": "Contact Us"
+    },
+    "categories": {
+      "allCategories": "All Categories",
+      "freshFruit": "Fresh Fruit",
+      "freshVegetables": "Fresh Vegetables",
+      "riverFish": "River Fish",
+      "chickenAndMeat": "Chicken & Meat",
+      "drinkAndWater": "Drink & Water",
+      "yogurtAndIceCream": "Yogurt & Ice Cream",
+      "cakeAndBread": "Cake & Bread",
+      "butterAndCream": "Butter & Cream",
+      "cooking": "Cooking"
+    }
+  }
+}
