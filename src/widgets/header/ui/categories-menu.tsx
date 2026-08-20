@@ -1,9 +1,11 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 import { categories } from '../model/constants';
 
 export function CategoriesMenu({ mobile = false }: { mobile?: boolean }) {
+  const t = useTranslations('Header.categories');
   return (
     <details
       className={`group relative ${mobile ? 'w-full' : 'categories-menu--desktop w-78 shrink-0'}`}
@@ -23,7 +25,7 @@ export function CategoriesMenu({ mobile = false }: { mobile?: boolean }) {
           />
         ) : null}
 
-        <div className="flex-1">All Categories</div>
+        <div className="flex-1">{t('allCategories')}</div>
 
         <Image
           src="/images/header/nav-chevron.svg"
@@ -43,7 +45,7 @@ export function CategoriesMenu({ mobile = false }: { mobile?: boolean }) {
         {categories.map((category) => (
           <li key={category.id} className={mobile ? '' : 'h-14'}>
             <Link
-              href={`/shop?category=${encodeURIComponent(category.name)}`}
+              href={`/shop?category=${encodeURIComponent(category.value)}`}
               className={`block px-5 text-sm text-gray-800 hover:bg-green-gray-50 hover:text-primary ${
                 mobile ? 'py-3' : 'flex h-full items-center'
               }`}
@@ -58,7 +60,7 @@ export function CategoriesMenu({ mobile = false }: { mobile?: boolean }) {
                     className="h-5 w-5 shrink-0 object-contain"
                   />
                 ) : null}
-                <span className="leading-none">{category.name}</span>
+                <span className="leading-none">{t(category.key)}</span>
               </div>
             </Link>
           </li>

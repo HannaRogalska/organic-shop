@@ -1,15 +1,17 @@
 import Image from 'next/image';
-import Link from 'next/link';
+import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
 
 import { navigation } from '../model/constants';
 import { CategoriesMenu } from './categories-menu';
 
 export function MobileNavigation() {
+  const t = useTranslations('Header.navigation');
   return (
     <div className="border-t border-gray-100 lg:hidden">
       <details className="group">
         <summary className="flex h-12 cursor-pointer list-none items-center justify-between px-4 text-sm font-medium text-gray-900 marker:content-none">
-          Menu
+          {t('menu')}
           <Image
             src="/images/header/chevron.svg"
             alt=""
@@ -18,16 +20,16 @@ export function MobileNavigation() {
             className="transition-transform group-open:rotate-180"
           />
         </summary>
-        <nav className="border-t border-gray-100 px-4 pb-4" aria-label="Mobile navigation">
+        <nav className="border-t border-gray-100 px-4 pb-4" aria-label={t('mobileLabel')}>
           <CategoriesMenu mobile />
           <div>
             {navigation.map((item) => (
               <Link
-                key={item.label}
+                key={item.key}
                 href={item.href}
                 className="flex py-3 text-sm font-medium text-gray-800 hover:text-primary"
               >
-                {item.label}
+                {t(item.key)}
               </Link>
             ))}
           </div>

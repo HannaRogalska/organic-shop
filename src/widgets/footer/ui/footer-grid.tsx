@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { Brand } from '@/shared/ui/brand/brand';
+import { Link } from '@/i18n/navigation';
 import { footerColumns } from '../model/constants';
 import { DownloadApps } from './download-apps';
 
