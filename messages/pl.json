@@ -48,5 +48,34 @@
       "butterAndCream": "Masło i śmietana",
       "cooking": "Gotowanie"
     }
+  },
+  "HomeHero": {
+    "banner": {
+      "titleLine1": "Świeża i zdrowa",
+      "titleLine2": "Żywność ekologiczna",
+      "saleUpTo": "Rabat do",
+      "specialOffer": "Oferta specjalna",
+      "off": "taniej",
+      "carouselLabel": "Polecane oferty",
+      "slideLabel": "{current} z {total}",
+      "controlsLabel": "Wybierz slajd",
+      "showSlide": "Pokaż slajd {number}",
+      "carouselRole": "karuzela",
+      "slideRole": "slajd"
+    },
+    "features": {
+      "sectionLabel": "Korzyści z zakupów",
+      "freeShippingTitle": "Bezpłatna dostawa",
+      "freeShippingDescription": "Bezpłatna dostawa z rabatem",
+      "supportTitle": "Wsparcie 24/7",
+      "supportDescription": "Natychmiastowy kontakt z obsługą",
+      "securePaymentTitle": "Bezpieczna płatność",
+      "securePaymentDescription": "Dbamy o bezpieczeństwo Twoich pieniędzy",
+      "moneyBackTitle": "Zwrot pieniędzy",
+      "moneyBackDescription": "Zwrot pieniędzy w ciągu 30 dni"
+    }
+  },
+  "Common": {
+    "shopNow": "Kup teraz"
   }
 }

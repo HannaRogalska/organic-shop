@@ -48,5 +48,34 @@
       "butterAndCream": "Butter & Cream",
       "cooking": "Cooking"
     }
+  },
+  "HomeHero": {
+    "banner": {
+      "titleLine1": "Fresh & Healthy",
+      "titleLine2": "Organic Food",
+      "saleUpTo": "Sale Up to",
+      "specialOffer": "Special Offer",
+      "off": "off",
+      "carouselLabel": "Featured offers",
+      "slideLabel": "{current} of {total}",
+      "controlsLabel": "Choose a slide",
+      "showSlide": "Show slide {number}",
+      "carouselRole": "carousel",
+      "slideRole": "slide"
+    },
+    "features": {
+      "sectionLabel": "Shopping benefits",
+      "freeShippingTitle": "Free Shipping",
+      "freeShippingDescription": "Free shipping with discount",
+      "supportTitle": "Great Support 24/7",
+      "supportDescription": "Instant access to Contact",
+      "securePaymentTitle": "100% Secure Payment",
+      "securePaymentDescription": "We ensure your money is safe",
+      "moneyBackTitle": "Money-Back Guarantee",
+      "moneyBackDescription": "30 days money-back"
+    }
+  },
+  "Common": {
+    "shopNow": "Shop now"
   }
 }
