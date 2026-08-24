@@ -1,4 +1,10 @@
 {
+  "Metadata": {
+    "title": "Organic Food | Fresh & Healthy",
+    "titleTemplate": "%s | Organic Food",
+    "description": "Fresh organic food delivery straight to your doorstep.",
+    "applicationName": "Organic Food"
+  },
   "Header": {
     "topBar": {
       "storeLocation": "Store Location: Lincoln- 344, Illinois, Chicago, USA",
