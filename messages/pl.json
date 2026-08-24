@@ -1,0 +1,52 @@
+{
+  "Metadata": {
+    "title": "Żywność ekologiczna | Świeża i zdrowa",
+    "titleTemplate": "%s | Żywność ekologiczna",
+    "description": "Świeża żywność ekologiczna z dostawą prosto pod Twoje drzwi.",
+    "applicationName": "Żywność ekologiczna"
+  },
+  "Header": {
+    "topBar": {
+      "storeLocation": "Lokalizacja sklepu: ul. Gorszka 37, 43-325, Warszawa, Polska",
+      "language": "Język",
+      "currency": "Waluta",
+      "signIn": "Zaloguj się",
+      "signUp": "Zarejestruj się"
+    },
+    "search": {
+      "label": "Wyszukiwanie produktów",
+      "placeholder": "Szukaj",
+      "submit": "Szukaj"
+    },
+    "cart": {
+      "wishlist": "Lista życzeń",
+      "shoppingCart": "Koszyk",
+      "cart": "Koszyk",
+      "openCart": "Otwórz koszyk",
+      "summary": "Koszyk, liczba produktów: {count}, razem: {total}"
+    },
+    "navigation": {
+      "label": "Główna nawigacja",
+      "mobileLabel": "Nawigacja mobilna",
+      "menu": "Menu",
+      "home": "Strona główna",
+      "shop": "Sklep",
+      "pages": "Strony",
+      "blog": "Blog",
+      "aboutUs": "O nas",
+      "contactUs": "Kontakt"
+    },
+    "categories": {
+      "allCategories": "Wszystkie kategorie",
+      "freshFruit": "Świeże owoce",
+      "freshVegetables": "Świeże warzywa",
+      "riverFish": "Ryby rzeczne",
+      "chickenAndMeat": "Kurczak i mięso",
+      "drinkAndWater": "Napoje i woda",
+      "yogurtAndIceCream": "Jogurt i lody",
+      "cakeAndBread": "Ciasta i pieczywo",
+      "butterAndCream": "Masło i śmietana",
+      "cooking": "Gotowanie"
+    }
+  }
+}
