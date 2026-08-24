@@ -1,4 +1,5 @@
 import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 type ShopNowLinkProps = {
   tabIndex?: number;
@@ -13,6 +14,7 @@ export function ShopNowLink({
   size = 'large',
   className = 'mt-8',
 }: ShopNowLinkProps) {
+  const t = useTranslations('Common');
   const variantClasses =
     color === 'primary'
       ? 'bg-primary text-white hover:bg-hard-primary'
@@ -26,7 +28,7 @@ export function ShopNowLink({
       tabIndex={tabIndex}
       className={`inline-flex items-center justify-center rounded-full leading-[1.2] font-semibold transition-colors ${sizeClasses} ${variantClasses} ${className}`}
     >
-      Shop now
+      {t('shopNow')}
       <svg
         aria-hidden="true"
         width="17"
