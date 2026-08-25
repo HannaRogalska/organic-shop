@@ -1,3 +1,5 @@
+'use client';
+import { useFormatPrice } from '@/shared/lib/i18n/use-format-price';
 import Image from 'next/image';
 import type { ProductCardProduct } from '@/entities/product/ui/product-card';
 import { StarRating } from '@/shared/ui/star-rating/star-rating';
@@ -8,15 +10,8 @@ function toAmount(value: number | string | null | undefined) {
   return Number.isFinite(amount) ? amount : 0;
 }
 
-function formatPrice(value: number | string) {
-  return new Intl.NumberFormat('en-US', {
-    style: 'currency',
-    currency: 'USD',
-    minimumFractionDigits: 2,
-  }).format(toAmount(value));
-}
-
 export function ProductListCard({ product }: { product: ProductCardProduct }) {
+  const formatPrice = useFormatPrice();
   const originalPrice = toAmount(product.price);
   const salePrice = toAmount(product.salePrice);
   const isOnSale = product.salePrice != null && salePrice < originalPrice;

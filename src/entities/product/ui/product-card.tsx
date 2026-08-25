@@ -16,8 +16,6 @@ function toAmount(value: number | string | null | undefined) {
 
 export function ProductCard({
   product,
-  currency = 'USD',
-  locale = 'en-US',
   className = '',
   eagerImage = false,
   onAddToCart,
@@ -40,13 +38,7 @@ export function ProductCard({
       />
 
       <div className="flex min-h-0 flex-1 items-center justify-between gap-3 px-4 pt-3 pb-4">
-        <ProductCardInfo
-          title={product.title}
-          price={price}
-          rating={rating}
-          currency={currency}
-          locale={locale}
-        />
+        <ProductCardInfo title={product.title} price={price} rating={rating} />
 
         <AddToCartButton
           label={`Add ${product.title} to cart`}
