@@ -1,11 +1,12 @@
 'use client';
-
+import { useTranslations } from 'next-intl';
 import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ProductCard, type ProductCardProduct } from '@/entities/product/ui/product-card';
 import { SaleBanner } from './sale-banner';
 
 export function FeaturedProductsCarousel({ products }: { products: ProductCardProduct[] }) {
+  const t = useTranslations('FeaturedProducts.carousel');
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: 'start',
     containScroll: 'trimSnaps',
@@ -40,9 +41,11 @@ export function FeaturedProductsCarousel({ products }: { products: ProductCardPr
         <div className="flex gap-3">
           <div className="min-w-0 flex-[0_0_264px]">
             <SaleBanner
-              eyebrow="Summer Sale"
+              eyebrow={t('saleEyebrow')}
               title={
-                <p className="mt-1 text-3xl leading-[1.2] font-semibold text-primary">75% off</p>
+                <p className="mt-1 text-3xl leading-[1.2] font-semibold text-primary">
+                  {t('saleDiscount')}
+                </p>
               }
               image="/images/product/sale-bag.png"
               imageSizes="264px"
@@ -65,7 +68,7 @@ export function FeaturedProductsCarousel({ products }: { products: ProductCardPr
           type="button"
           onClick={() => emblaApi?.scrollPrev()}
           disabled={!canScrollPrev}
-          aria-label="Previous featured products"
+          aria-label={t('previous')}
           className="flex size-11 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-background text-xl text-gray-900 transition-colors hover:border-primary hover:bg-primary hover:text-background disabled:cursor-not-allowed disabled:opacity-40"
         >
           <span aria-hidden="true">←</span>
@@ -74,7 +77,7 @@ export function FeaturedProductsCarousel({ products }: { products: ProductCardPr
           type="button"
           onClick={() => emblaApi?.scrollNext()}
           disabled={!canScrollNext}
-          aria-label="Next featured products"
+          aria-label={t('next')}
           className="flex size-11 cursor-pointer items-center justify-center rounded-full border border-gray-200 bg-background text-xl text-gray-900 transition-colors hover:border-primary hover:bg-primary hover:text-background disabled:cursor-not-allowed disabled:opacity-40"
         >
           <span aria-hidden="true">→</span>

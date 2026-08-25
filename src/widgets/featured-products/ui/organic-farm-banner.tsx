@@ -1,7 +1,9 @@
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { OrganicFarmVideoDialog } from './organic-farm-video-dialog';
 
 export function OrganicFarmBanner() {
+  const t = useTranslations('FeaturedProducts.organicFarm');
   return (
     <section
       className="relative mt-15 min-h-[396px] overflow-hidden"
@@ -9,7 +11,7 @@ export function OrganicFarmBanner() {
     >
       <Image
         src="/images/product/organic-farm-background.jpg"
-        alt="Fresh organic vegetables at the farm"
+        alt={t('imageAlt')}
         fill
         sizes="(min-width: 1448px) 1320px, calc(100vw - 32px)"
         loading="lazy"
@@ -21,7 +23,7 @@ export function OrganicFarmBanner() {
           id="organic-farm-title"
           className="max-w-[495px] text-3xl leading-[1.2] font-semibold text-white sm:text-4xl"
         >
-          We’re the Best Organic Farm in the World
+          {t('title')}
         </h2>
         <OrganicFarmVideoDialog />
       </div>
