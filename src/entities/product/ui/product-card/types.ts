@@ -9,8 +9,6 @@ export type ProductCardProduct = {
 
 export type ProductCardProps = {
   product: ProductCardProduct;
-  currency?: string;
-  locale?: string;
   className?: string;
   eagerImage?: boolean;
   onAddToCart?: (product: ProductCardProduct) => void;

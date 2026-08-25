@@ -1,3 +1,4 @@
+import { CurrencySelect } from './currency-select';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -16,13 +17,7 @@ export function HeaderTopBar() {
           <LanguageSelect />
           <label className="flex items-center gap-1.5">
             <span className="sr-only">{t('currency')}</span>
-            <select
-              className="appearance-none bg-transparent pr-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-              defaultValue="USD"
-            >
-              <option>USD</option>
-              <option>EUR</option>
-            </select>
+            <CurrencySelect />
           </label>
           <span className="h-4 w-px bg-gray-200" aria-hidden="true" />
           <div className="flex gap-1">
