@@ -1,8 +1,10 @@
+import { useTranslations } from 'next-intl';
 import type { HotDealProduct, ProductCardProduct } from '@/entities/product/ui/product-card';
 import { ProductListCard } from './product-list-card';
 import { SaleBanner } from './sale-banner';
 
 type ProductCollectionProps = {
+  id: string;
   title: string;
   products: ProductCardProduct[];
 };
@@ -13,8 +15,8 @@ type ProductCollectionsProps = {
   topRated: ProductCardProduct[];
 };
 
-function ProductCollection({ title, products }: ProductCollectionProps) {
-  const titleId = `${title.toLowerCase().replaceAll(' ', '-')}-title`;
+function ProductCollection({ id, title, products }: ProductCollectionProps) {
+  const titleId = `${id}-title`;
 
   return (
     <section aria-labelledby={titleId}>
@@ -23,7 +25,7 @@ function ProductCollection({ title, products }: ProductCollectionProps) {
       </h3>
       <div className="flex flex-col gap-4">
         {products.map((product) => (
-          <ProductListCard key={`${title}-${product.id}`} product={product} />
+          <ProductListCard key={`${id}-${product.id}`} product={product} />
         ))}
       </div>
     </section>
@@ -31,21 +33,23 @@ function ProductCollection({ title, products }: ProductCollectionProps) {
 }
 
 export function ProductCollections({ bestSellers, hotDeals, topRated }: ProductCollectionsProps) {
+  const t = useTranslations('FeaturedProducts.collections');
   return (
     <section
       className="mt-15 grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4"
-      aria-label="Product collections"
+      aria-label={t('sectionLabel')}
     >
-      <ProductCollection title="Hot Deals" products={hotDeals} />
-      <ProductCollection title="Best Seller" products={bestSellers} />
-      <ProductCollection title="Top Rated" products={topRated} />
+      <ProductCollection id="hot-deals" title={t('hotDeals')} products={hotDeals} />
+      <ProductCollection id="best-sellers" title={t('bestSeller')} products={bestSellers} />
+      <ProductCollection id="top-rated" title={t('topRated')} products={topRated} />
       <SaleBanner
-        eyebrow="Hot Sale"
+        eyebrow={t('hotSale')}
         title={
           <p className="mt-3 text-[32px] leading-[1.2] text-gray-900">
-            <strong className="font-semibold">Save 37%</strong> on
-            <br />
-            Every Order
+            {t.rich('saleTitle', {
+              strong: (chunks) => <strong className="font-semibold">{chunks}</strong>,
+              br: () => <br />,
+            })}
           </p>
         }
         image="/images/product/yellow-products-sale.png"
