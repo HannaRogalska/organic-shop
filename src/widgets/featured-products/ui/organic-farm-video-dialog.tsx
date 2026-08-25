@@ -1,11 +1,12 @@
 'use client';
-
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 
 const VIDEO_URL = 'https://www.youtube-nocookie.com/embed/MCxQs05BMls?autoplay=1&rel=0';
 
 export function OrganicFarmVideoDialog() {
+  const t = useTranslations('FeaturedProducts.organicFarm');
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +22,7 @@ export function OrganicFarmVideoDialog() {
       <button
         type="button"
         className="relative mt-6 size-20 cursor-pointer rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
-        aria-label="Play organic farm video"
+        aria-label={t('playVideo')}
         onClick={openVideo}
       >
         <Image src="/images/product/organic-farm-play.svg" alt="" fill sizes="80px" />
@@ -29,7 +30,7 @@ export function OrganicFarmVideoDialog() {
 
       <dialog
         ref={dialogRef}
-        aria-label="Organic farm video"
+        aria-label={t('videoLabel')}
         className="m-auto w-[min(90vw,960px)] overflow-visible rounded-lg bg-black p-0 backdrop:bg-black/75"
         onClose={() => setIsOpen(false)}
         onClick={closeVideo}
@@ -39,7 +40,7 @@ export function OrganicFarmVideoDialog() {
             <iframe
               className="absolute inset-0 size-full border-0"
               src={VIDEO_URL}
-              title="Shopery organic farm video"
+              title={t('videoTitle')}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             />
@@ -48,7 +49,7 @@ export function OrganicFarmVideoDialog() {
 
         <button
           type="button"
-          aria-label="Close video"
+          aria-label={t('closeVideo')}
           onClick={closeVideo}
           className="absolute -top-11 right-0 grid size-10 cursor-pointer place-items-center rounded-full bg-white text-2xl leading-none text-gray-900 transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >

@@ -77,5 +77,34 @@
   },
   "Common": {
     "shopNow": "Kup teraz"
+  },
+  "FeaturedProducts": {
+    "header": {
+      "eyebrow": "Produkty",
+      "title": "Nasze polecane produkty",
+      "empty": "Brak dostępnych polecanych produktów."
+    },
+    "carousel": {
+      "saleEyebrow": "Letnia wyprzedaż",
+      "saleDiscount": "75% taniej",
+      "previous": "Poprzednie polecane produkty",
+      "next": "Następne polecane produkty"
+    },
+    "collections": {
+      "sectionLabel": "Kolekcje produktów",
+      "hotDeals": "Najlepsze okazje",
+      "bestSeller": "Bestsellery",
+      "topRated": "Najwyżej oceniane",
+      "hotSale": "Gorąca wyprzedaż",
+      "saleTitle": "<strong>Oszczędź 37%</strong> na<br></br>każdym zamówieniu"
+    },
+    "organicFarm": {
+      "title": "Jesteśmy najlepszym gospodarstwem ekologicznym na świecie",
+      "imageAlt": "Świeże ekologiczne warzywa w gospodarstwie",
+      "playVideo": "Odtwórz film o gospodarstwie ekologicznym",
+      "videoLabel": "Film o gospodarstwie ekologicznym",
+      "videoTitle": "Film o gospodarstwie ekologicznym Shopery",
+      "closeVideo": "Zamknij film"
+    }
   }
 }

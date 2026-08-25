@@ -77,5 +77,34 @@
   },
   "Common": {
     "shopNow": "Shop now"
+  },
+  "FeaturedProducts": {
+    "header": {
+      "eyebrow": "Products",
+      "title": "Our Featured Products",
+      "empty": "No featured products available yet."
+    },
+    "carousel": {
+      "saleEyebrow": "Summer Sale",
+      "saleDiscount": "75% off",
+      "previous": "Previous featured products",
+      "next": "Next featured products"
+    },
+    "collections": {
+      "sectionLabel": "Product collections",
+      "hotDeals": "Hot Deals",
+      "bestSeller": "Best Seller",
+      "topRated": "Top Rated",
+      "hotSale": "Hot Sale",
+      "saleTitle": "<strong>Save 37%</strong> on<br></br>Every Order"
+    },
+    "organicFarm": {
+      "title": "We’re the Best Organic Farm in the World",
+      "imageAlt": "Fresh organic vegetables at the farm",
+      "playVideo": "Play organic farm video",
+      "videoLabel": "Organic farm video",
+      "videoTitle": "Shopery organic farm video",
+      "closeVideo": "Close video"
+    }
   }
 }
