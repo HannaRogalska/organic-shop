@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒 Organic Shop
 
-## Getting Started
+🚧 **Work in Progress** - this project is currently under active development.
 
-First, run the development server:
+A full-stack e-commerce application built with **Next.js, TypeScript, PostgreSQL, and Drizzle ORM**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The project is focused on building a realistic online shopping experience using modern frontend and full-stack web technologies.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🌐 Live Demo
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔗 [Open Organic Shop](https://organic-shop-snowy.vercel.app/)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📸 Preview
 
-To learn more about Next.js, take a look at the following resources:
+### Homepage Hero and Navigation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<p align="center">
+  <img
+    src="./docs/screenshots/homepage-hero.png"
+    width="900"
+    alt="Organic Shop homepage hero, navigation, and product categories"
+  />
+</p>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Featured Products
 
-## Deploy on Vercel
+<p align="center">
+  <img
+    src="./docs/screenshots/featured-products.png"
+    width="900"
+    alt="Organic Shop featured products carousel"
+  />
+</p>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Testimonials and Footer
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<p align="center">
+  <img
+    src="./docs/screenshots/testimonials-footer.png"
+    width="900"
+    alt="Organic Shop testimonials, newsletter, and footer"
+  />
+</p>
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+
+- **Next.js 16**
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS 4**
+- **next-intl**
+- **Zustand**
+- **Embla Carousel**
+
+### Backend & Data
+
+- **PostgreSQL on Neon**
+- **Drizzle ORM**
+- **Upstash Redis**
+
+### Development Tools & Code Quality
+
+- **Git & GitHub**
+- **Vercel**
+- **ESLint**
+- **Prettier**
+- **Husky**
+- **Codex**
+
+---
+
+## ✨ Current Functionality
+
+- Responsive localized homepage
+- English and Polish language switching
+- USD and PLN price display with a persisted currency preference
+- Database-driven featured product collections
+- Featured, best-selling, top-rated, and discounted product queries
+- Redis stale-while-revalidate caching
+- Responsive product carousel
+- Accessible navigation and carousel controls
+
+---
+
+## 🚧 Development Status
+
+The project is actively being developed.
+
+Current work includes expanding the e-commerce functionality, improving application architecture and polishing the user experience.
+
+---
+
+## 🎯 Project Goals
+
+This project is focused on gaining practical experience with:
+
+- Full-stack e-commerce architecture
+- Database design and integration
+- Server and client-side development
+- E-commerce workflows
+- State and data management
+- Responsive UI development
+- Performance and maintainability
+- Production deployment
+
+---
+
+## 👩‍💻 Author
+
+**Hanna Rogalska**
+
+Frontend Developer focused on **React, TypeScript, Next.js and E-commerce**.
