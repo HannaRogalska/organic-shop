@@ -106,19 +106,5 @@
       "videoTitle": "Film o gospodarstwie ekologicznym Shopery",
       "closeVideo": "Zamknij film"
     }
-  },
-  "TeamMemberCard": {
-    "socialMedia": "Media społecznościowe: {name}",
-    "socialProfile": "{name} w serwisie {platform}"
-  },
-  "ProfessionalMembers": {
-    "eyebrow": "Zespół",
-    "title": "Nasi specjaliści",
-    "positions": {
-      "ceoAndFounder": "Prezes i założyciel",
-      "worker": "Pracownik",
-      "securityGuard": "Pracownik ochrony",
-      "seniorFarmerManager": "Starszy kierownik gospodarstwa"
-    }
   }
 }
