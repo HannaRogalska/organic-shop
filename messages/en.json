@@ -108,7 +108,7 @@
     }
   },
   "TeamMemberCard": {
-    "socialMedia": "{name} social media",
+    "socialMedia": "Social media for {name}",
     "socialProfile": "{name} on {platform}"
   },
   "ProfessionalMembers": {
