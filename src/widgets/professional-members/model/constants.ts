@@ -3,22 +3,22 @@ import type { TeamMember } from '@/entities/team-member/ui/team-member-card';
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     name: 'Jenny Wilson',
-    position: 'Ceo & Founder',
+    positionKey: 'ceoAndFounder',
     image: '/images/team/jenny-wilson.jpg',
   },
   {
     name: 'Jane Cooper',
-    position: 'Worker',
+    positionKey: 'worker',
     image: '/images/team/jane-cooper.jpg',
   },
   {
     name: 'Cody Fisher',
-    position: 'Security Guard',
+    positionKey: 'securityGuard',
     image: '/images/team/cody-fisher.jpg',
   },
   {
     name: 'Robert Fox',
-    position: 'Senior Farmer Manager',
+    positionKey: 'seniorFarmerManager',
     image: '/images/team/robert-fox.jpg',
   },
 ];
