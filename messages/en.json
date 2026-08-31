@@ -106,5 +106,26 @@
       "videoTitle": "Shopery organic farm video",
       "closeVideo": "Close video"
     }
+  },
+  "TeamMemberCard": {
+    "socialMedia": "Social media for {name}",
+    "socialProfile": "{name} on {platform}"
+  },
+  "ProfessionalMembers": {
+    "eyebrow": "Team",
+    "title": "Our Professional Members",
+    "positions": {
+      "ceoAndFounder": "CEO & Founder",
+      "worker": "Worker",
+      "securityGuard": "Security Guard",
+      "seniorFarmerManager": "Senior Farmer Manager"
+    }
+  },
+  "Testimonials": {
+    "eyebrow": "Client Testimonials",
+    "title": "What Our Clients Say",
+    "previous": "Previous testimonial",
+    "next": "Next testimonial",
+    "customerRole": "Customer"
   }
 }

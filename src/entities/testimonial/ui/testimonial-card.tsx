@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { StarRating } from '@/shared/ui/star-rating/star-rating';
 import type { Testimonial } from '../model/types';
@@ -8,6 +9,8 @@ type TestimonialCardProps = {
 
 export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   const { text, client, rating } = testimonial;
+  const t = useTranslations('Testimonials');
+  const role = t(client.roleKey);
 
   return (
     <div className="flex h-full min-h-63.5 flex-col bg-background p-6 shadow-[0_10px_10px_rgba(0,0,0,0.01)]">
@@ -25,7 +28,7 @@ export function TestimonialCard({ testimonial }: TestimonialCardProps) {
           />
           <div className="min-w-0">
             <p className="text-base leading-6 font-medium text-gray-900">{client.name}</p>
-            <p className="text-sm leading-5 text-gray-400">{client.role}</p>
+            <p className="text-sm leading-5 text-gray-400">{role}</p>
           </div>
         </div>
         <div className="shrink-0">
