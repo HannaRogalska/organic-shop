@@ -140,6 +140,33 @@
       "unavailable": "Newsletter is unavailable right now. Please try again later.",
       "success": "Thank you! You are now subscribed.",
       "error": "We could not subscribe you. Please try again."
+    },
+    "grid": {
+      "description": "Fresh organic products delivered with care for healthier everyday choices.",
+      "contactSeparator": "or",
+      "columns": {
+        "account": {
+          "title": "My Account",
+          "myAccount": "My Account",
+          "orderHistory": "Order History",
+          "shoppingCart": "Shopping Cart",
+          "wishlist": "Wishlist"
+        },
+        "help": {
+          "title": "Help",
+          "contact": "Contact",
+          "faqs": "FAQs",
+          "termsAndConditions": "Terms & Conditions",
+          "privacyPolicy": "Privacy Policy"
+        },
+        "shopery": {
+          "title": "Shopery",
+          "about": "About",
+          "shop": "Shop",
+          "products": "Products",
+          "trackOrder": "Track Order"
+        }
+      }
     }
   }
 }

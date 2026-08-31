@@ -1,33 +1,32 @@
 export const footerColumns = [
   {
-    title: 'My Account',
+    titleKey: 'columns.account.title',
     links: [
-      { label: 'My Account', href: '/account' },
-      { label: 'Order History', href: '/orders' },
-      { label: 'Shopping Cart', href: '/cart' },
-      { label: 'Wishlist', href: '/wishlist' },
+      { labelKey: 'columns.account.myAccount', href: '/account' },
+      { labelKey: 'columns.account.orderHistory', href: '/orders' },
+      { labelKey: 'columns.account.shoppingCart', href: '/cart' },
+      { labelKey: 'columns.account.wishlist', href: '/wishlist' },
     ],
   },
   {
-    title: 'Helps',
+    titleKey: 'columns.help.title',
     links: [
-      { label: 'Contact', href: '/contact' },
-      { label: 'Faqs', href: '/faqs' },
-      { label: 'Terms & Condition', href: '/terms' },
-      { label: 'Privacy Policy', href: '/privacy' },
+      { labelKey: 'columns.help.contact', href: '/contact' },
+      { labelKey: 'columns.help.faqs', href: '/faqs' },
+      { labelKey: 'columns.help.termsAndConditions', href: '/terms' },
+      { labelKey: 'columns.help.privacyPolicy', href: '/privacy' },
     ],
   },
   {
-    title: 'Shopery',
+    titleKey: 'columns.shopery.title',
     links: [
-      { label: 'About', href: '/about' },
-      { label: 'Shop', href: '/shop' },
-      { label: 'Product', href: '/products' },
-      { label: 'Track Order', href: '/track-order' },
+      { labelKey: 'columns.shopery.about', href: '/about' },
+      { labelKey: 'columns.shopery.shop', href: '/shop' },
+      { labelKey: 'columns.shopery.products', href: '/products' },
+      { labelKey: 'columns.shopery.trackOrder', href: '/track-order' },
     ],
   },
 ] as const;
-
 export const socialLinks = [
   { label: 'Facebook', href: 'https://www.facebook.com', icon: 'facebook.svg' },
   { label: 'X', href: 'https://x.com', icon: 'twitter.svg' },

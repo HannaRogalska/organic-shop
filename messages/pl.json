@@ -140,6 +140,33 @@
       "unavailable": "Newsletter jest obecnie niedostępny. Spróbuj ponownie później.",
       "success": "Dziękujemy! Twój adres został zapisany.",
       "error": "Nie udało się zapisać do newslettera. Spróbuj ponownie."
+    },
+    "grid": {
+      "description": "Świeże produkty ekologiczne dostarczane z troską o zdrowsze codzienne wybory.",
+      "contactSeparator": "lub",
+      "columns": {
+        "account": {
+          "title": "Moje konto",
+          "myAccount": "Moje konto",
+          "orderHistory": "Historia zamówień",
+          "shoppingCart": "Koszyk",
+          "wishlist": "Lista życzeń"
+        },
+        "help": {
+          "title": "Pomoc",
+          "contact": "Kontakt",
+          "faqs": "Najczęstsze pytania",
+          "termsAndConditions": "Regulamin",
+          "privacyPolicy": "Polityka prywatności"
+        },
+        "shopery": {
+          "title": "Shopery",
+          "about": "O nas",
+          "shop": "Sklep",
+          "products": "Produkty",
+          "trackOrder": "Śledź zamówienie"
+        }
+      }
     }
   }
 }
