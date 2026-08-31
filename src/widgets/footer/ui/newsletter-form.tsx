@@ -1,10 +1,12 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { SyntheticEvent, useState } from 'react';
 
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
 export function NewsletterForm() {
+  const t = useTranslations('Footer.newsletter');
   const [status, setStatus] = useState<SubmissionStatus>('idle');
   const [message, setMessage] = useState('');
 
@@ -17,7 +19,7 @@ export function NewsletterForm() {
 
     if (!accessKey) {
       setStatus('error');
-      setMessage('Newsletter is unavailable right now. Please try again later.');
+      setMessage(t('unavailable'));
       return;
     }
 
@@ -42,10 +44,10 @@ export function NewsletterForm() {
 
       form.reset();
       setStatus('success');
-      setMessage('Thank you! You are now subscribed.');
+      setMessage(t('success'));
     } catch {
       setStatus('error');
-      setMessage('We could not subscribe you. Please try again.');
+      setMessage(t('error'));
     }
   }
 
@@ -56,14 +58,14 @@ export function NewsletterForm() {
         className="flex w-full overflow-hidden rounded-full bg-gray-800"
       >
         <label className="sr-only" htmlFor="newsletter-email">
-          Email address
+          {t('emailLabel')}
         </label>
         <input
           id="newsletter-email"
           name="email"
           type="email"
           autoComplete="email"
-          placeholder="Your email address"
+          placeholder={t('emailPlaceholder')}
           required
           disabled={status === 'submitting'}
           className="min-w-0 flex-1 bg-transparent px-6 py-3.5 text-base text-background outline-none placeholder:text-gray-400 disabled:cursor-not-allowed disabled:opacity-60"
@@ -74,7 +76,7 @@ export function NewsletterForm() {
           disabled={status === 'submitting'}
           className="m-1 shrink-0 rounded-full bg-primary px-6 text-sm font-semibold text-background transition-colors hover:bg-hard-primary disabled:cursor-not-allowed disabled:opacity-60 sm:px-10 sm:text-base"
         >
-          {status === 'submitting' ? 'Subscribing…' : 'Subscribe'}
+          {status === 'submitting' ? t('subscribing') : t('subscribe')}
         </button>
       </form>
       <p
