@@ -173,6 +173,10 @@
       "downloadOn": "Pobierz z",
       "appStoreLabel": "Pobierz Shopery z App Store",
       "googlePlayLabel": "Pobierz Shopery z Google Play"
+    },
+    "bottomBar": {
+      "copyright": "Shopery eCommerce © {year}. Wszystkie prawa zastrzeżone.",
+      "paymentMethods": "Akceptowane metody płatności"
     }
   }
 }

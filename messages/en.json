@@ -173,6 +173,10 @@
       "downloadOn": "Download on the",
       "appStoreLabel": "Download Shopery on the App Store",
       "googlePlayLabel": "Download Shopery on Google Play"
+    },
+    "bottomBar": {
+      "copyright": "Shopery eCommerce © {year}. All rights reserved.",
+      "paymentMethods": "Accepted payment methods"
     }
   }
 }
