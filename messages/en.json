@@ -127,5 +127,19 @@
     "previous": "Previous testimonial",
     "next": "Next testimonial",
     "customerRole": "Customer"
+  },
+  "Footer": {
+    "newsletter": {
+      "title": "Subscribe to Our Newsletter",
+      "description": "Get the latest organic offers and product updates.",
+      "socialMediaLabel": "Social media links",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "Your email address",
+      "subscribe": "Subscribe",
+      "subscribing": "Subscribing…",
+      "unavailable": "Newsletter is unavailable right now. Please try again later.",
+      "success": "Thank you! You are now subscribed.",
+      "error": "We could not subscribe you. Please try again."
+    }
   }
 }
