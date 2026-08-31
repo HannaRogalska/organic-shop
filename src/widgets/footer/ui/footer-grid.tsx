@@ -2,8 +2,10 @@ import { Brand } from '@/shared/ui/brand/brand';
 import { Link } from '@/i18n/navigation';
 import { footerColumns } from '../model/constants';
 import { DownloadApps } from './download-apps';
+import { useTranslations } from 'next-intl';
 
 export function FooterGrid() {
+  const t = useTranslations('Footer.grid');
   return (
     <section className="bg-gray-50">
       <div className="mx-auto grid w-full max-w-330 grid-cols-3 gap-8 px-5 py-10 lg:grid-cols-[3fr_repeat(3,1fr)_3fr] lg:px-15 lg:py-15">
@@ -12,8 +14,7 @@ export function FooterGrid() {
             <Brand />
           </div>
           <p className="mt-4 w-full text-center text-base text-gray-500 lg:text-left">
-            Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum
-            magna congue nec.
+            {t('description')}
           </p>
           <address className="mt-4 flex flex-row not-italic items-center justify-center gap-3 text-sm lg:justify-start">
             <a
@@ -22,7 +23,7 @@ export function FooterGrid() {
             >
               (219) 555-0114
             </a>
-            <span className="text-base text-gray-500">or</span>
+            <span className="text-base text-gray-500">{t('contactSeparator')}</span>
             <a
               href="mailto:proxy@gmail.com"
               className="border-b-2 border-primary pb-1 font-medium text-gray-900"
@@ -33,14 +34,14 @@ export function FooterGrid() {
         </div>
 
         {footerColumns.map((column) => (
-          <div key={column.title} className="col-span-1">
+          <div key={column.titleKey} className="col-span-1">
             <div className="w-full text-center lg:text-left">
-              <h3 className="text-base font-medium text-gray-900">{column.title}</h3>
+              <h3 className="text-base font-medium text-gray-900">{t(column.titleKey)}</h3>
               <ul className="mt-4 flex flex-col items-center space-y-3 text-sm text-gray-600 lg:items-start">
                 {column.links.map((link) => (
-                  <li key={link.label}>
+                  <li key={link.labelKey}>
                     <Link href={link.href} className="hover:text-primary">
-                      {link.label}
+                      {t(link.labelKey)}
                     </Link>
                   </li>
                 ))}

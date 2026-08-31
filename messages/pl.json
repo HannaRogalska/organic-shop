@@ -127,5 +127,56 @@
     "previous": "Poprzednia opinia",
     "next": "Następna opinia",
     "customerRole": "Klient"
+  },
+  "Footer": {
+    "newsletter": {
+      "title": "Zapisz się do naszego newslettera",
+      "description": "Otrzymuj najnowsze oferty ekologiczne i informacje o produktach.",
+      "socialMediaLabel": "Linki do mediów społecznościowych",
+      "emailLabel": "Adres e-mail",
+      "emailPlaceholder": "Twój adres e-mail",
+      "subscribe": "Zapisz się",
+      "subscribing": "Zapisywanie…",
+      "unavailable": "Newsletter jest obecnie niedostępny. Spróbuj ponownie później.",
+      "success": "Dziękujemy! Twój adres został zapisany.",
+      "error": "Nie udało się zapisać do newslettera. Spróbuj ponownie."
+    },
+    "grid": {
+      "description": "Świeże produkty ekologiczne dostarczane z troską o zdrowsze codzienne wybory.",
+      "contactSeparator": "lub",
+      "columns": {
+        "account": {
+          "title": "Moje konto",
+          "myAccount": "Moje konto",
+          "orderHistory": "Historia zamówień",
+          "shoppingCart": "Koszyk",
+          "wishlist": "Lista życzeń"
+        },
+        "help": {
+          "title": "Pomoc",
+          "contact": "Kontakt",
+          "faqs": "Najczęstsze pytania",
+          "termsAndConditions": "Regulamin",
+          "privacyPolicy": "Polityka prywatności"
+        },
+        "shopery": {
+          "title": "Shopery",
+          "about": "O nas",
+          "shop": "Sklep",
+          "products": "Produkty",
+          "trackOrder": "Śledź zamówienie"
+        }
+      }
+    },
+    "downloadApps": {
+      "title": "Pobierz aplikację mobilną",
+      "downloadOn": "Pobierz z",
+      "appStoreLabel": "Pobierz Shopery z App Store",
+      "googlePlayLabel": "Pobierz Shopery z Google Play"
+    },
+    "bottomBar": {
+      "copyright": "Shopery eCommerce © {year}. Wszystkie prawa zastrzeżone.",
+      "paymentMethods": "Akceptowane metody płatności"
+    }
   }
 }
