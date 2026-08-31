@@ -19,7 +19,11 @@ export function BottomBar() {
     <div className="bg-background">
       <div className="mx-auto flex lg:flex-row flex-col items-center lg:justify-between w-full max-w-330 p-6">
         <p className="text-sm text-gray-500 mb-3">{t('copyright', { year: currentYear })}</p>
-        <div className="flex flex-wrap items-center gap-2" aria-label={t('paymentMethods')}>
+        <div
+          role="group"
+          aria-label={t('paymentMethods')}
+          className="flex flex-wrap items-center gap-2"
+        >
           <PaymentMethod src="/images/footer/apple-pay.svg" alt="Apple Pay" />
           <PaymentMethod src="/images/footer/visa.svg" alt="Visa" width={44} />
           <PaymentMethod src="/images/footer/discover.svg" alt="Discover" width={44} />
