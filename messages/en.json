@@ -120,5 +120,12 @@
       "securityGuard": "Security Guard",
       "seniorFarmerManager": "Senior Farmer Manager"
     }
+  },
+  "Testimonials": {
+    "eyebrow": "Client Testimonials",
+    "title": "What Our Clients Say",
+    "previous": "Previous testimonial",
+    "next": "Next testimonial",
+    "customerRole": "Customer"
   }
 }
