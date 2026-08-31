@@ -120,5 +120,12 @@
       "securityGuard": "Pracownik ochrony",
       "seniorFarmerManager": "Starszy kierownik gospodarstwa"
     }
+  },
+  "Testimonials": {
+    "eyebrow": "Opinie klientów",
+    "title": "Co mówią nasi klienci",
+    "previous": "Poprzednia opinia",
+    "next": "Następna opinia",
+    "customerRole": "Klient"
   }
 }

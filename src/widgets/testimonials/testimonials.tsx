@@ -1,11 +1,13 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
 import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import { TestimonialCard } from '@/entities/testimonial/ui/testimonial-card';
 import { TESTIMONIALS } from './model/constants';
 
 export function Testimonials() {
+  const t = useTranslations('Testimonials');
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
@@ -33,13 +35,13 @@ export function Testimonials() {
       <div className="mx-auto max-w-330">
         <header className="mx-auto mb-9 max-w-156 text-center">
           <p className="text-sm leading-7 font-medium tracking-[0.02em] text-primary uppercase">
-            Client Testimonial
+            {t('eyebrow')}
           </p>
           <h2
             id="testimonials-title"
             className="mt-2 text-[32px] leading-[1.2] font-semibold text-gray-900 sm:text-4xl"
           >
-            What our Client Says
+            {t('title')}
           </h2>
         </header>
 
@@ -61,7 +63,7 @@ export function Testimonials() {
             type="button"
             onClick={() => emblaApi?.scrollPrev()}
             disabled={!canScrollPrev}
-            aria-label="Previous testimonial"
+            aria-label={t('previous')}
             className="flex size-11 items-center justify-center rounded-full border border-gray-200 bg-background text-xl text-gray-900 transition-colors hover:border-primary hover:bg-primary hover:text-background disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:bg-background disabled:hover:text-gray-900"
           >
             <span aria-hidden="true">←</span>
@@ -70,7 +72,7 @@ export function Testimonials() {
             type="button"
             onClick={() => emblaApi?.scrollNext()}
             disabled={!canScrollNext}
-            aria-label="Next testimonial"
+            aria-label={t('next')}
             className="flex size-11 items-center justify-center rounded-full border border-gray-200 bg-background text-xl text-gray-900 transition-colors hover:border-primary hover:bg-primary hover:text-background disabled:cursor-not-allowed disabled:opacity-40 disabled:hover:border-gray-200 disabled:hover:bg-background disabled:hover:text-gray-900"
           >
             <span aria-hidden="true">→</span>

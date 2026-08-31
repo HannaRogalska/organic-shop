@@ -4,7 +4,7 @@ export type Testimonial = {
   client: {
     avatar: string;
     name: string;
-    role: string;
+    roleKey: 'customerRole';
   };
   rating: number;
 };

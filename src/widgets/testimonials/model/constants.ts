@@ -10,7 +10,7 @@ export const TESTIMONIALS: Testimonial[] = [
     client: {
       avatar: '/images/testimonials/robert-fox.png',
       name: 'Robert Fox',
-      role: 'Customer',
+      roleKey: 'customerRole',
     },
     rating: 5,
   },
@@ -20,7 +20,7 @@ export const TESTIMONIALS: Testimonial[] = [
     client: {
       avatar: '/images/testimonials/dianne-russell.png',
       name: 'Dianne Russell',
-      role: 'Customer',
+      roleKey: 'customerRole',
     },
     rating: 4,
   },
@@ -30,7 +30,7 @@ export const TESTIMONIALS: Testimonial[] = [
     client: {
       avatar: '/images/testimonials/eleanor-pena.png',
       name: 'Eleanor Pena',
-      role: 'Customer',
+      roleKey: 'customerRole',
     },
     rating: 5,
   },
@@ -40,7 +40,7 @@ export const TESTIMONIALS: Testimonial[] = [
     client: {
       avatar: '/images/testimonials/robert-fox.png',
       name: 'Cameron Williamson',
-      role: 'Customer',
+      roleKey: 'customerRole',
     },
     rating: 3,
   },
@@ -50,7 +50,7 @@ export const TESTIMONIALS: Testimonial[] = [
     client: {
       avatar: '/images/testimonials/dianne-russell.png',
       name: 'Kristin Watson',
-      role: 'Customer',
+      roleKey: 'customerRole',
     },
     rating: 4,
   },
@@ -60,7 +60,7 @@ export const TESTIMONIALS: Testimonial[] = [
     client: {
       avatar: '/images/testimonials/eleanor-pena.png',
       name: 'Ralph Edwards',
-      role: 'Customer',
+      roleKey: 'customerRole',
     },
     rating: 4,
   },
