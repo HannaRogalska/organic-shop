@@ -167,6 +167,12 @@
           "trackOrder": "Track Order"
         }
       }
+    },
+    "downloadApps": {
+      "title": "Download Mobile App",
+      "downloadOn": "Download on the",
+      "appStoreLabel": "Download Shopery on the App Store",
+      "googlePlayLabel": "Download Shopery on Google Play"
     }
   }
 }

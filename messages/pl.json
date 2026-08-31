@@ -167,6 +167,12 @@
           "trackOrder": "Śledź zamówienie"
         }
       }
+    },
+    "downloadApps": {
+      "title": "Pobierz aplikację mobilną",
+      "downloadOn": "Pobierz z",
+      "appStoreLabel": "Pobierz Shopery z App Store",
+      "googlePlayLabel": "Pobierz Shopery z Google Play"
     }
   }
 }
