@@ -11,6 +11,7 @@ import {
   numeric,
   index,
   check,
+  primaryKey,
 } from 'drizzle-orm/pg-core';
 
 export const categoriesTable = pgTable(
@@ -59,6 +60,25 @@ export const productsTable = pgTable(
     index('products_category_id_idx').on(table.categoryId),
     index('products_price_idx').on(table.price),
     check('product_stock_check', sql`${table.stock} >= 0`),
+  ]
+);
+
+export const productTranslationsTable = pgTable(
+  'product_translations',
+  {
+    productId: uuid()
+      .references(() => productsTable.id, { onDelete: 'cascade' })
+      .notNull(),
+    locale: varchar({ length: 5 }).notNull(),
+    title: varchar({ length: 255 }).notNull(),
+    description: text(),
+    slug: varchar({ length: 255 }).notNull(),
+  },
+  (table) => [
+    primaryKey({
+      columns: [table.productId, table.locale],
+    }),
+    uniqueIndex('product_translations_locale_slug_idx').on(table.locale, table.slug),
   ]
 );
 
