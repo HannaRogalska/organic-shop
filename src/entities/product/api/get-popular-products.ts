@@ -1,8 +1,8 @@
 import 'server-only';
 
-import { desc, eq, sql } from 'drizzle-orm';
+import { and, desc, eq, sql } from 'drizzle-orm';
 import { orderItemsTable, ordersTable } from '@/entities/order/model/schema';
-import { productsTable } from '@/entities/product/model/schema';
+import { productsTable, productTranslationsTable } from '@/entities/product/model/schema';
 import { isNumberOrString, isOptionalAmount } from '@/entities/product/model/validation';
 import type { ProductCardProduct } from '@/entities/product/ui/product-card';
 import { db } from '@/shared/api/db';
@@ -14,7 +14,8 @@ const STALE_TTL_SECONDS = 5 * 60;
 const REFRESH_LOCK_SECONDS = 15;
 const DEFAULT_LIMIT = 5;
 
-const getCacheKey = (limit: number) => `home:popular-products:${CACHE_VERSION}:${limit}`;
+const getCacheKey = (limit: number, locale: string) =>
+  `home:popular-products:${CACHE_VERSION}:${locale}:${limit}`;
 
 function isProductCardProduct(value: unknown): value is ProductCardProduct {
   if (typeof value !== 'object' || value === null) return false;
@@ -35,7 +36,7 @@ function isProductCardProducts(value: unknown): value is ProductCardProduct[] {
   return Array.isArray(value) && value.every(isProductCardProduct);
 }
 
-async function queryPopularProducts(limit: number): Promise<ProductCardProduct[]> {
+async function queryPopularProducts(limit: number, locale: string): Promise<ProductCardProduct[]> {
   const soldQuantity = sql<number>`
     coalesce(
       sum(${orderItemsTable.quantity})
@@ -47,16 +48,25 @@ async function queryPopularProducts(limit: number): Promise<ProductCardProduct[]
   const rows = await db
     .select({
       id: productsTable.id,
-      title: productsTable.title,
+      title: sql<string>`
+        coalesce(${productTranslationsTable.title}, ${productsTable.title})
+      `,
       image: sql<string>`${productsTable.images}[1]`,
       price: sql<string>`coalesce(${productsTable.salePrice}, ${productsTable.price})`,
       rating: productsTable.rating,
       soldQuantity,
     })
     .from(productsTable)
+    .leftJoin(
+      productTranslationsTable,
+      and(
+        eq(productTranslationsTable.productId, productsTable.id),
+        eq(productTranslationsTable.locale, locale)
+      )
+    )
     .leftJoin(orderItemsTable, eq(orderItemsTable.productId, productsTable.id))
     .leftJoin(ordersTable, eq(ordersTable.id, orderItemsTable.orderId))
-    .groupBy(productsTable.id)
+    .groupBy(productsTable.id, productTranslationsTable.title)
     .orderBy(desc(soldQuantity), desc(productsTable.rating), desc(productsTable.createdAt))
     .limit(limit);
 
@@ -69,10 +79,13 @@ async function queryPopularProducts(limit: number): Promise<ProductCardProduct[]
   }));
 }
 
-export async function getPopularProducts(limit = DEFAULT_LIMIT): Promise<ProductCardProduct[]> {
+export async function getPopularProducts(
+  limit = DEFAULT_LIMIT,
+  locale = 'en'
+): Promise<ProductCardProduct[]> {
   return getCachedData({
-    key: getCacheKey(limit),
-    loadData: () => queryPopularProducts(limit),
+    key: getCacheKey(limit, locale),
+    loadData: () => queryPopularProducts(limit, locale),
     isValid: isProductCardProducts,
     freshTtlSeconds: FRESH_TTL_SECONDS,
     staleTtlSeconds: STALE_TTL_SECONDS,

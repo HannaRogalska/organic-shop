@@ -1,7 +1,7 @@
 import 'server-only';
 
-import { and, desc, gt, isNotNull, lt, sql } from 'drizzle-orm';
-import { productsTable } from '@/entities/product/model/schema';
+import { and, desc, eq, gt, isNotNull, lt, sql } from 'drizzle-orm';
+import { productsTable, productTranslationsTable } from '@/entities/product/model/schema';
 import { isNumberOrString, isOptionalAmount } from '@/entities/product/model/validation';
 import type { HotDealProduct } from '@/entities/product/ui/product-card';
 import { db } from '@/shared/api/db';
@@ -35,18 +35,20 @@ function isHotDealProducts(value: unknown): value is HotDealProduct[] {
   return Array.isArray(value) && value.every(isHotDealProduct);
 }
 
-function getCacheKey(limit: number): string {
-  return `home:hot-deals:${CACHE_VERSION}:${limit}`;
+function getCacheKey(limit: number, locale: string): string {
+  return `home:hot-deals:${CACHE_VERSION}:${locale}:${limit}`;
 }
 
-async function queryHotDeals(limit: number): Promise<HotDealProduct[]> {
+async function queryHotDeals(limit: number, locale: string): Promise<HotDealProduct[]> {
   const discountRate = sql<number>`
     ((${productsTable.price} - ${productsTable.salePrice}) / ${productsTable.price})::double precision
   `;
   const rows = await db
     .select({
       id: productsTable.id,
-      title: productsTable.title,
+      title: sql<string>`
+  coalesce(${productTranslationsTable.title}, ${productsTable.title})
+`,
       image: sql<string>`${productsTable.images}[1]`,
       price: productsTable.price,
       salePrice: productsTable.salePrice,
@@ -54,6 +56,13 @@ async function queryHotDeals(limit: number): Promise<HotDealProduct[]> {
       discountRate,
     })
     .from(productsTable)
+    .leftJoin(
+      productTranslationsTable,
+      and(
+        eq(productTranslationsTable.productId, productsTable.id),
+        eq(productTranslationsTable.locale, locale)
+      )
+    )
     .where(
       and(
         isNotNull(productsTable.salePrice),
@@ -66,10 +75,10 @@ async function queryHotDeals(limit: number): Promise<HotDealProduct[]> {
   return rows;
 }
 
-export async function getHotDeals(limit = DEFAULT_LIMIT): Promise<HotDealProduct[]> {
+export async function getHotDeals(limit = DEFAULT_LIMIT, locale = 'en'): Promise<HotDealProduct[]> {
   return getCachedData({
-    key: getCacheKey(limit),
-    loadData: () => queryHotDeals(limit),
+    key: getCacheKey(limit, locale),
+    loadData: () => queryHotDeals(limit, locale),
     isValid: isHotDealProducts,
     freshTtlSeconds: FRESH_TTL_SECONDS,
     staleTtlSeconds: STALE_TTL_SECONDS,
