@@ -78,7 +78,7 @@ export const productTranslationsTable = pgTable(
     primaryKey({
       columns: [table.productId, table.locale],
     }),
-    uniqueIndex('product_translations_locale_slug_idx').on(table.locale, table.slug),
+    uniqueIndex('product_translations_locale_slug_idx').on(table.locale, sql`lower(${table.slug})`),
   ]
 );
 
