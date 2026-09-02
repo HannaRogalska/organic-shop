@@ -18,6 +18,13 @@ export const mockProducts = [
     title: 'Organic Green Apple',
     slug: 'organic-green-apple',
     description: 'Crisp and juicy organic green apples full of vitamins.',
+    translations: {
+      pl: {
+        title: 'Ekologiczne zielone jabłko',
+        slug: 'ekologiczne-zielone-jablko',
+        description: 'Chrupiące i soczyste ekologiczne zielone jabłka pełne witamin.',
+      },
+    },
     stock: 150,
     price: '3.99',
     salePrice: '2.99',
@@ -31,6 +38,13 @@ export const mockProducts = [
     title: 'Crunchy Orange Carrot',
     slug: 'crunchy-orange-carrot',
     description: 'Freshly harvested crunchy organic carrots.',
+    translations: {
+      pl: {
+        title: 'Chrupiąca pomarańczowa marchew',
+        slug: 'chrupiaca-pomaranczowa-marchew',
+        description: 'Świeżo zebrane, chrupiące ekologiczne marchewki.',
+      },
+    },
     stock: 250,
     price: '1.49',
     salePrice: null,
@@ -44,6 +58,13 @@ export const mockProducts = [
     title: 'Sea Salt Pack',
     slug: 'sea-salt-pack',
     description: 'Natural unrefined sea salt for fine cooking.',
+    translations: {
+      pl: {
+        title: 'Opakowanie soli morskiej',
+        slug: 'opakowanie-soli-morskiej',
+        description: 'Naturalna nierafinowana sól morska do wykwintnego gotowania.',
+      },
+    },
     stock: 100,
     price: '2.19',
     salePrice: null,
@@ -57,6 +78,13 @@ export const mockProducts = [
     title: 'Organic Potato Chips',
     slug: 'organic-potato-chips',
     description: 'Crispy sea salt potato chips baked in avocado oil.',
+    translations: {
+      pl: {
+        title: 'Ekologiczne chipsy ziemniaczane',
+        slug: 'ekologiczne-chipsy-ziemniaczane',
+        description: 'Chrupiące chipsy ziemniaczane z solą morską, pieczone na oleju z awokado.',
+      },
+    },
     stock: 180,
     price: '2.99',
     salePrice: '2.49',
@@ -70,6 +98,13 @@ export const mockProducts = [
     title: 'Cold-Pressed Apple Juice',
     slug: 'cold-pressed-apple-juice',
     description: '100% natural pure cold-pressed apple juice.',
+    translations: {
+      pl: {
+        title: 'Sok jabłkowy tłoczony na zimno',
+        slug: 'sok-jablkowy-tloczony-na-zimno',
+        description: 'W 100% naturalny, czysty sok jabłkowy tłoczony na zimno.',
+      },
+    },
     stock: 90,
     price: '4.50',
     salePrice: null,
@@ -84,6 +119,13 @@ export const mockProducts = [
     title: 'Organic Herbal Shampoo',
     slug: 'organic-herbal-shampoo',
     description: 'Eco-friendly natural shampoo with aloe vera extract.',
+    translations: {
+      pl: {
+        title: 'Ekologiczny szampon ziołowy',
+        slug: 'ekologiczny-szampon-ziolowy',
+        description: 'Przyjazny środowisku naturalny szampon z ekstraktem z aloesu.',
+      },
+    },
     stock: 50,
     price: '12.99',
     salePrice: '9.99',
@@ -98,6 +140,13 @@ export const mockProducts = [
     title: 'Fresh Butter Croissant',
     slug: 'fresh-butter-croissant',
     description: 'Flaky and warm flaky pastry made with real premium butter.',
+    translations: {
+      pl: {
+        title: 'Świeży rogalik maślany',
+        slug: 'swiezy-rogalik-maslany',
+        description: 'Ciepłe, kruche ciasto przygotowane z prawdziwego masła najwyższej jakości.',
+      },
+    },
     stock: 40,
     price: '1.89',
     salePrice: null,
@@ -111,6 +160,13 @@ export const mockProducts = [
     title: 'Fresh Salmon Fillet',
     slug: 'fresh-salmon-fillet',
     description: 'Wild-caught premium fresh salmon fillet.',
+    translations: {
+      pl: {
+        title: 'Świeży filet z łososia',
+        slug: 'swiezy-filet-z-lososia',
+        description: 'Najwyższej jakości świeży filet z dziko żyjącego łososia.',
+      },
+    },
     stock: 30,
     price: '18.99',
     salePrice: '15.49',
@@ -125,6 +181,14 @@ export const mockProducts = [
     title: 'Organic Wheat Flour',
     slug: 'organic-wheat-flour',
     description: 'Unbleached high-quality whole wheat flour for perfect baking.',
+    translations: {
+      pl: {
+        title: 'Ekologiczna mąka pszenna',
+        slug: 'ekologiczna-maka-pszenna',
+        description:
+          'Niebielona pełnoziarnista mąka pszenna wysokiej jakości, idealna do wypieków.',
+      },
+    },
     stock: 110,
     price: '3.49',
     salePrice: null,
@@ -138,6 +202,14 @@ export const mockProducts = [
     title: 'Zero Sugar Granola',
     slug: 'zero-sugar-granola',
     description: 'Nutty diabetic-friendly granola with sweetener berries.',
+    translations: {
+      pl: {
+        title: 'Granola bez cukru',
+        slug: 'granola-bez-cukru',
+        description:
+          'Orzechowa granola z jagodami i substancją słodzącą, odpowiednia dla diabetyków.',
+      },
+    },
     stock: 75,
     price: '5.99',
     salePrice: null,
@@ -151,6 +223,13 @@ export const mockProducts = [
     title: 'Eco Dish Soap',
     slug: 'eco-dish-soap',
     description: 'Plant-based biodegradable liquid dish soap with lemon scent.',
+    translations: {
+      pl: {
+        title: 'Ekologiczny płyn do naczyń',
+        slug: 'ekologiczny-plyn-do-naczyn',
+        description: 'Biodegradowalny płyn do naczyń na bazie roślin o zapachu cytryny.',
+      },
+    },
     stock: 130,
     price: '4.25',
     salePrice: '3.75',
@@ -164,6 +243,13 @@ export const mockProducts = [
     title: 'Extra Virgin Olive Oil',
     slug: 'extra-virgin-olive-oil',
     description: 'Premium cold-pressed extra virgin olive oil from Spain.',
+    translations: {
+      pl: {
+        title: 'Oliwa z oliwek extra virgin',
+        slug: 'oliwa-z-oliwek-extra-virgin',
+        description: 'Najwyższej jakości hiszpańska oliwa z oliwek extra virgin tłoczona na zimno.',
+      },
+    },
     stock: 65,
     price: '14.99',
     salePrice: null,
