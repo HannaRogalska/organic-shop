@@ -1,7 +1,11 @@
 import ws from 'ws';
 import { Pool, neonConfig } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-serverless';
-import { categoriesTable, productsTable } from '@/entities/product/model/schema';
+import {
+  categoriesTable,
+  productsTable,
+  productTranslationsTable,
+} from '@/entities/product/model/schema';
 import { mockCategories, mockProducts } from '@/shared/api/db/data/mock-data';
 
 if (typeof WebSocket === 'undefined') {
@@ -38,7 +42,42 @@ export const main = async () => {
         categoryId: matchedCategory.id,
       };
     });
-    await db.insert(productsTable).values(productToInsert);
+    const insertedProducts = await db.insert(productsTable).values(productToInsert).returning();
+    const translationsToInsert = mockProducts.flatMap((product) => {
+      const insertedProduct = insertedProducts.find((item) => item.slug === product.slug);
+
+      if (!insertedProduct) {
+        return [];
+      }
+
+      const englishTranslation = {
+        productId: insertedProduct.id,
+        locale: 'en',
+        title: product.title,
+        slug: product.slug,
+        description: product.description,
+      };
+
+      const polishTranslation = product.translations?.pl;
+
+      if (!polishTranslation) {
+        return [englishTranslation];
+      }
+
+      return [
+        englishTranslation,
+        {
+          productId: insertedProduct.id,
+          locale: 'pl',
+          title: polishTranslation.title,
+          slug: polishTranslation.slug,
+          description: polishTranslation.description,
+        },
+      ];
+    });
+    if (translationsToInsert.length > 0) {
+      await db.insert(productTranslationsTable).values(translationsToInsert);
+    }
   } catch (error) {
     console.error('Error somthing wrong', error);
   } finally {

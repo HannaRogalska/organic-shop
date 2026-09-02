@@ -11,13 +11,18 @@ import { ProfessionalMembers } from '@/widgets/professional-members/professional
 import { Testimonials } from '@/widgets/testimonials/testimonials';
 import { Sponsors } from '@/widgets/sponsors/sponsors';
 
-export default async function Home() {
+type HomeProps = {
+  params: Promise<{ locale: string }>;
+};
+
+export default async function Home({ params }: HomeProps) {
+  const { locale } = await params;
   await connection();
   const [featuredProducts, bestSellers, hotDeals, topRated] = await Promise.all([
-    getFeaturedProducts(4),
-    getPopularProducts(3),
-    getHotDeals(3),
-    getTopRatedProducts(3),
+    getFeaturedProducts(4, locale),
+    getPopularProducts(3, locale),
+    getHotDeals(3, locale),
+    getTopRatedProducts(3, locale),
   ]);
 
   return (

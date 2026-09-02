@@ -36,6 +36,20 @@
       "when": 1783441936898,
       "tag": "0004_gorgeous_ender_wiggin",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1788343102164,
+      "tag": "0005_young_cannonball",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1788347492304,
+      "tag": "0006_damp_richard_fisk",
+      "breakpoints": true
     }
   ]
 }
