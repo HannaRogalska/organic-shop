@@ -178,5 +178,10 @@
       "copyright": "Shopery eCommerce © {year}. All rights reserved.",
       "paymentMethods": "Accepted payment methods"
     }
+  },
+  "ErrorPage": {
+    "title": "Something went wrong",
+    "description": "We couldn't load this page. Please try again.",
+    "retry": "Try again"
   }
 }
