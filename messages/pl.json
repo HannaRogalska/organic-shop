@@ -178,5 +178,10 @@
       "copyright": "Shopery eCommerce © {year}. Wszystkie prawa zastrzeżone.",
       "paymentMethods": "Akceptowane metody płatności"
     }
+  },
+  "ErrorPage": {
+    "title": "Coś poszło nie tak",
+    "description": "Nie udało się załadować tej strony. Spróbuj ponownie.",
+    "retry": "Spróbuj ponownie"
   }
 }
