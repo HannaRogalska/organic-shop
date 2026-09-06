@@ -183,5 +183,10 @@
     "title": "Something went wrong",
     "description": "We couldn't load this page. Please try again.",
     "retry": "Try again"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist or has been moved.",
+    "backHome": "Back to home"
   }
 }

@@ -183,5 +183,10 @@
     "title": "Coś poszło nie tak",
     "description": "Nie udało się załadować tej strony. Spróbuj ponownie.",
     "retry": "Spróbuj ponownie"
+  },
+  "NotFoundPage": {
+    "title": "Nie znaleziono strony",
+    "description": "Strona, której szukasz, nie istnieje lub została przeniesiona.",
+    "backHome": "Wróć na stronę główną"
   }
 }
