@@ -185,6 +185,9 @@
     "retry": "Try again"
   },
   "NotFoundPage": {
+    "breadcrumbLabel": "Breadcrumb",
+    "home": "Home",
+    "breadcrumb": "404 Error",
     "title": "Page not found",
     "description": "The page you are looking for does not exist or has been moved.",
     "backHome": "Back to home"
