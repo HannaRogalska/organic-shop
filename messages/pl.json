@@ -185,6 +185,9 @@
     "retry": "Spróbuj ponownie"
   },
   "NotFoundPage": {
+    "breadcrumbLabel": "Ścieżka nawigacyjna",
+    "home": "Strona główna",
+    "breadcrumb": "Błąd 404",
     "title": "Nie znaleziono strony",
     "description": "Strona, której szukasz, nie istnieje lub została przeniesiona.",
     "backHome": "Wróć na stronę główną"
