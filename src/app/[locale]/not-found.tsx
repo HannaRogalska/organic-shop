@@ -19,7 +19,7 @@ export default async function NotFoundPage() {
             alt=""
             width={583}
             height={355}
-            priority
+            preload
             className="mx-auto h-auto w-full max-w-146"
           />
           <h1 className="mt-8 text-3xl leading-tight font-semibold text-gray-900 sm:text-4xl">

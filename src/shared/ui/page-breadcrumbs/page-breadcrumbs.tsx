@@ -18,7 +18,7 @@ export function PageBreadcrumbs({ ariaLabel, items }: PageBreadcrumbsProps) {
         src="/images/breadcrumbs/background.jpeg"
         alt=""
         fill
-        priority
+        preload
         sizes="100vw"
         className="object-cover"
       />
