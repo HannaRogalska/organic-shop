@@ -4,13 +4,28 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import { LanguageSelect } from '@/widgets/header/ui/language-select';
 
-export function HeaderTopBar() {
+type HeaderTopBarProps = {
+  variant: 'home' | 'inner';
+};
+
+export function HeaderTopBar({ variant }: HeaderTopBarProps) {
   const t = useTranslations('Header.topBar');
+  const isInner = variant === 'inner';
   return (
-    <div className="border-b border-gray-100">
-      <div className="mx-auto flex w-full max-w-330 flex-col items-center gap-2 px-4 py-3 text-center text-xs text-gray-600 lg:h-13 lg:flex-row lg:justify-between lg:gap-0 lg:px-6 lg:py-0 lg:text-left xl:px-0">
+    <div className={isInner ? 'bg-gray-800' : 'border-b border-gray-100'}>
+      <div
+        className={`mx-auto flex w-full max-w-330 flex-col items-center gap-2 px-4 py-3 text-center text-xs lg:h-13 lg:flex-row lg:justify-between lg:gap-0 lg:px-6 lg:py-0 lg:text-left xl:px-0 ${
+          isInner ? 'text-gray-300' : 'text-gray-600'
+        }`}
+      >
         <p className="flex w-full items-start justify-center gap-2 lg:w-auto lg:justify-start">
-          <Image src="/images/header/map-pin.svg" alt="" width={15} height={18} />
+          <Image
+            src="/images/header/map-pin.svg"
+            alt=""
+            width={15}
+            height={18}
+            className={isInner ? 'brightness-0 invert opacity-70' : undefined}
+          />
           {t('storeLocation')}
         </p>
         <div className="flex w-full flex-wrap items-center justify-center gap-x-3 gap-y-2 lg:w-auto lg:flex-nowrap lg:justify-start lg:gap-5">
