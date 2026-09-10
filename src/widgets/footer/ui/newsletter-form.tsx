@@ -5,8 +5,15 @@ import { SyntheticEvent, useState } from 'react';
 
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
-export function NewsletterForm() {
+type NewsletterFormProps = {
+  variant: 'home' | 'inner';
+};
+
+export function NewsletterForm({ variant }: NewsletterFormProps) {
   const t = useTranslations('Footer.newsletter');
+
+  const isInner = variant === 'inner';
+
   const [status, setStatus] = useState<SubmissionStatus>('idle');
   const [message, setMessage] = useState('');
 
@@ -55,7 +62,9 @@ export function NewsletterForm() {
     <div className="w-full max-w-115 sm:w-115">
       <form
         onSubmit={handleSubmit}
-        className="flex w-full overflow-hidden rounded-full bg-gray-800"
+        className={`flex w-full overflow-hidden rounded-full ${
+          isInner ? 'border border-gray-100 bg-background' : 'bg-gray-800'
+        }`}
       >
         <label className="sr-only" htmlFor="newsletter-email">
           {t('emailLabel')}
@@ -68,7 +77,11 @@ export function NewsletterForm() {
           placeholder={t('emailPlaceholder')}
           required
           disabled={status === 'submitting'}
-          className="min-w-0 flex-1 bg-transparent px-6 py-3.5 text-base text-background outline-none placeholder:text-gray-400 disabled:cursor-not-allowed disabled:opacity-60"
+          className={`min-w-0 flex-1 bg-transparent px-6 py-3.5 text-base outline-none disabled:cursor-not-allowed disabled:opacity-60 ${
+            isInner
+              ? 'text-gray-900 placeholder:text-gray-500'
+              : 'text-background placeholder:text-gray-400'
+          }`}
         />
         <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} />
         <button
