@@ -3,23 +3,36 @@ import Image from 'next/image';
 import { socialLinks } from '../model/constants';
 import { NewsletterForm } from './newsletter-form';
 
-export function Newsletter() {
+type FooterSectionProps = {
+  variant: 'home' | 'inner';
+};
+
+export function Newsletter({ variant }: FooterSectionProps) {
   const t = useTranslations('Footer.newsletter');
+  const isInner = variant === 'inner';
   return (
-    <section className="bg-gray-900">
+    <section className={isInner ? 'bg-gray-50' : 'bg-gray-900'}>
       <div className="mx-auto flex w-full max-w-330 flex-col items-center gap-8 px-5 py-10 text-center sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-15 lg:py-15">
         <div className="flex flex-col items-center gap-2 sm:flex-row sm:items-center sm:text-left">
-          <Image src="/images/footer/newsletter.svg" alt="" width={56} height={56} />
+          {!isInner && <Image src="/images/footer/newsletter.svg" alt="" width={56} height={56} />}
           <div>
-            <h2 className="text-xl leading-8 font-medium text-background sm:text-2xl">
+            <h2
+              className={`leading-8 ${
+                isInner
+                  ? 'text-2xl font-semibold text-gray-900'
+                  : 'text-xl font-medium text-background sm:text-2xl'
+              }`}
+            >
               {t('title')}
             </h2>
-            <p className="mt-1 text-sm text-gray-600">{t('description')}</p>
+            <p className={`mt-1 text-sm ${isInner ? 'text-gray-400' : 'text-gray-600'}`}>
+              {t('description')}
+            </p>
           </div>
         </div>
 
         <div className="flex w-full flex-col items-center gap-5 xl:flex-row xl:items-center">
-          <NewsletterForm />
+          <NewsletterForm variant={variant} />
 
           <nav className="flex justify-center gap-2" aria-label={t('socialMediaLabel')}>
             {socialLinks.map((s) => (

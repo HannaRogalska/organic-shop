@@ -1,11 +1,18 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-export function DownloadApps() {
+type DownloadAppsProps = {
+  variant: 'home' | 'inner';
+};
+
+export function DownloadApps({ variant }: DownloadAppsProps) {
   const t = useTranslations('Footer.downloadApps');
+  const isInner = variant === 'inner';
   return (
     <div className="text-center lg:text-left">
-      <h3 className="text-base font-medium text-gray-900">{t('title')}</h3>
+      <h3 className={`text-base font-medium ${isInner ? 'text-background' : 'text-gray-900'}`}>
+        {t('title')}
+      </h3>
       <div className="mt-4 flex flex-row flex-wrap justify-center gap-2 lg:justify-start">
         <a
           href="#app-store"

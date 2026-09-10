@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
+type FooterSectionProps = {
+  variant: 'home' | 'inner';
+};
+
 function PaymentMethod({ src, alt, width = 60 }: { src: string; alt: string; width?: number }) {
   return (
     <span
@@ -12,13 +16,20 @@ function PaymentMethod({ src, alt, width = 60 }: { src: string; alt: string; wid
   );
 }
 
-export function BottomBar() {
+export function BottomBar({ variant }: FooterSectionProps) {
   const t = useTranslations('Footer.bottomBar');
+  const isInner = variant === 'inner';
   const currentYear = new Date().getFullYear();
   return (
-    <div className="bg-background">
-      <div className="mx-auto flex lg:flex-row flex-col items-center lg:justify-between w-full max-w-330 p-6">
-        <p className="text-sm text-gray-500 mb-3">{t('copyright', { year: currentYear })}</p>
+    <div className={isInner ? 'bg-gray-900' : 'bg-background'}>
+      <div
+        className={`mx-auto flex w-full max-w-330 flex-col items-center p-6 lg:flex-row lg:justify-between ${
+          isInner ? 'border-t border-gray-800' : ''
+        }`}
+      >
+        <p className="mb-3 text-sm text-gray-500 lg:mb-0">
+          {t('copyright', { year: currentYear })}
+        </p>
         <div className="flex flex-wrap items-center gap-2" aria-label={t('paymentMethods')}>
           <PaymentMethod src="/images/footer/apple-pay.svg" alt="Apple Pay" />
           <PaymentMethod src="/images/footer/visa.svg" alt="Visa" width={44} />

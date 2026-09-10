@@ -3,6 +3,7 @@ import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import { PageBreadcrumbs } from '@/shared/ui/page-breadcrumbs/page-breadcrumbs';
 import { Header } from '@/widgets/header/header';
+import { Footer } from '@/widgets/footer/footer';
 
 export default async function NotFoundPage() {
   const t = await getTranslations('NotFoundPage');
@@ -40,6 +41,7 @@ export default async function NotFoundPage() {
           </div>
         </section>
       </main>
+      <Footer variant="inner" />
     </div>
   );
 }
