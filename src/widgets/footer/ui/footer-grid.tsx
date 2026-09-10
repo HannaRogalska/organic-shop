@@ -18,7 +18,11 @@ export function FooterGrid({ variant }: FooterSectionProps) {
           <div className="mx-auto sm:mx-0">
             <Brand color={isInner ? 'inverse' : 'default'} />
           </div>
-          <p className="mt-4 w-full text-center text-base text-gray-500 lg:text-left">
+          <p
+            className={`mt-4 w-full text-center text-base lg:text-left ${
+              isInner ? 'text-gray-400' : 'text-gray-500'
+            }`}
+          >
             {t('description')}
           </p>
           <address className="mt-4 flex flex-row not-italic items-center justify-center gap-3 text-sm lg:justify-start">
@@ -30,7 +34,9 @@ export function FooterGrid({ variant }: FooterSectionProps) {
             >
               (219) 555-0114
             </a>
-            <span className="text-base text-gray-500">{t('contactSeparator')}</span>
+            <span className={`text-base ${isInner ? 'text-gray-400' : 'text-gray-500'}`}>
+              {t('contactSeparator')}
+            </span>
             <a
               href="mailto:proxy@gmail.com"
               className={`border-b-2 border-primary pb-1 font-medium ${

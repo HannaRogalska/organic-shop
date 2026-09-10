@@ -27,10 +27,14 @@ export function BottomBar({ variant }: FooterSectionProps) {
           isInner ? 'border-t border-gray-800' : ''
         }`}
       >
-        <p className="mb-3 text-sm text-gray-500 lg:mb-0">
+        <p className={`mb-3 text-sm lg:mb-0 ${isInner ? 'text-gray-400' : 'text-gray-500'}`}>
           {t('copyright', { year: currentYear })}
         </p>
-        <div className="flex flex-wrap items-center gap-2" aria-label={t('paymentMethods')}>
+        <div
+          role="group"
+          className="flex flex-wrap items-center gap-2"
+          aria-label={t('paymentMethods')}
+        >
           <PaymentMethod src="/images/footer/apple-pay.svg" alt="Apple Pay" />
           <PaymentMethod src="/images/footer/visa.svg" alt="Visa" width={44} />
           <PaymentMethod src="/images/footer/discover.svg" alt="Discover" width={44} />
