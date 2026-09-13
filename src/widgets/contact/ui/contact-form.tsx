@@ -4,6 +4,8 @@ import { type SyntheticEvent, useState } from 'react';
 
 type SubmissionStatus = 'idle' | 'submitting' | 'success' | 'error';
 
+const REQUEST_TIMEOUT_MS = 10_000;
+
 export function ContactForm() {
   const t = useTranslations('ContactPage.form');
 
@@ -30,10 +32,12 @@ export function ContactForm() {
 
     formData.append('access_key', accessKey);
     formData.append('from_name', 'Organic Shop contact form');
+
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         body: formData,
+        signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
       });
 
       const result = (await response.json()) as {
