@@ -191,5 +191,35 @@
     "title": "Page not found",
     "description": "The page you are looking for does not exist or has been moved.",
     "backHome": "Back to home"
+  },
+  "ContactPage": {
+    "breadcrumbLabel": "Breadcrumb",
+    "home": "Home",
+    "breadcrumb": "Contact",
+    "contactInfo": {
+      "addressLabel": "Address",
+      "address": "2715 Ash Dr. San Jose, South Dakota 83475",
+      "emailLabel": "Email",
+      "primaryEmail": "Proxy@gmail.com",
+      "supportEmail": "Help.proxy@gmail.com",
+      "phoneLabel": "Phone",
+      "primaryPhone": "(219) 555-0114",
+      "secondaryPhone": "(164) 333-0487",
+      "sectionLabel": "Contact information"
+    },
+    "mapLabel": "Map showing the store location",
+    "form": {
+      "title": "Just Say Hello!",
+      "description": "Do you fancy saying hi to us or want to get started with your project and need our help? Feel free to contact us.",
+      "name": "Your name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Your message has been sent successfully.",
+      "error": "Failed to send your message. Please try again.",
+      "unavailable": "The contact form is temporarily unavailable."
+    }
   }
 }
