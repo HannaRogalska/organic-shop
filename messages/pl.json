@@ -191,5 +191,35 @@
     "title": "Nie znaleziono strony",
     "description": "Strona, której szukasz, nie istnieje lub została przeniesiona.",
     "backHome": "Wróć na stronę główną"
+  },
+  "ContactPage": {
+    "breadcrumbLabel": "Ścieżka nawigacyjna",
+    "home": "Strona główna",
+    "breadcrumb": "Kontakt",
+    "contactInfo": {
+      "addressLabel": "Adres",
+      "address": "ul. Gorszka 37, 43-325, Warszawa, Polska",
+      "emailLabel": "E-mail",
+      "primaryEmail": "Proxy@gmail.com",
+      "supportEmail": "Help.proxy@gmail.com",
+      "phoneLabel": "Telefon",
+      "primaryPhone": "(219) 555-0114",
+      "secondaryPhone": "(164) 333-0487",
+      "sectionLabel": "Dane kontaktowe"
+    },
+    "mapLabel": "Mapa przedstawiająca lokalizację sklepu",
+    "form": {
+      "title": "Po prostu się przywitaj!",
+      "description": "Chcesz się z nami przywitać lub rozpocząć swój projekt i potrzebujesz naszej pomocy? Skontaktuj się z nami.",
+      "name": "Twoje imię",
+      "email": "E-mail",
+      "subject": "Temat",
+      "message": "Wiadomość",
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie...",
+      "success": "Twoja wiadomość została wysłana.",
+      "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
+      "unavailable": "Formularz kontaktowy jest tymczasowo niedostępny."
+    }
   }
 }
