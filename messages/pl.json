@@ -221,5 +221,42 @@
       "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie.",
       "unavailable": "Formularz kontaktowy jest tymczasowo niedostępny."
     }
+  },
+  "AboutPage": {
+    "breadcrumbLabel": "Ścieżka nawigacyjna",
+    "home": "Strona główna",
+    "breadcrumb": "O nas",
+    "intro": {
+      "title": "Sklep z ekologiczną żywnością, któremu możesz w pełni zaufać",
+      "description": "Starannie wybieramy świeże produkty ekologiczne ze sprawdzonych gospodarstw. Naszym celem jest zapewnienie zdrowej żywności, przejrzystej jakości i niezawodnej obsługi każdego klienta.",
+      "imageAlt": "Rolnik trzymający kosz świeżych ekologicznych warzyw"
+    },
+    "benefits": {
+      "title": "Sklep z ekologiczną żywnością, któremu możesz w pełni zaufać",
+      "description": "Współpracujemy ze sprawdzonymi dostawcami i starannie kontrolujemy jakość produktów, aby każde zamówienie było świeże, bezpieczne i dostarczone z troską.",
+      "imageAlt": "Rolnik trzymający skrzynkę świeżych warzyw",
+      "features": {
+        "organicTitle": "100% ekologiczna żywność",
+        "organicDescription": "Zdrowe i świeże produkty",
+        "supportTitle": "Wsparcie 24/7",
+        "supportDescription": "Natychmiastowy kontakt z naszym zespołem",
+        "feedbackTitle": "Opinie klientów",
+        "feedbackDescription": "Nasi klienci nas polecają",
+        "paymentTitle": "100% bezpieczna płatność",
+        "paymentDescription": "Dbamy o bezpieczeństwo płatności",
+        "shippingTitle": "Bezpłatna dostawa",
+        "shippingDescription": "Bezpłatna dostawa wybranych ofert",
+        "freshTitle": "Świeże produkty",
+        "freshDescription": "Starannie wybrana żywność ekologiczna"
+      }
+    },
+    "delivery": {
+      "title": "My dostarczamy, Ty cieszysz się zamówieniem.",
+      "description": "Dostarczamy zamówienie prosto pod Twoje drzwi, dbając o świeżość i staranne zapakowanie każdego produktu.",
+      "firstBenefit": "Świeże produkty dostarczane z troską",
+      "secondBenefit": "Szybka i niezawodna dostawa",
+      "thirdBenefit": "Wygodne zakupy bez wychodzenia z domu",
+      "imageAlt": "Kurier dostarczający świeże produkty ekologiczne"
+    }
   }
 }
