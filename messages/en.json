@@ -221,5 +221,42 @@
       "error": "Failed to send your message. Please try again.",
       "unavailable": "The contact form is temporarily unavailable."
     }
+  },
+  "AboutPage": {
+    "breadcrumbLabel": "Breadcrumb",
+    "home": "Home",
+    "breadcrumb": "About",
+    "intro": {
+      "title": "100% Trusted Organic Food Store",
+      "description": "We carefully select fresh organic products from trusted farms. Our goal is to offer healthy food, transparent quality and dependable service for every customer.",
+      "imageAlt": "Farmer holding a basket of fresh organic vegetables"
+    },
+    "benefits": {
+      "title": "100% Trusted Organic Food Store",
+      "description": "We work with reliable suppliers and carefully control product quality so that every order is fresh, safe and delivered with care.",
+      "imageAlt": "Farmer holding a box of fresh vegetables",
+      "features": {
+        "organicTitle": "100% Organic Food",
+        "organicDescription": "Healthy and fresh products",
+        "supportTitle": "Great Support 24/7",
+        "supportDescription": "Instant access to our support team",
+        "feedbackTitle": "Customer Feedback",
+        "feedbackDescription": "Our customers recommend us",
+        "paymentTitle": "100% Secure Payment",
+        "paymentDescription": "We keep your payments safe",
+        "shippingTitle": "Free Shipping",
+        "shippingDescription": "Free shipping with selected offers",
+        "freshTitle": "Fresh Products",
+        "freshDescription": "Carefully selected organic food"
+      }
+    },
+    "delivery": {
+      "title": "We Delivered, You Enjoy Your Order.",
+      "description": "We deliver your order directly to your doorstep, keeping every product fresh and carefully packed.",
+      "firstBenefit": "Fresh products delivered with care",
+      "secondBenefit": "Fast and reliable delivery",
+      "thirdBenefit": "Convenient shopping from home",
+      "imageAlt": "Courier delivering fresh organic products"
+    }
   }
 }
