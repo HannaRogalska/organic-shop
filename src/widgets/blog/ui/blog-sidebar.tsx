@@ -73,6 +73,7 @@ export function BlogSidebar() {
 
                   <time dateTime={post.publishedAt}>
                     {format.dateTime(new Date(`${post.publishedAt}T00:00:00Z`), {
+                      timeZone: 'UTC',
                       day: 'numeric',
                       month: 'short',
                       year: 'numeric',
