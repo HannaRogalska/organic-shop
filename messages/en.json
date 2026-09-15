@@ -258,5 +258,62 @@
       "thirdBenefit": "Convenient shopping from home",
       "imageAlt": "Courier delivering fresh organic products"
     }
+  },
+  "BlogPage": {
+    "breadcrumbLabel": "Blog page navigation",
+    "home": "Home",
+    "breadcrumb": "Blog",
+    "sidebar": {
+      "label": "Blog sidebar",
+      "popularTags": "Popular Tags",
+      "gallery": "Our Gallery",
+      "recentlyAdded": "Recently Added",
+      "tags": {
+        "healthy": "Healthy",
+        "lowFat": "Low fat",
+        "vegetarian": "Vegetarian",
+        "bread": "Bread",
+        "kidsFood": "Kids food",
+        "vitamins": "Vitamins",
+        "snacks": "Snacks",
+        "tiffin": "Tiffin",
+        "meat": "Meat",
+        "lunch": "Lunch",
+        "dinner": "Dinner"
+      },
+      "recentPosts": {
+        "firstTitle": "Fresh organic produce for a healthier everyday life.",
+        "secondTitle": "Simple ways to add more vegetables to your meals.",
+        "thirdTitle": "How seasonal food brings better flavor to your table."
+      }
+    },
+    "posts": {
+      "sectionLabel": "Blog posts",
+      "sortBy": "Sort by:",
+      "latest": "Latest",
+      "results": "<strong>{count}</strong> results found",
+      "category": "Food",
+      "author": "By {name}",
+      "comments": "{count, plural, one {# comment} other {# comments}}",
+      "readMore": "Read more",
+      "titles": {
+        "first": "Fresh organic vegetables for healthy everyday meals.",
+        "second": "How to choose seasonal fruit at its best.",
+        "third": "Simple ideas for nutritious homemade food.",
+        "fourth": "Why locally grown produce tastes better.",
+        "fifth": "Healthy ingredients that belong in every kitchen.",
+        "sixth": "Easy ways to make fresh vegetables more enjoyable.",
+        "seventh": "A practical guide to storing fruit and vegetables.",
+        "eighth": "Colorful seasonal recipes for the whole family.",
+        "ninth": "From the farm to your table: keeping food fresh.",
+        "tenth": "Everyday habits for a healthier and greener lifestyle."
+      }
+    },
+    "pagination": {
+      "label": "Blog pagination",
+      "previous": "Previous page",
+      "next": "Next page",
+      "page": "Page {number}"
+    }
   }
 }
