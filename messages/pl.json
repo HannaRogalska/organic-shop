@@ -258,5 +258,62 @@
       "thirdBenefit": "Wygodne zakupy bez wychodzenia z domu",
       "imageAlt": "Kurier dostarczający świeże produkty ekologiczne"
     }
+  },
+  "BlogPage": {
+    "breadcrumbLabel": "Nawigacja strony bloga",
+    "home": "Strona główna",
+    "breadcrumb": "Blog",
+    "sidebar": {
+      "label": "Panel boczny bloga",
+      "popularTags": "Popularne tagi",
+      "gallery": "Nasza galeria",
+      "recentlyAdded": "Ostatnio dodane",
+      "tags": {
+        "healthy": "Zdrowa żywność",
+        "lowFat": "Niskotłuszczowe",
+        "vegetarian": "Wegetariańskie",
+        "bread": "Pieczywo",
+        "kidsFood": "Żywność dla dzieci",
+        "vitamins": "Witaminy",
+        "snacks": "Przekąski",
+        "tiffin": "Posiłki",
+        "meat": "Mięso",
+        "lunch": "Lunch",
+        "dinner": "Kolacja"
+      },
+      "recentPosts": {
+        "firstTitle": "Świeże produkty ekologiczne dla zdrowszego życia.",
+        "secondTitle": "Proste sposoby na więcej warzyw w codziennych posiłkach.",
+        "thirdTitle": "Jak sezonowe produkty wzbogacają smak Twoich potraw."
+      }
+    },
+    "posts": {
+      "sectionLabel": "Artykuły na blogu",
+      "sortBy": "Sortuj według:",
+      "latest": "Najnowsze",
+      "results": "Znaleziono: <strong>{count}</strong>",
+      "category": "Żywność",
+      "author": "Autor: {name}",
+      "comments": "{count, plural, one {# komentarz} few {# komentarze} many {# komentarzy} other {# komentarza}}",
+      "readMore": "Czytaj więcej",
+      "titles": {
+        "first": "Świeże warzywa ekologiczne do zdrowych codziennych posiłków.",
+        "second": "Jak wybierać najlepsze owoce sezonowe.",
+        "third": "Proste pomysły na wartościowe domowe jedzenie.",
+        "fourth": "Dlaczego lokalne produkty smakują lepiej.",
+        "fifth": "Zdrowe składniki, które warto mieć w każdej kuchni.",
+        "sixth": "Jak w prosty sposób polubić świeże warzywa.",
+        "seventh": "Praktyczny przewodnik po przechowywaniu owoców i warzyw.",
+        "eighth": "Kolorowe sezonowe przepisy dla całej rodziny.",
+        "ninth": "Od gospodarstwa na stół: jak zachować świeżość żywności.",
+        "tenth": "Codzienne nawyki wspierające zdrowszy i bardziej ekologiczny styl życia."
+      }
+    },
+    "pagination": {
+      "label": "Stronicowanie bloga",
+      "previous": "Poprzednia strona",
+      "next": "Następna strona",
+      "page": "Strona {number}"
+    }
   }
 }
