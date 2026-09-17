@@ -291,6 +291,8 @@
       "sectionLabel": "Artykuły na blogu",
       "sortBy": "Sortuj według:",
       "latest": "Najnowsze",
+      "oldest": "Najstarsze",
+      "popular": "Popularne",
       "results": "Znaleziono: <strong>{count}</strong>",
       "category": "Żywność",
       "author": "Autor: {name}",

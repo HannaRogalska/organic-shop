@@ -291,6 +291,8 @@
       "sectionLabel": "Blog posts",
       "sortBy": "Sort by:",
       "latest": "Latest",
+      "oldest": "Oldest",
+      "popular": "Popular",
       "results": "<strong>{count}</strong> results found",
       "category": "Food",
       "author": "By {name}",

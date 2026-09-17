@@ -28,6 +28,7 @@ export const BLOG_POSTS = [
     titleKey: 'first',
     image: '/images/blog/posts/post-1.png',
     comments: 65,
+    publishedAt: '2026-09-12',
   },
   {
     id: 2,
@@ -35,6 +36,7 @@ export const BLOG_POSTS = [
     titleKey: 'second',
     image: '/images/blog/posts/post-2.png',
     comments: 48,
+    publishedAt: '2026-08-28',
   },
   {
     id: 3,
@@ -42,6 +44,7 @@ export const BLOG_POSTS = [
     titleKey: 'third',
     image: '/images/blog/posts/post-3.png',
     comments: 32,
+    publishedAt: '2026-08-10',
   },
   {
     id: 4,
@@ -49,6 +52,7 @@ export const BLOG_POSTS = [
     titleKey: 'fourth',
     image: '/images/blog/posts/post-4.png',
     comments: 27,
+    publishedAt: '2026-07-19',
   },
   {
     id: 5,
@@ -56,6 +60,7 @@ export const BLOG_POSTS = [
     titleKey: 'fifth',
     image: '/images/blog/posts/post-5.png',
     comments: 41,
+    publishedAt: '2026-06-30',
   },
   {
     id: 6,
@@ -63,6 +68,7 @@ export const BLOG_POSTS = [
     titleKey: 'sixth',
     image: '/images/blog/posts/post-6.png',
     comments: 19,
+    publishedAt: '2026-06-14',
   },
   {
     id: 7,
@@ -70,6 +76,7 @@ export const BLOG_POSTS = [
     titleKey: 'seventh',
     image: '/images/blog/posts/post-7.png',
     comments: 36,
+    publishedAt: '2026-05-22',
   },
   {
     id: 8,
@@ -77,6 +84,7 @@ export const BLOG_POSTS = [
     titleKey: 'eighth',
     image: '/images/blog/posts/post-8.png',
     comments: 24,
+    publishedAt: '2026-04-17',
   },
   {
     id: 9,
@@ -84,6 +92,7 @@ export const BLOG_POSTS = [
     titleKey: 'ninth',
     image: '/images/blog/posts/post-9.png',
     comments: 52,
+    publishedAt: '2026-03-09',
   },
   {
     id: 10,
@@ -91,6 +100,7 @@ export const BLOG_POSTS = [
     titleKey: 'tenth',
     image: '/images/blog/posts/post-10.png',
     comments: 30,
+    publishedAt: '2026-02-01',
   },
 ] as const;
 
