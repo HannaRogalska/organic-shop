@@ -9,12 +9,28 @@ const RESULTS_COUNT = BLOG_POSTS.length;
 const POSTS_PER_PAGE = 6;
 
 export function BlogPosts() {
+  type SortOption = 'latest' | 'oldest' | 'popular';
   const t = useTranslations('BlogPage.posts');
+  const [sortOption, setSortOption] = useState<SortOption>('latest');
   const [currentPage, setCurrentPage] = useState(1);
 
+  const sortedPosts = [...BLOG_POSTS].sort((left, right) => {
+    if (sortOption === 'popular') {
+      return right.comments - left.comments;
+    }
+
+    if (sortOption === 'oldest') {
+      return left.publishedAt.localeCompare(right.publishedAt);
+    }
+
+    return right.publishedAt.localeCompare(left.publishedAt);
+  });
+
   const pageCount = Math.ceil(BLOG_POSTS.length / POSTS_PER_PAGE);
-  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
-  const visiblePosts = BLOG_POSTS.slice(startIndex, startIndex + POSTS_PER_PAGE);
+  const visiblePosts = sortedPosts.slice(
+    (currentPage - 1) * POSTS_PER_PAGE,
+    currentPage * POSTS_PER_PAGE
+  );
 
   return (
     <section aria-label={t('sectionLabel')}>
@@ -24,9 +40,15 @@ export function BlogPosts() {
 
           <select
             className="h-10 min-w-40 rounded-md border border-gray-100 bg-background px-4 text-sm text-gray-700 focus-visible:outline-2 focus-visible:outline-primary"
-            defaultValue="latest"
+            value={sortOption}
+            onChange={(event) => {
+              setSortOption(event.target.value as SortOption);
+              setCurrentPage(1);
+            }}
           >
             <option value="latest">{t('latest')}</option>
+            <option value="oldest">{t('oldest')}</option>
+            <option value="popular">{t('popular')}</option>
           </select>
         </label>
 
