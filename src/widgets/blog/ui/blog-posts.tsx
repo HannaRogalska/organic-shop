@@ -1,7 +1,9 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useBlogCommentsStore } from '../model/blog-comments-store';
 import { BLOG_POSTS } from '../model/constants';
+import { getMockBlogComments } from '../model/get-mock-blog-comments';
 import { BlogPostCard } from './blog-post-card';
 import { BlogPagination } from './blog-pagination';
 
@@ -13,10 +15,25 @@ export function BlogPosts() {
   const t = useTranslations('BlogPage.posts');
   const [sortOption, setSortOption] = useState<SortOption>('latest');
   const [currentPage, setCurrentPage] = useState(1);
+  const commentsBySlug = useBlogCommentsStore((state) => state.commentsBySlug);
+  const hasHydrated = useBlogCommentsStore((state) => state.hasHydrated);
+
+  useEffect(() => {
+    void useBlogCommentsStore.persist.rehydrate();
+  }, []);
 
   const sortedPosts = [...BLOG_POSTS].sort((left, right) => {
     if (sortOption === 'popular') {
-      return right.comments - left.comments;
+      const leftCommentsCount =
+        hasHydrated && commentsBySlug[left.slug]
+          ? commentsBySlug[left.slug].length
+          : getMockBlogComments(left.slug).length;
+      const rightCommentsCount =
+        hasHydrated && commentsBySlug[right.slug]
+          ? commentsBySlug[right.slug].length
+          : getMockBlogComments(right.slug).length;
+
+      return rightCommentsCount - leftCommentsCount;
     }
 
     if (sortOption === 'oldest') {

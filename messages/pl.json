@@ -297,25 +297,30 @@
       "category": "Żywność",
       "author": "Autor: {name}",
       "comments": "{count, plural, one {# komentarz} few {# komentarze} many {# komentarzy} other {# komentarza}}",
-      "readMore": "Czytaj więcej",
-      "titles": {
-        "first": "Świeże warzywa ekologiczne do zdrowych codziennych posiłków.",
-        "second": "Jak wybierać najlepsze owoce sezonowe.",
-        "third": "Proste pomysły na wartościowe domowe jedzenie.",
-        "fourth": "Dlaczego lokalne produkty smakują lepiej.",
-        "fifth": "Zdrowe składniki, które warto mieć w każdej kuchni.",
-        "sixth": "Jak w prosty sposób polubić świeże warzywa.",
-        "seventh": "Praktyczny przewodnik po przechowywaniu owoców i warzyw.",
-        "eighth": "Kolorowe sezonowe przepisy dla całej rodziny.",
-        "ninth": "Od gospodarstwa na stół: jak zachować świeżość żywności.",
-        "tenth": "Codzienne nawyki wspierające zdrowszy i bardziej ekologiczny styl życia."
-      }
+      "readMore": "Czytaj więcej"
     },
     "pagination": {
       "label": "Stronicowanie bloga",
       "previous": "Poprzednia strona",
       "next": "Następna strona",
       "page": "Strona {number}"
+    }
+  },
+  "BlogPostPage": {
+    "breadcrumbLabel": "Nawigacja artykułu na blogu",
+    "home": "Strona główna",
+    "blog": "Blog",
+    "breadcrumb": "Artykuł",
+    "authorName": "Cameron Williamson",
+    "authorAvatarAlt": "Cameron Williamson",
+    "comments": {
+      "title": "Zostaw komentarz",
+      "name": "Imię i nazwisko",
+      "email": "E-mail",
+      "message": "Wiadomość",
+      "submit": "Dodaj komentarz",
+      "success": "Twój komentarz został dodany.",
+      "listTitle": "Komentarze"
     }
   }
 }

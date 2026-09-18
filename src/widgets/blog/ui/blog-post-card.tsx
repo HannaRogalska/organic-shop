@@ -1,8 +1,10 @@
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
+import { getBlogPostTranslation } from '../model/get-blog-post-translation';
 
 import type { BlogPost } from '../model/constants';
 import { Link } from '@/i18n/navigation';
+import { BlogCommentCount } from './blog-comment-count';
 
 type BlogPostCardProps = {
   post: BlogPost;
@@ -11,13 +13,16 @@ type BlogPostCardProps = {
 
 export function BlogPostCard({ post, eager = false }: BlogPostCardProps) {
   const t = useTranslations('BlogPage.posts');
+  const postT = useTranslations('BlogPostPage');
+  const locale = useLocale();
+  const translation = getBlogPostTranslation(post, locale);
 
   return (
     <article className="overflow-hidden rounded-lg border border-gray-100 bg-background transition-shadow hover:shadow-lg">
       <div className="relative aspect-106/81 overflow-hidden">
         <Image
           src={post.image}
-          alt={t(`titles.${post.titleKey}`)}
+          alt={translation.title}
           fill
           loading={eager ? 'eager' : 'lazy'}
           sizes="(min-width: 1280px) 424px, (min-width: 640px) 50vw, 100vw"
@@ -33,22 +38,13 @@ export function BlogPostCard({ post, eager = false }: BlogPostCardProps) {
 
           <span className="flex items-center gap-1">
             <Image src="/images/blog/user.svg" alt="" width={20} height={20} aria-hidden="true" />
-            {t('author', { name: 'Admin' })}
+            {t('author', { name: postT('authorName') })}
           </span>
 
-          <span className="flex items-center gap-1">
-            <Image
-              src="/images/blog/comment.svg"
-              alt=""
-              width={18}
-              height={18}
-              aria-hidden="true"
-            />
-            {t('comments', { count: post.comments })}
-          </span>
+          <BlogCommentCount slug={post.slug} />
         </div>
         <h2 className="mt-2 line-clamp-2 text-lg leading-normal font-medium text-gray-900">
-          {t(`titles.${post.titleKey}`)}
+          {translation.title}
         </h2>
 
         <Link
