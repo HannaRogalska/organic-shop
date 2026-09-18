@@ -1,6 +1,6 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useBlogCommentsStore } from '../model/blog-comments-store';
 import { BLOG_POSTS } from '../model/constants';
 import { getMockBlogComments } from '../model/get-mock-blog-comments';
@@ -16,13 +16,22 @@ export function BlogPosts() {
   const [sortOption, setSortOption] = useState<SortOption>('latest');
   const [currentPage, setCurrentPage] = useState(1);
   const commentsBySlug = useBlogCommentsStore((state) => state.commentsBySlug);
+  const hasHydrated = useBlogCommentsStore((state) => state.hasHydrated);
+
+  useEffect(() => {
+    void useBlogCommentsStore.persist.rehydrate();
+  }, []);
 
   const sortedPosts = [...BLOG_POSTS].sort((left, right) => {
     if (sortOption === 'popular') {
       const leftCommentsCount =
-        commentsBySlug[left.slug]?.length ?? getMockBlogComments(left.slug).length;
+        hasHydrated && commentsBySlug[left.slug]
+          ? commentsBySlug[left.slug].length
+          : getMockBlogComments(left.slug).length;
       const rightCommentsCount =
-        commentsBySlug[right.slug]?.length ?? getMockBlogComments(right.slug).length;
+        hasHydrated && commentsBySlug[right.slug]
+          ? commentsBySlug[right.slug].length
+          : getMockBlogComments(right.slug).length;
 
       return rightCommentsCount - leftCommentsCount;
     }

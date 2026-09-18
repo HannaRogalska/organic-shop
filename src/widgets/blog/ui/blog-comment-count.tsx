@@ -13,7 +13,9 @@ type BlogCommentCountProps = {
 export function BlogCommentCount({ slug }: BlogCommentCountProps) {
   const t = useTranslations('BlogPage.posts');
   const storedComments = useBlogCommentsStore((state) => state.commentsBySlug[slug]);
-  const count = storedComments?.length ?? getMockBlogComments(slug).length;
+  const hasHydrated = useBlogCommentsStore((state) => state.hasHydrated);
+  const mockCount = getMockBlogComments(slug).length;
+  const count = hasHydrated ? (storedComments?.length ?? mockCount) : mockCount;
 
   return (
     <span className="flex items-center gap-1">

@@ -63,7 +63,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             <span className="flex items-center gap-1">
               <Image src="/images/blog/user.svg" alt="" width={20} height={20} aria-hidden="true" />
-              {postsT('author', { name: 'Admin' })}
+              {postsT('author', { name: t('authorName') })}
             </span>
 
             <BlogCommentCount slug={post.slug} />
@@ -85,7 +85,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <p className="text-sm font-medium text-gray-900">{t('authorName')}</p>
 
                 <p className="mt-1 text-sm text-gray-500">
-                  <span>{postsT('author', { name: 'Admin' })}</span>
+                  <span>{postsT('author', { name: t('authorName') })}</span>
                   <span aria-hidden="true"> · </span>
                   <time dateTime={post.publishedAt}>
                     {format.dateTime(new Date(`${post.publishedAt}T00:00:00Z`), {

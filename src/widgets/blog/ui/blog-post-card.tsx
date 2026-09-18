@@ -13,6 +13,7 @@ type BlogPostCardProps = {
 
 export function BlogPostCard({ post, eager = false }: BlogPostCardProps) {
   const t = useTranslations('BlogPage.posts');
+  const postT = useTranslations('BlogPostPage');
   const locale = useLocale();
   const translation = getBlogPostTranslation(post, locale);
 
@@ -37,7 +38,7 @@ export function BlogPostCard({ post, eager = false }: BlogPostCardProps) {
 
           <span className="flex items-center gap-1">
             <Image src="/images/blog/user.svg" alt="" width={20} height={20} aria-hidden="true" />
-            {t('author', { name: 'Admin' })}
+            {t('author', { name: postT('authorName') })}
           </span>
 
           <BlogCommentCount slug={post.slug} />

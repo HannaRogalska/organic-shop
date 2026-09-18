@@ -14,14 +14,24 @@ type BlogCommentFormProps = {
 export function BlogCommentForm({ slug }: BlogCommentFormProps) {
   const t = useTranslations('BlogPostPage.comments');
   const storedComments = useBlogCommentsStore((state) => state.commentsBySlug[slug]);
-  const comments = storedComments ?? [];
+  const hasHydrated = useBlogCommentsStore((state) => state.hasHydrated);
+  const mockComments = getMockBlogComments(slug);
+  const comments = hasHydrated ? (storedComments ?? mockComments) : mockComments;
   const addComment = useBlogCommentsStore((state) => state.addComment);
   const initializeComments = useBlogCommentsStore((state) => state.initializeComments);
 
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
-    initializeComments(slug, getMockBlogComments(slug));
+    async function hydrateAndInitializeComments() {
+      try {
+        await useBlogCommentsStore.persist.rehydrate();
+      } finally {
+        initializeComments(slug, getMockBlogComments(slug));
+      }
+    }
+
+    void hydrateAndInitializeComments();
   }, [initializeComments, slug]);
   function handleSubmit(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
