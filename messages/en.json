@@ -297,25 +297,30 @@
       "category": "Food",
       "author": "By {name}",
       "comments": "{count, plural, one {# comment} other {# comments}}",
-      "readMore": "Read more",
-      "titles": {
-        "first": "Fresh organic vegetables for healthy everyday meals.",
-        "second": "How to choose seasonal fruit at its best.",
-        "third": "Simple ideas for nutritious homemade food.",
-        "fourth": "Why locally grown produce tastes better.",
-        "fifth": "Healthy ingredients that belong in every kitchen.",
-        "sixth": "Easy ways to make fresh vegetables more enjoyable.",
-        "seventh": "A practical guide to storing fruit and vegetables.",
-        "eighth": "Colorful seasonal recipes for the whole family.",
-        "ninth": "From the farm to your table: keeping food fresh.",
-        "tenth": "Everyday habits for a healthier and greener lifestyle."
-      }
+      "readMore": "Read more"
     },
     "pagination": {
       "label": "Blog pagination",
       "previous": "Previous page",
       "next": "Next page",
       "page": "Page {number}"
+    }
+  },
+  "BlogPostPage": {
+    "breadcrumbLabel": "Blog article navigation",
+    "home": "Home",
+    "blog": "Blog",
+    "breadcrumb": "Article",
+    "authorName": "Cameron Williamson",
+    "authorAvatarAlt": "Cameron Williamson",
+    "comments": {
+      "title": "Leave a Comment",
+      "name": "Full Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Post Comment",
+      "success": "Your comment has been added.",
+      "listTitle": "Comments"
     }
   }
 }
