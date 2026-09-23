@@ -1,23 +1,16 @@
+'use client';
 import { useFormatter, useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 import { BLOG_GALLERY_IMAGES, RECENT_POSTS } from '../model/constants';
+import { BLOG_TAGS, type BlogTag } from '../model/blog-tags';
 
-const TAG_KEYS = [
-  'healthy',
-  'lowFat',
-  'vegetarian',
-  'bread',
-  'kidsFood',
-  'vitamins',
-  'snacks',
-  'tiffin',
-  'meat',
-  'lunch',
-  'dinner',
-] as const;
+type BlogSidebarProps = {
+  selectedTag: BlogTag | null;
+  onTagChange: (tag: BlogTag) => void;
+};
 
-export function BlogSidebar() {
+export function BlogSidebar({ selectedTag, onTagChange }: BlogSidebarProps) {
   const t = useTranslations('BlogPage.sidebar');
   const format = useFormatter();
 
@@ -26,13 +19,20 @@ export function BlogSidebar() {
       <section className="py-6 first:pt-0">
         <h2 className="text-xl leading-normal font-medium text-gray-900">{t('popularTags')}</h2>
         <div className="mt-5 flex flex-wrap gap-2">
-          {TAG_KEYS.map((key) => (
-            <span
+          {BLOG_TAGS.map((key) => (
+            <button
               key={key}
-              className="rounded-full bg-gray-50 px-4 py-2 text-sm leading-normal text-gray-900"
+              type="button"
+              aria-pressed={selectedTag === key}
+              onClick={() => onTagChange(key)}
+              className={`cursor-pointer rounded-full px-4 py-2 text-sm leading-normal transition-colors ${
+                selectedTag === key
+                  ? 'bg-primary text-white'
+                  : 'bg-gray-50 text-gray-900 hover:bg-green-gray-50 hover:text-primary'
+              }`}
             >
               {t(`tags.${key}`)}
-            </span>
+            </button>
           ))}
         </div>
       </section>

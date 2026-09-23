@@ -6,23 +6,31 @@ import { BLOG_POSTS } from '../model/constants';
 import { getMockBlogComments } from '../model/get-mock-blog-comments';
 import { BlogPostCard } from './blog-post-card';
 import { BlogPagination } from './blog-pagination';
+import type { BlogTag } from '../model/blog-tags';
 
-const RESULTS_COUNT = BLOG_POSTS.length;
 const POSTS_PER_PAGE = 6;
 
-export function BlogPosts() {
+type BlogPostsProps = {
+  selectedTag: BlogTag | null;
+  currentPage: number;
+  onPageChange: (page: number) => void;
+};
+
+export function BlogPosts({ selectedTag, currentPage, onPageChange }: BlogPostsProps) {
   type SortOption = 'latest' | 'oldest' | 'popular';
   const t = useTranslations('BlogPage.posts');
   const [sortOption, setSortOption] = useState<SortOption>('latest');
-  const [currentPage, setCurrentPage] = useState(1);
   const commentsBySlug = useBlogCommentsStore((state) => state.commentsBySlug);
   const hasHydrated = useBlogCommentsStore((state) => state.hasHydrated);
 
   useEffect(() => {
     void useBlogCommentsStore.persist.rehydrate();
   }, []);
+  const filteredPosts = selectedTag
+    ? BLOG_POSTS.filter((post) => post.tags.some((tag) => tag === selectedTag))
+    : BLOG_POSTS;
 
-  const sortedPosts = [...BLOG_POSTS].sort((left, right) => {
+  const sortedPosts = [...filteredPosts].sort((left, right) => {
     if (sortOption === 'popular') {
       const leftCommentsCount =
         hasHydrated && commentsBySlug[left.slug]
@@ -43,7 +51,7 @@ export function BlogPosts() {
     return right.publishedAt.localeCompare(left.publishedAt);
   });
 
-  const pageCount = Math.ceil(BLOG_POSTS.length / POSTS_PER_PAGE);
+  const pageCount = Math.ceil(filteredPosts.length / POSTS_PER_PAGE);
   const visiblePosts = sortedPosts.slice(
     (currentPage - 1) * POSTS_PER_PAGE,
     currentPage * POSTS_PER_PAGE
@@ -60,7 +68,7 @@ export function BlogPosts() {
             value={sortOption}
             onChange={(event) => {
               setSortOption(event.target.value as SortOption);
-              setCurrentPage(1);
+              onPageChange(1);
             }}
           >
             <option value="latest">{t('latest')}</option>
@@ -71,7 +79,7 @@ export function BlogPosts() {
 
         <p className="text-base text-gray-900">
           {t.rich('results', {
-            count: RESULTS_COUNT,
+            count: filteredPosts.length,
             strong: (chunks) => <strong className="font-semibold">{chunks}</strong>,
           })}
         </p>
@@ -81,11 +89,7 @@ export function BlogPosts() {
           <BlogPostCard key={post.id} post={post} eager={currentPage === 1 && index < 4} />
         ))}
       </div>
-      <BlogPagination
-        currentPage={currentPage}
-        pageCount={pageCount}
-        onPageChange={setCurrentPage}
-      />
+      <BlogPagination currentPage={currentPage} pageCount={pageCount} onPageChange={onPageChange} />
     </section>
   );
 }

@@ -27,6 +27,7 @@ export const BLOG_POSTS = [
     slug: 'fresh-organic-vegetables',
     image: '/images/blog/posts/post-1.png',
     publishedAt: '2026-09-12',
+    tags: ['healthy', 'vegetarian', 'vitamins', 'lunch', 'dinner'],
     translations: {
       en: {
         title: 'Fresh organic vegetables for healthy everyday meals.',
@@ -51,6 +52,7 @@ export const BLOG_POSTS = [
     slug: 'seasonal-fruit',
     image: '/images/blog/posts/post-2.png',
     publishedAt: '2026-08-28',
+    tags: ['healthy', 'lowFat', 'vegetarian', 'vitamins', 'snacks', 'kidsFood'],
     translations: {
       en: {
         title: 'How to choose seasonal fruit at its best.',
@@ -75,6 +77,7 @@ export const BLOG_POSTS = [
     slug: 'nutritious-homemade-food',
     image: '/images/blog/posts/post-3.png',
     publishedAt: '2026-08-10',
+    tags: ['healthy', 'tiffin', 'meat', 'lunch', 'dinner'],
     translations: {
       en: {
         title: 'Simple ideas for nutritious homemade food.',
@@ -99,6 +102,7 @@ export const BLOG_POSTS = [
     slug: 'locally-grown-produce',
     image: '/images/blog/posts/post-4.png',
     publishedAt: '2026-07-19',
+    tags: ['healthy', 'vegetarian', 'vitamins'],
     translations: {
       en: {
         title: 'Why locally grown produce tastes better.',
@@ -123,6 +127,7 @@ export const BLOG_POSTS = [
     slug: 'healthy-kitchen-ingredients',
     image: '/images/blog/posts/post-5.png',
     publishedAt: '2026-06-30',
+    tags: ['healthy', 'lowFat', 'vegetarian', 'vitamins'],
     translations: {
       en: {
         title: 'Healthy ingredients that belong in every kitchen.',
@@ -147,6 +152,7 @@ export const BLOG_POSTS = [
     slug: 'enjoy-fresh-vegetables',
     image: '/images/blog/posts/post-6.png',
     publishedAt: '2026-06-14',
+    tags: ['healthy', 'lowFat', 'vegetarian', 'lunch', 'dinner'],
     translations: {
       en: {
         title: 'Easy ways to make fresh vegetables more enjoyable.',
@@ -171,6 +177,7 @@ export const BLOG_POSTS = [
     slug: 'storing-fruit-and-vegetables',
     image: '/images/blog/posts/post-7.png',
     publishedAt: '2026-05-22',
+    tags: ['healthy', 'vitamins'],
     translations: {
       en: {
         title: 'A practical guide to storing fruit and vegetables.',
@@ -195,6 +202,7 @@ export const BLOG_POSTS = [
     slug: 'seasonal-family-recipes',
     image: '/images/blog/posts/post-8.png',
     publishedAt: '2026-04-17',
+    tags: ['bread', 'kidsFood', 'tiffin', 'lunch', 'dinner'],
     translations: {
       en: {
         title: 'Colorful seasonal recipes for the whole family.',
@@ -219,6 +227,7 @@ export const BLOG_POSTS = [
     slug: 'farm-to-table',
     image: '/images/blog/posts/post-9.png',
     publishedAt: '2026-03-09',
+    tags: ['healthy', 'vegetarian', 'meat'],
     translations: {
       en: {
         title: 'From the farm to your table: keeping food fresh.',
@@ -243,6 +252,7 @@ export const BLOG_POSTS = [
     slug: 'healthy-green-lifestyle',
     image: '/images/blog/posts/post-10.png',
     publishedAt: '2026-02-01',
+    tags: ['healthy', 'lowFat', 'vegetarian'],
     translations: {
       en: {
         title: 'Everyday habits for a healthier and greener lifestyle.',
