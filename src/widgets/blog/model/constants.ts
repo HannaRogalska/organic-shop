@@ -77,7 +77,7 @@ export const BLOG_POSTS = [
     slug: 'nutritious-homemade-food',
     image: '/images/blog/posts/post-3.png',
     publishedAt: '2026-08-10',
-    tags: ['healthy', 'tiffin', 'meat', 'lunch', 'dinner'],
+    tags: ['healthy', 'tiffin', 'lunch', 'dinner'],
     translations: {
       en: {
         title: 'Simple ideas for nutritious homemade food.',
@@ -202,7 +202,7 @@ export const BLOG_POSTS = [
     slug: 'seasonal-family-recipes',
     image: '/images/blog/posts/post-8.png',
     publishedAt: '2026-04-17',
-    tags: ['bread', 'kidsFood', 'tiffin', 'lunch', 'dinner'],
+    tags: ['kidsFood', 'tiffin', 'lunch', 'dinner'],
     translations: {
       en: {
         title: 'Colorful seasonal recipes for the whole family.',
@@ -227,7 +227,7 @@ export const BLOG_POSTS = [
     slug: 'farm-to-table',
     image: '/images/blog/posts/post-9.png',
     publishedAt: '2026-03-09',
-    tags: ['healthy', 'vegetarian', 'meat'],
+    tags: ['healthy', 'vegetarian'],
     translations: {
       en: {
         title: 'From the farm to your table: keeping food fresh.',
