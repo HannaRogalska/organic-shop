@@ -297,7 +297,10 @@
       "category": "Food",
       "author": "By {name}",
       "comments": "{count, plural, one {# comment} other {# comments}}",
-      "readMore": "Read more"
+      "readMore": "Read more",
+      "emptyTitle": "No articles found",
+      "emptyDescription": "There are no articles with this tag yet.",
+      "showAll": "Show all articles"
     },
     "pagination": {
       "label": "Blog pagination",

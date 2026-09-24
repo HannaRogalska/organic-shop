@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { useBlogCommentsStore } from '../model/blog-comments-store';
@@ -14,9 +15,10 @@ type BlogPostsProps = {
   selectedTag: BlogTag | null;
   currentPage: number;
   onPageChange: (page: number) => void;
+  onClearTag: () => void;
 };
 
-export function BlogPosts({ selectedTag, currentPage, onPageChange }: BlogPostsProps) {
+export function BlogPosts({ selectedTag, currentPage, onPageChange, onClearTag }: BlogPostsProps) {
   type SortOption = 'latest' | 'oldest' | 'popular';
   const t = useTranslations('BlogPage.posts');
   const [sortOption, setSortOption] = useState<SortOption>('latest');
@@ -77,18 +79,37 @@ export function BlogPosts({ selectedTag, currentPage, onPageChange }: BlogPostsP
           </select>
         </label>
 
-        <p className="text-base text-gray-900">
+        <p className="text-base text-gray-900" aria-live="polite">
           {t.rich('results', {
             count: filteredPosts.length,
             strong: (chunks) => <strong className="font-semibold">{chunks}</strong>,
           })}
         </p>
       </header>
-      <div className="mt-8 grid gap-6 md:grid-cols-2">
-        {visiblePosts.map((post, index) => (
-          <BlogPostCard key={post.id} post={post} eager={currentPage === 1 && index < 4} />
-        ))}
-      </div>
+      {visiblePosts.length > 0 ? (
+        <div className="mt-8 grid gap-6 md:grid-cols-2">
+          {visiblePosts.map((post, index) => (
+            <BlogPostCard key={post.id} post={post} eager={currentPage === 1 && index < 4} />
+          ))}
+        </div>
+      ) : (
+        <div className="mt-8 flex min-h-80 flex-col items-center justify-center rounded-lg border border-gray-100 bg-gray-50 px-6 py-12 text-center">
+          <span className="grid size-16 place-items-center rounded-full bg-background">
+            <Image src="/images/header/search.svg" alt="" width={28} height={28} />
+          </span>
+          <h2 className="mt-5 text-2xl font-semibold text-gray-900">{t('emptyTitle')}</h2>
+          <p className="mt-2 max-w-md text-sm leading-relaxed text-gray-500">
+            {t('emptyDescription')}
+          </p>
+          <button
+            type="button"
+            onClick={onClearTag}
+            className="mt-6 cursor-pointer rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-hard-primary"
+          >
+            {t('showAll')}
+          </button>
+        </div>
+      )}
       <BlogPagination currentPage={currentPage} pageCount={pageCount} onPageChange={onPageChange} />
     </section>
   );
