@@ -297,7 +297,10 @@
       "category": "Żywność",
       "author": "Autor: {name}",
       "comments": "{count, plural, one {# komentarz} few {# komentarze} many {# komentarzy} other {# komentarza}}",
-      "readMore": "Czytaj więcej"
+      "readMore": "Czytaj więcej",
+      "emptyTitle": "Nie znaleziono artykułów",
+      "emptyDescription": "Nie ma jeszcze artykułów z tym tagiem.",
+      "showAll": "Pokaż wszystkie"
     },
     "pagination": {
       "label": "Stronicowanie bloga",
