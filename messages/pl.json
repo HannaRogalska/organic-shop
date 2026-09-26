@@ -267,6 +267,21 @@
       "label": "Panel boczny bloga",
       "popularTags": "Popularne tagi",
       "gallery": "Nasza galeria",
+      "galleryDialogLabel": "Galeria zdjęć bloga",
+      "galleryImage": "Otwórz zdjęcie: {description}",
+      "closeGallery": "Zamknij galerię",
+      "imagePosition": "Zdjęcie {current} z {total}",
+      "fullImageAlt": "{description}. {position}",
+      "galleryDescriptions": {
+        "image1": "Świeże warzywa ułożone na ciemnym tle",
+        "image2": "Miska świeżych warzyw z awokado i ciecierzycą",
+        "image3": "Kolorowe papryki zanurzone w wodzie",
+        "image4": "Świeże marchewki na ciemnym podłożu",
+        "image5": "Zielony groszek w otwartym strąku",
+        "image6": "Świeże pomarańcze z zielonymi liśćmi",
+        "image7": "Plasterki cukinii na szarym tle",
+        "image8": "Świeży brokuł na jasnym tle"
+      },
       "recentlyAdded": "Ostatnio dodane",
       "tags": {
         "healthy": "Zdrowa żywność",

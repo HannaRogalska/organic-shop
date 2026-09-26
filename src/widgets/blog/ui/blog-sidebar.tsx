@@ -4,6 +4,7 @@ import Image from 'next/image';
 
 import { BLOG_GALLERY_IMAGES, RECENT_POSTS } from '../model/constants';
 import { BLOG_TAGS, type BlogTag } from '../model/blog-tags';
+import { BlogGallery } from './blog-gallery';
 
 type BlogSidebarProps = {
   selectedTag: BlogTag | null;
@@ -39,13 +40,7 @@ export function BlogSidebar({ selectedTag, onTagChange }: BlogSidebarProps) {
 
       <section className="py-6 first:pt-0">
         <h2 className="text-xl leading-normal font-medium text-gray-900">{t('gallery')}</h2>
-        <div className="mt-5 grid grid-cols-4 gap-2">
-          {BLOG_GALLERY_IMAGES.map((image) => (
-            <div key={image} className="relative aspect-square overflow-hidden rounded-md">
-              <Image src={image} alt="" fill sizes="100px" className="object-cover" />
-            </div>
-          ))}
-        </div>
+        <BlogGallery images={BLOG_GALLERY_IMAGES} />
       </section>
 
       <section className="py-6 first:pt-0">
