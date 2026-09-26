@@ -268,9 +268,20 @@
       "popularTags": "Popular Tags",
       "gallery": "Our Gallery",
       "galleryDialogLabel": "Blog image gallery",
-      "galleryImage": "Open image {number}",
+      "galleryImage": "Open image: {description}",
       "closeGallery": "Close gallery",
       "imagePosition": "Image {current} of {total}",
+      "fullImageAlt": "{description}. {position}",
+      "galleryDescriptions": {
+        "image1": "Fresh vegetables arranged against a dark background",
+        "image2": "Fresh vegetable bowl with avocado and chickpeas",
+        "image3": "Colorful bell peppers splashing in water",
+        "image4": "Fresh carrots on a dark surface",
+        "image5": "Green peas in an open pod",
+        "image6": "Fresh oranges with green leaves",
+        "image7": "Sliced zucchini on a gray background",
+        "image8": "Fresh broccoli on a light background"
+      },
       "recentlyAdded": "Recently Added",
       "tags": {
         "healthy": "Healthy",

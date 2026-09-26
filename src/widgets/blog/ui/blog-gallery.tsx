@@ -18,6 +18,11 @@ export function BlogGallery({ images }: BlogGalleryProps) {
 
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const selectedImageDescription = t(`galleryDescriptions.image${selectedIndex + 1}`);
+  const selectedImagePosition = t('imagePosition', {
+    current: selectedIndex + 1,
+    total: images.length,
+  });
 
   function openGallery(index: number) {
     setSelectedIndex(index);
@@ -37,23 +42,27 @@ export function BlogGallery({ images }: BlogGalleryProps) {
   return (
     <>
       <div className="mt-5 grid grid-cols-4 gap-2">
-        {images.map((image, index) => (
-          <button
-            key={image.thumbnail}
-            type="button"
-            aria-label={t('galleryImage', { number: index + 1 })}
-            onClick={() => openGallery(index)}
-            className="relative aspect-square cursor-pointer overflow-hidden rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
-          >
-            <Image
-              src={image.thumbnail}
-              alt=""
-              fill
-              sizes="100px"
-              className="object-cover transition-transform duration-200 hover:scale-105"
-            />
-          </button>
-        ))}
+        {images.map((image, index) => {
+          const description = t(`galleryDescriptions.image${index + 1}`);
+
+          return (
+            <button
+              key={image.thumbnail}
+              type="button"
+              aria-label={t('galleryImage', { description })}
+              onClick={() => openGallery(index)}
+              className="relative aspect-square cursor-pointer overflow-hidden rounded-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+            >
+              <Image
+                src={image.thumbnail}
+                alt=""
+                fill
+                sizes="100px"
+                className="object-cover transition-transform duration-200 hover:scale-105"
+              />
+            </button>
+          );
+        })}
       </div>
 
       <dialog
@@ -65,9 +74,9 @@ export function BlogGallery({ images }: BlogGalleryProps) {
         <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-900">
           <Image
             src={images[selectedIndex].full}
-            alt={t('imagePosition', {
-              current: selectedIndex + 1,
-              total: images.length,
+            alt={t('fullImageAlt', {
+              description: selectedImageDescription,
+              position: selectedImagePosition,
             })}
             fill
             sizes="(min-width: 640px) 600px, 92vw"
