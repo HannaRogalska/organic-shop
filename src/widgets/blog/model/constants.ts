@@ -1,7 +1,7 @@
-export const BLOG_GALLERY_IMAGES = Array.from(
-  { length: 8 },
-  (_, index) => `/images/blog/gallery/gallery-${index + 1}.png`
-);
+export const BLOG_GALLERY_IMAGES = Array.from({ length: 8 }, (_, index) => ({
+  thumbnail: `/images/blog/gallery/gallery-${index + 1}.png`,
+  full: `/images/blog/gallery/full/gallery-${index + 1}.png`,
+}));
 
 export const RECENT_POSTS = [
   {
