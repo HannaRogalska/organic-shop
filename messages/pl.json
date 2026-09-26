@@ -267,6 +267,10 @@
       "label": "Panel boczny bloga",
       "popularTags": "Popularne tagi",
       "gallery": "Nasza galeria",
+      "galleryDialogLabel": "Galeria zdjęć bloga",
+      "galleryImage": "Otwórz zdjęcie {number}",
+      "closeGallery": "Zamknij galerię",
+      "imagePosition": "Zdjęcie {current} z {total}",
       "recentlyAdded": "Ostatnio dodane",
       "tags": {
         "healthy": "Zdrowa żywność",

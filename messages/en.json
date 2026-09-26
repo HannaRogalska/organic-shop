@@ -267,6 +267,10 @@
       "label": "Blog sidebar",
       "popularTags": "Popular Tags",
       "gallery": "Our Gallery",
+      "galleryDialogLabel": "Blog image gallery",
+      "galleryImage": "Open image {number}",
+      "closeGallery": "Close gallery",
+      "imagePosition": "Image {current} of {total}",
       "recentlyAdded": "Recently Added",
       "tags": {
         "healthy": "Healthy",
