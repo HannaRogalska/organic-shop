@@ -85,6 +85,7 @@ The project is focused on building a realistic online shopping experience using 
 - Redis stale-while-revalidate caching
 - Responsive product carousel
 - Accessible navigation and carousel controls
+- Localized blog with sorting, tag filters, persisted comments, and an accessible image lightbox
 
 ---
 
