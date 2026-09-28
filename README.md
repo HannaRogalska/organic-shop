@@ -12,6 +12,46 @@ The project is focused on building a realistic online shopping experience using 
 
 ---
 
+## ✨ Key Features
+
+### Storefront
+
+- Responsive homepage with hero and product carousels
+- Database-driven featured, best-selling, top-rated, and discounted product collections
+- USD and PLN price display with a persisted currency preference
+- Reusable product cards, promotional banners, ratings, and product collections
+
+### Localization
+
+- English and Polish localization powered by next-intl
+- Locale-aware navigation and metadata
+- Language switching with preserved URL query parameters
+- Localized product titles stored in PostgreSQL
+
+### Blog
+
+- Localized blog listing and article pages
+- Sorting by newest, oldest, and popularity
+- Tag filtering, pagination, result counts, and empty states
+- Browser-persisted mock comments with dynamic comment counts
+- Accessible image lightbox with localized image descriptions
+
+### Content Pages
+
+- Responsive About and Contact pages
+- Localized contact and newsletter forms with submission feedback
+- Team, testimonials, sponsors, benefits, and delivery sections
+- Reusable breadcrumbs and inner-page layouts
+
+### Reliability and Accessibility
+
+- Redis stale-while-revalidate caching with runtime validation and refresh locks
+- Database fallback when Redis is unavailable
+- Responsive and keyboard-accessible navigation and dialogs
+- Responsive loading skeletons and localized error and not-found states
+
+---
+
 ## 📸 Preview
 
 ### Homepage Hero and Navigation
@@ -44,6 +84,44 @@ The project is focused on building a realistic online shopping experience using 
   />
 </p>
 
+### About and Contact
+
+<p align="center">
+  <a href="./docs/screenshots/about-page.png">
+    <img
+      src="./docs/screenshots/about-page.png"
+      width="53%"
+      alt="Organic Shop About page"
+    />
+  </a>
+  <a href="./docs/screenshots/contact-page.png">
+    <img
+      src="./docs/screenshots/contact-page.png"
+      width="41%"
+      alt="Organic Shop Contact page with contact form and map"
+    />
+  </a>
+</p>
+
+### Blog
+
+<p align="center">
+  <a href="./docs/screenshots/blog-listing.png">
+    <img
+      src="./docs/screenshots/blog-listing.png"
+      width="54%"
+      alt="Organic Shop blog with sorting, tag filters, and pagination"
+    />
+  </a>
+  <a href="./docs/screenshots/blog-article.png">
+    <img
+      src="./docs/screenshots/blog-article.png"
+      width="40%"
+      alt="Organic Shop blog article and comments"
+    />
+  </a>
+</p>
+
 ---
 
 ## 🛠 Tech Stack
@@ -58,11 +136,12 @@ The project is focused on building a realistic online shopping experience using 
 - **Zustand**
 - **Embla Carousel**
 
-### Backend & Data
+### Backend, Data & Integrations
 
 - **PostgreSQL on Neon**
 - **Drizzle ORM**
 - **Upstash Redis**
+- **Web3Forms**
 
 ### Development Tools & Code Quality
 
@@ -72,20 +151,6 @@ The project is focused on building a realistic online shopping experience using 
 - **Prettier**
 - **Husky**
 - **Codex**
-
----
-
-## ✨ Current Functionality
-
-- Responsive localized homepage
-- English and Polish language switching
-- USD and PLN price display with a persisted currency preference
-- Database-driven featured product collections
-- Featured, best-selling, top-rated, and discounted product queries
-- Redis stale-while-revalidate caching
-- Responsive product carousel
-- Accessible navigation and carousel controls
-- Localized blog with sorting, tag filters, persisted comments, and an accessible image lightbox
 
 ---
 
