@@ -340,5 +340,23 @@
       "success": "Your comment has been added.",
       "listTitle": "Comments"
     }
+  },
+  "Auth": {
+    "signIn": {
+      "breadcrumbLabel": "Sign in page navigation",
+      "home": "Home",
+      "account": "Account",
+      "breadcrumb": "Login",
+      "title": "Sign In",
+      "email": "Email",
+      "password": "Password",
+      "rememberMe": "Remember me",
+      "forgotPassword": "Forgot password",
+      "submit": "Login",
+      "noAccount": "Don't have an account?",
+      "register": "Register",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password"
+    }
   }
 }
