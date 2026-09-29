@@ -340,5 +340,23 @@
       "success": "Twój komentarz został dodany.",
       "listTitle": "Komentarze"
     }
+  },
+  "Auth": {
+    "signIn": {
+      "breadcrumbLabel": "Nawigacja strony logowania",
+      "home": "Strona główna",
+      "account": "Konto",
+      "breadcrumb": "Logowanie",
+      "title": "Zaloguj się",
+      "email": "E-mail",
+      "password": "Hasło",
+      "rememberMe": "Zapamiętaj mnie",
+      "forgotPassword": "Nie pamiętasz hasła?",
+      "submit": "Zaloguj się",
+      "noAccount": "Nie masz konta?",
+      "register": "Zarejestruj się",
+      "showPassword": "Pokaż hasło",
+      "hidePassword": "Ukryj hasło"
+    }
   }
 }
