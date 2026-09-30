@@ -1,10 +1,13 @@
 'use client';
 
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
+import { useState } from 'react';
 
 export function SignInForm() {
   const t = useTranslations('Auth.signIn');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   return (
     <form className="mt-5">
@@ -21,20 +24,41 @@ export function SignInForm() {
         placeholder={t('email')}
         className="h-13 w-full rounded-md border border-gray-100 px-4 text-base text-gray-900 placeholder:text-gray-400 focus-visible:border-primary focus-visible:outline-none"
       />
-      <label htmlFor="sign-in-password" className="sr-only">
-        {t('password')}
-      </label>
 
-      <input
-        id="sign-in-password"
-        name="password"
-        type="password"
-        autoComplete="current-password"
-        required
-        minLength={8}
-        placeholder={t('password')}
-        className="mt-3 h-13 w-full rounded-md border border-gray-100 px-4 text-base text-gray-900 placeholder:text-gray-400 focus-visible:border-primary focus-visible:outline-none"
-      />
+      <div className="relative mt-3">
+        <label htmlFor="sign-in-password" className="sr-only">
+          {t('password')}
+        </label>
+
+        <input
+          id="sign-in-password"
+          name="password"
+          type={isPasswordVisible ? 'text' : 'password'}
+          autoComplete="current-password"
+          required
+          minLength={8}
+          placeholder={t('password')}
+          className="h-13 w-full rounded-md border border-gray-100 px-4 pr-12 text-base text-gray-900 placeholder:text-gray-400 focus-visible:border-primary focus-visible:outline-none"
+        />
+
+        <button
+          type="button"
+          aria-label={isPasswordVisible ? t('hidePassword') : t('showPassword')}
+          aria-pressed={isPasswordVisible}
+          onClick={() => setIsPasswordVisible((current) => !current)}
+          className="absolute top-1/2 right-4 grid size-8 -translate-y-1/2 cursor-pointer place-items-center rounded-full focus-visible:outline-2 focus-visible:outline-primary"
+        >
+          <Image
+            src="/images/product/eye.svg"
+            alt=""
+            width={19}
+            height={15}
+            aria-hidden="true"
+            className="h-auto w-5"
+          />
+        </button>
+      </div>
+
       <div className="mt-4 flex items-center justify-between gap-4">
         <label className="flex cursor-pointer items-center gap-2 text-sm text-gray-600">
           <input
