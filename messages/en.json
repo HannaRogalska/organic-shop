@@ -357,6 +357,23 @@
       "register": "Register",
       "showPassword": "Show password",
       "hidePassword": "Hide password"
+    },
+    "signUp": {
+      "breadcrumbLabel": "Create account page navigation",
+      "home": "Home",
+      "breadcrumb": "Create Account",
+      "title": "Create Account",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "acceptTerms": "Accept all terms and conditions",
+      "submit": "Create Account",
+      "haveAccount": "Already have an account?",
+      "login": "Login",
+      "showPassword": "Show password",
+      "hidePassword": "Hide password",
+      "showConfirmPassword": "Show password confirmation",
+      "hideConfirmPassword": "Hide password confirmation"
     }
   }
 }
