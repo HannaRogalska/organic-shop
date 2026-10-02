@@ -357,6 +357,23 @@
       "register": "Zarejestruj się",
       "showPassword": "Pokaż hasło",
       "hidePassword": "Ukryj hasło"
+    },
+    "signUp": {
+      "breadcrumbLabel": "Nawigacja strony rejestracji",
+      "home": "Strona główna",
+      "breadcrumb": "Utwórz konto",
+      "title": "Utwórz konto",
+      "email": "E-mail",
+      "password": "Hasło",
+      "confirmPassword": "Potwierdź hasło",
+      "acceptTerms": "Akceptuję regulamin",
+      "submit": "Utwórz konto",
+      "haveAccount": "Masz już konto?",
+      "login": "Zaloguj się",
+      "showPassword": "Pokaż hasło",
+      "hidePassword": "Ukryj hasło",
+      "showConfirmPassword": "Pokaż potwierdzenie hasła",
+      "hideConfirmPassword": "Ukryj potwierdzenie hasła"
     }
   }
 }
