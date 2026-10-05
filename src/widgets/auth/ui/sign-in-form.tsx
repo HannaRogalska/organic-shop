@@ -54,7 +54,7 @@ export function SignInForm() {
             width={19}
             height={15}
             aria-hidden="true"
-            className="h-auto w-5"
+            className="h-[15px] w-[19px] max-w-none"
           />
         </button>
       </div>
