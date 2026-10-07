@@ -1,17 +1,99 @@
 'use client';
 
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
-import { useState } from 'react';
 import Image from 'next/image';
+import { useState, type SubmitEvent } from 'react';
+import { useTranslations } from 'next-intl';
+
+import { Link, useRouter } from '@/i18n/navigation';
+import { authClient } from '@/shared/api/auth/client';
+
+type SignUpStatus = 'idle' | 'submitting' | 'error';
+
+type SignUpFormValues = {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+};
+
+function getTextValue(formData: FormData, fieldName: string): string {
+  const value = formData.get(fieldName);
+
+  return typeof value === 'string' ? value : '';
+}
+
+function getSignUpFormValues(form: HTMLFormElement): SignUpFormValues {
+  const formData = new FormData(form);
+
+  return {
+    name: getTextValue(formData, 'name').trim(),
+    email: getTextValue(formData, 'email').trim(),
+    password: getTextValue(formData, 'password'),
+    confirmPassword: getTextValue(formData, 'confirmPassword'),
+  };
+}
 
 export function SignUpForm() {
   const t = useTranslations('Auth.signUp');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
+  const router = useRouter();
+  const [status, setStatus] = useState<SignUpStatus>('idle');
+  const [message, setMessage] = useState('');
+
+  async function handleSignUp(event: SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const { name, email, password, confirmPassword } = getSignUpFormValues(event.currentTarget);
+
+    setMessage('');
+
+    if (password !== confirmPassword) {
+      setStatus('error');
+      setMessage(t('passwordMismatch'));
+      return;
+    }
+
+    setStatus('submitting');
+
+    try {
+      const { error } = await authClient.signUp.email({
+        name,
+        email,
+        password,
+      });
+
+      if (error) {
+        setStatus('error');
+        setMessage(
+          error.code === 'USER_ALREADY_EXISTS_USE_ANOTHER_EMAIL' ? t('accountExists') : t('error')
+        );
+        return;
+      }
+
+      router.replace('/');
+      router.refresh();
+    } catch {
+      setStatus('error');
+      setMessage(t('error'));
+    }
+  }
 
   return (
-    <form className="mt-5" onSubmit={(event) => event.preventDefault()}>
+    <form className="mt-5" onSubmit={handleSignUp}>
+      <label htmlFor="sign-up-name" className="sr-only">
+        {t('name')}
+      </label>
+
+      <input
+        id="sign-up-name"
+        name="name"
+        type="text"
+        autoComplete="name"
+        required
+        placeholder={t('name')}
+        className="h-13 w-full rounded-md border border-gray-100 px-4 text-base text-gray-900 placeholder:text-gray-400 focus-visible:border-primary focus-visible:outline-none"
+      />
       <label htmlFor="sign-up-email" className="sr-only">
         {t('email')}
       </label>
@@ -23,7 +105,7 @@ export function SignUpForm() {
         autoComplete="email"
         required
         placeholder={t('email')}
-        className="h-13 w-full rounded-md border border-gray-100 px-4 text-base text-gray-900 placeholder:text-gray-400 focus-visible:border-primary focus-visible:outline-none"
+        className="mt-3 h-13 w-full rounded-md border border-gray-100 px-4 text-base text-gray-900 placeholder:text-gray-400 focus-visible:border-primary focus-visible:outline-none"
       />
       <div className="relative mt-3">
         <label htmlFor="sign-up-password" className="sr-only">
@@ -102,11 +184,15 @@ export function SignUpForm() {
 
         <span>{t('acceptTerms')}</span>
       </label>
+      <p role="alert" aria-live="polite" className="mt-3 min-h-5 text-sm text-danger">
+        {message}
+      </p>
       <button
         type="submit"
-        className="mt-5 h-11 w-full cursor-pointer rounded-full bg-primary px-8 text-sm font-semibold text-white transition-colors hover:bg-hard-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        disabled={status === 'submitting'}
+        className="mt-2 h-11 w-full cursor-pointer rounded-full bg-primary px-8 text-sm font-semibold text-white transition-colors hover:bg-hard-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {t('submit')}
+        {status === 'submitting' ? t('submitting') : t('submit')}
       </button>
       <p className="mt-6 text-center text-sm text-gray-600">
         {t('haveAccount')}{' '}

@@ -363,6 +363,7 @@
       "home": "Strona główna",
       "breadcrumb": "Utwórz konto",
       "title": "Utwórz konto",
+      "name": "Imię i nazwisko",
       "email": "E-mail",
       "password": "Hasło",
       "confirmPassword": "Potwierdź hasło",
@@ -373,7 +374,11 @@
       "showPassword": "Pokaż hasło",
       "hidePassword": "Ukryj hasło",
       "showConfirmPassword": "Pokaż potwierdzenie hasła",
-      "hideConfirmPassword": "Ukryj potwierdzenie hasła"
+      "hideConfirmPassword": "Ukryj potwierdzenie hasła",
+      "submitting": "Tworzenie konta...",
+      "passwordMismatch": "Hasła nie są takie same.",
+      "accountExists": "Konto z tym adresem e-mail już istnieje.",
+      "error": "Nie udało się utworzyć konta. Spróbuj ponownie."
     }
   }
 }

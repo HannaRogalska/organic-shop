@@ -363,6 +363,7 @@
       "home": "Home",
       "breadcrumb": "Create Account",
       "title": "Create Account",
+      "name": "Full name",
       "email": "Email",
       "password": "Password",
       "confirmPassword": "Confirm Password",
@@ -373,7 +374,11 @@
       "showPassword": "Show password",
       "hidePassword": "Hide password",
       "showConfirmPassword": "Show password confirmation",
-      "hideConfirmPassword": "Hide password confirmation"
+      "hideConfirmPassword": "Hide password confirmation",
+      "submitting": "Creating account...",
+      "passwordMismatch": "Passwords do not match.",
+      "accountExists": "An account with this email already exists.",
+      "error": "Could not create your account. Please try again."
     }
   }
 }
