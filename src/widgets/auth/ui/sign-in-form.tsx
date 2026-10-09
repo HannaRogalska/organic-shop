@@ -1,16 +1,76 @@
 'use client';
 
 import Image from 'next/image';
+import { useState, type SubmitEvent } from 'react';
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
-import { useState } from 'react';
+
+import { Link, useRouter } from '@/i18n/navigation';
+import { authClient } from '@/shared/api/auth/client';
+
+type SignInFormValues = {
+  email: string;
+  password: string;
+  rememberMe: boolean;
+};
+
+type SignInStatus = 'idle' | 'submitting' | 'error';
+
+function getTextValue(formData: FormData, fieldName: string): string {
+  const value = formData.get(fieldName);
+
+  return typeof value === 'string' ? value : '';
+}
+
+function getSignInFormValues(form: HTMLFormElement): SignInFormValues {
+  const formData = new FormData(form);
+
+  return {
+    email: getTextValue(formData, 'email').trim(),
+    password: getTextValue(formData, 'password'),
+    rememberMe: formData.get('rememberMe') === 'on',
+  };
+}
 
 export function SignInForm() {
   const t = useTranslations('Auth.signIn');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const router = useRouter();
+  const [status, setStatus] = useState<SignInStatus>('idle');
+  const [message, setMessage] = useState('');
+
+  async function handleSignIn(event: SubmitEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const { email, password, rememberMe } = getSignInFormValues(event.currentTarget);
+
+    setMessage('');
+    setStatus('submitting');
+
+    try {
+      const { error } = await authClient.signIn.email({
+        email,
+        password,
+        rememberMe,
+      });
+
+      if (error) {
+        setStatus('error');
+        setMessage(
+          error.code === 'INVALID_EMAIL_OR_PASSWORD' ? t('invalidCredentials') : t('error')
+        );
+        return;
+      }
+
+      router.replace('/');
+      router.refresh();
+    } catch {
+      setStatus('error');
+      setMessage(t('error'));
+    }
+  }
 
   return (
-    <form className="mt-5">
+    <form className="mt-5" onSubmit={handleSignIn}>
       <label htmlFor="sign-in-email" className="sr-only">
         {t('email')}
       </label>
@@ -76,11 +136,15 @@ export function SignInForm() {
           {t('forgotPassword')}
         </button>
       </div>
+      <p role="alert" aria-live="polite" className="mt-3 min-h-5 text-sm text-danger">
+        {message}
+      </p>
       <button
         type="submit"
-        className="mt-5 h-11 w-full cursor-pointer rounded-full bg-primary px-8 text-sm font-semibold text-white transition-colors hover:bg-hard-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+        disabled={status === 'submitting'}
+        className="mt-2 h-11 w-full cursor-pointer rounded-full bg-primary px-8 text-sm font-semibold text-white transition-colors hover:bg-hard-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-60"
       >
-        {t('submit')}
+        {status === 'submitting' ? t('submitting') : t('submit')}
       </button>
       <p className="mt-6 text-center text-sm text-gray-600">
         {t('noAccount')}{' '}
