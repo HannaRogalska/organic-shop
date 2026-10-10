@@ -356,7 +356,10 @@
       "noAccount": "Don't have an account?",
       "register": "Register",
       "showPassword": "Show password",
-      "hidePassword": "Hide password"
+      "hidePassword": "Hide password",
+      "submitting": "Signing in...",
+      "invalidCredentials": "Invalid email or password.",
+      "error": "Could not sign in. Please try again."
     },
     "signUp": {
       "breadcrumbLabel": "Create account page navigation",

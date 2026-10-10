@@ -356,7 +356,10 @@
       "noAccount": "Nie masz konta?",
       "register": "Zarejestruj się",
       "showPassword": "Pokaż hasło",
-      "hidePassword": "Ukryj hasło"
+      "hidePassword": "Ukryj hasło",
+      "submitting": "Logowanie...",
+      "invalidCredentials": "Nieprawidłowy adres e-mail lub hasło.",
+      "error": "Nie udało się zalogować. Spróbuj ponownie."
     },
     "signUp": {
       "breadcrumbLabel": "Nawigacja strony rejestracji",
