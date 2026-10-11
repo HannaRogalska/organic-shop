@@ -341,6 +341,13 @@
       "listTitle": "Comments"
     }
   },
+  "AccountPage": {
+    "breadcrumbLabel": "Account dashboard navigation",
+    "home": "Home",
+    "account": "Account",
+    "dashboard": "Dashboard",
+    "title": "Dashboard"
+  },
   "Auth": {
     "signIn": {
       "breadcrumbLabel": "Sign in page navigation",

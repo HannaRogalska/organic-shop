@@ -341,6 +341,13 @@
       "listTitle": "Komentarze"
     }
   },
+  "AccountPage": {
+    "breadcrumbLabel": "Nawigacja panelu konta",
+    "home": "Strona główna",
+    "account": "Konto",
+    "dashboard": "Panel",
+    "title": "Panel użytkownika"
+  },
   "Auth": {
     "signIn": {
       "breadcrumbLabel": "Nawigacja strony logowania",
