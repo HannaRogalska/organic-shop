@@ -61,7 +61,7 @@ export function SignInForm() {
         return;
       }
 
-      router.replace('/');
+      router.replace('/account');
       router.refresh();
     } catch {
       setStatus('error');
