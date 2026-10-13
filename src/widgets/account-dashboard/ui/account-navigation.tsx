@@ -19,21 +19,25 @@ export function AccountNavigation() {
   const pathname = usePathname();
   const router = useRouter();
   const [isSigningOut, setIsSigningOut] = useState(false);
+  const [signOutError, setSignOutError] = useState('');
 
   async function handleSignOut() {
+    setSignOutError('');
     setIsSigningOut(true);
 
     try {
       const { error } = await authClient.signOut();
 
       if (error) {
-        setIsSigningOut(false);
+        setSignOutError(t('logoutError'));
         return;
       }
 
       router.replace('/');
       router.refresh();
     } catch {
+      setSignOutError(t('logoutError'));
+    } finally {
       setIsSigningOut(false);
     }
   }
@@ -74,6 +78,11 @@ export function AccountNavigation() {
       >
         {t('logout')}
       </button>
+      {signOutError ? (
+        <p role="alert" className="px-5 pb-4 text-sm text-danger">
+          {signOutError}
+        </p>
+      ) : null}
     </nav>
   );
 }

@@ -355,7 +355,8 @@
       "wishlist": "Lista życzeń",
       "shoppingCart": "Koszyk",
       "settings": "Ustawienia",
-      "logout": "Wyloguj się"
+      "logout": "Wyloguj się",
+      "logoutError": "Nie udało się wylogować. Spróbuj ponownie."
     }
   },
   "Auth": {
