@@ -346,7 +346,18 @@
     "home": "Strona główna",
     "account": "Konto",
     "dashboard": "Panel",
-    "title": "Panel użytkownika"
+    "title": "Panel użytkownika",
+    "navigation": {
+      "label": "Nawigacja konta",
+      "title": "Nawigacja",
+      "dashboard": "Panel",
+      "orderHistory": "Historia zamówień",
+      "wishlist": "Lista życzeń",
+      "shoppingCart": "Koszyk",
+      "settings": "Ustawienia",
+      "logout": "Wyloguj się",
+      "logoutError": "Nie udało się wylogować. Spróbuj ponownie."
+    }
   },
   "Auth": {
     "signIn": {
