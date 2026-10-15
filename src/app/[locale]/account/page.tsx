@@ -7,6 +7,7 @@ import { PageBreadcrumbs } from '@/shared/ui/page-breadcrumbs/page-breadcrumbs';
 import { Footer } from '@/widgets/footer/footer';
 import { Header } from '@/widgets/header/header';
 import { AccountNavigation } from '@/widgets/account-dashboard/ui/account-navigation';
+import { AccountProfileCard } from '@/widgets/account-dashboard/ui/account-profile-card';
 
 type AccountPageProps = {
   params: Promise<{ locale: string }>;
@@ -48,9 +49,8 @@ export default async function AccountPage({ params }: AccountPageProps) {
             <div className="mt-6 flex flex-col gap-6 lg:flex-row">
               <AccountNavigation />
 
-              <div className="min-w-0 flex-1 rounded-lg border border-gray-100 p-6">
-                <p className="font-medium text-gray-900">{session.user.name}</p>
-                <p className="mt-1 text-sm text-gray-500">{session.user.email}</p>
+              <div className="min-w-0 flex-1">
+                <AccountProfileCard name={session.user.name} email={session.user.email} />
               </div>
             </div>
           </div>
