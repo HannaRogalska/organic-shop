@@ -357,6 +357,10 @@
       "settings": "Ustawienia",
       "logout": "Wyloguj się",
       "logoutError": "Nie udało się wylogować. Spróbuj ponownie."
+    },
+    "profile": {
+      "label": "Profil użytkownika",
+      "customer": "Klient"
     }
   },
   "Auth": {
