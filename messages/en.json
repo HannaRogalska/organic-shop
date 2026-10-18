@@ -361,6 +361,11 @@
     "profile": {
       "label": "User profile",
       "customer": "Customer"
+    },
+    "billingAddress": {
+      "label": "Billing address",
+      "title": "Billing Address",
+      "empty": "No billing address has been added yet."
     }
   },
   "Auth": {
