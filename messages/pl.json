@@ -361,6 +361,11 @@
     "profile": {
       "label": "Profil użytkownika",
       "customer": "Klient"
+    },
+    "billingAddress": {
+      "label": "Adres rozliczeniowy",
+      "title": "Adres rozliczeniowy",
+      "empty": "Nie dodano jeszcze adresu rozliczeniowego."
     }
   },
   "Auth": {
