@@ -384,6 +384,11 @@
         "paid": "Paid",
         "shipped": "Shipped"
       }
+    },
+    "orders": {
+      "breadcrumbLabel": "Order history navigation",
+      "breadcrumb": "Order History",
+      "title": "Order History"
     }
   },
   "Auth": {

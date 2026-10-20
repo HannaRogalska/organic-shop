@@ -384,6 +384,11 @@
         "paid": "Opłacone",
         "shipped": "Wysłane"
       }
+    },
+    "orders": {
+      "breadcrumbLabel": "Nawigacja historii zamówień",
+      "breadcrumb": "Historia zamówień",
+      "title": "Historia zamówień"
     }
   },
   "Auth": {
