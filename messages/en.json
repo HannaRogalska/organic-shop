@@ -366,6 +366,29 @@
       "label": "Billing address",
       "title": "Billing Address",
       "empty": "No billing address has been added yet."
+    },
+    "recentOrders": {
+      "label": "Recent order history",
+      "title": "Recent Order History",
+      "viewAll": "View All",
+      "orderId": "Order ID",
+      "date": "Date",
+      "total": "Total",
+      "status": "Status",
+      "details": "Details",
+      "viewDetails": "View details for order {id}",
+      "empty": "You haven't placed any orders yet.",
+      "itemCount": "{count, plural, one {# product} other {# products}}",
+      "statuses": {
+        "pending": "Pending",
+        "paid": "Paid",
+        "shipped": "Shipped"
+      }
+    },
+    "orders": {
+      "breadcrumbLabel": "Order history navigation",
+      "breadcrumb": "Order History",
+      "title": "Order History"
     }
   },
   "Auth": {
