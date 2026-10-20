@@ -8,13 +8,15 @@ import { useFormatPrice } from '@/shared/lib/i18n/use-format-price';
 
 type RecentOrdersTableProps = {
   orders: RecentOrder[];
+  title?: string;
+  showViewAll?: boolean;
 };
 
 function getOrderNumber(id: string): string {
   return `#${id.slice(0, 8).toUpperCase()}`;
 }
 
-export function RecentOrdersTable({ orders }: RecentOrdersTableProps) {
+export function RecentOrdersTable({ orders, title, showViewAll = true }: RecentOrdersTableProps) {
   const t = useTranslations('AccountPage.recentOrders');
   const format = useFormatter();
   const formatPrice = useFormatPrice();
@@ -25,9 +27,9 @@ export function RecentOrdersTable({ orders }: RecentOrdersTableProps) {
       className="overflow-hidden rounded-lg border border-gray-100 bg-background"
     >
       <header className="flex items-center justify-between gap-4 px-6 py-5">
-        <h2 className="text-xl font-medium text-gray-900">{t('title')}</h2>
+        <h2 className="text-xl font-medium text-gray-900">{title ?? t('title')}</h2>
 
-        {orders.length > 0 ? (
+        {showViewAll && orders.length > 0 ? (
           <Link
             href="/account/orders"
             className="text-sm font-medium text-primary hover:text-hard-primary"

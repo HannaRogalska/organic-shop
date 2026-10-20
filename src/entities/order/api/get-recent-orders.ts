@@ -15,10 +15,7 @@ export type RecentOrder = {
   itemCount: number;
 };
 
-export async function getRecentOrders(
-  userId: string,
-  limit = DEFAULT_LIMIT
-): Promise<RecentOrder[]> {
+function queryUserOrders(userId: string) {
   return db
     .select({
       id: ordersTable.id,
@@ -33,6 +30,16 @@ export async function getRecentOrders(
     .leftJoin(orderItemsTable, eq(orderItemsTable.orderId, ordersTable.id))
     .where(eq(ordersTable.userId, userId))
     .groupBy(ordersTable.id, ordersTable.status, ordersTable.totalAmount, ordersTable.createdAt)
-    .orderBy(desc(ordersTable.createdAt))
-    .limit(limit);
+    .orderBy(desc(ordersTable.createdAt));
+}
+
+export async function getRecentOrders(
+  userId: string,
+  limit = DEFAULT_LIMIT
+): Promise<RecentOrder[]> {
+  return queryUserOrders(userId).limit(limit);
+}
+
+export async function getUserOrders(userId: string): Promise<RecentOrder[]> {
+  return queryUserOrders(userId);
 }
