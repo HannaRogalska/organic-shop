@@ -4,12 +4,14 @@ import { getTranslations } from 'next-intl/server';
 import { redirect } from '@/i18n/navigation';
 import { auth } from '@/shared/api/auth/server';
 import { getUserAddress } from '@/entities/user/api/get-user-address';
+import { getRecentOrders } from '@/entities/order/api/get-recent-orders';
 import { PageBreadcrumbs } from '@/shared/ui/page-breadcrumbs/page-breadcrumbs';
 import { Footer } from '@/widgets/footer/footer';
 import { Header } from '@/widgets/header/header';
 import { AccountNavigation } from '@/widgets/account-dashboard/ui/account-navigation';
 import { AccountProfileCard } from '@/widgets/account-dashboard/ui/account-profile-card';
 import { BillingAddressCard } from '@/widgets/account-dashboard/ui/billing-address-card';
+import { RecentOrdersTable } from '@/widgets/account-dashboard/ui/recent-orders-table';
 
 type AccountPageProps = {
   params: Promise<{ locale: string }>;
@@ -29,7 +31,10 @@ export default async function AccountPage({ params }: AccountPageProps) {
       locale,
     });
   }
-  const address = await getUserAddress(session.user.id);
+  const [address, recentOrders] = await Promise.all([
+    getUserAddress(session.user.id),
+    getRecentOrders(session.user.id),
+  ]);
 
   return (
     <div className="flex min-h-screen flex-col bg-background font-sans">
@@ -52,10 +57,16 @@ export default async function AccountPage({ params }: AccountPageProps) {
             <div className="mt-6 flex flex-col gap-6 lg:flex-row">
               <AccountNavigation />
 
-              <div className="grid min-w-0 flex-1 gap-6 xl:grid-cols-2">
-                <AccountProfileCard name={session.user.name} email={session.user.email} />
+              <div className="min-w-0 flex-1">
+                <div className="grid gap-6 xl:grid-cols-2">
+                  <AccountProfileCard name={session.user.name} email={session.user.email} />
 
-                <BillingAddressCard address={address} email={session.user.email} />
+                  <BillingAddressCard address={address} email={session.user.email} />
+                </div>
+
+                <div className="mt-6">
+                  <RecentOrdersTable orders={recentOrders} />
+                </div>
               </div>
             </div>
           </div>

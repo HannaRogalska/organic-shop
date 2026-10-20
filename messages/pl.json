@@ -366,6 +366,24 @@
       "label": "Adres rozliczeniowy",
       "title": "Adres rozliczeniowy",
       "empty": "Nie dodano jeszcze adresu rozliczeniowego."
+    },
+    "recentOrders": {
+      "label": "Historia ostatnich zamówień",
+      "title": "Ostatnie zamówienia",
+      "viewAll": "Zobacz wszystkie",
+      "orderId": "Numer zamówienia",
+      "date": "Data",
+      "total": "Suma",
+      "status": "Status",
+      "details": "Szczegóły",
+      "viewDetails": "Zobacz szczegóły zamówienia {id}",
+      "empty": "Nie masz jeszcze żadnych zamówień.",
+      "itemCount": "{count, plural, one {# produkt} few {# produkty} many {# produktów} other {# produktu}}",
+      "statuses": {
+        "pending": "Oczekujące",
+        "paid": "Opłacone",
+        "shipped": "Wysłane"
+      }
     }
   },
   "Auth": {
