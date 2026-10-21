@@ -389,6 +389,30 @@
       "breadcrumbLabel": "Order history navigation",
       "breadcrumb": "Order History",
       "title": "Order History"
+    },
+    "orderDetails": {
+      "breadcrumbLabel": "Order details navigation",
+      "breadcrumb": "Order Details",
+      "title": "Order Details",
+      "orderId": "Order ID",
+      "date": "Date",
+      "total": "Total",
+      "status": "Status",
+      "backToList": "Back to List",
+      "productCount": "{count, plural, one {# product} other {# products}}",
+      "product": "Product",
+      "price": "Price",
+      "quantity": "Quantity",
+      "subtotal": "Subtotal",
+      "emptyItems": "No products were found in this order.",
+      "contactDetails": "Contact Details",
+      "addressUnavailable": "Address has not been added yet",
+      "email": "Email",
+      "phone": "Phone",
+      "progressLabel": "Order progress",
+      "progressPending": "Order received",
+      "progressPaid": "Paid",
+      "progressShipped": "Shipped"
     }
   },
   "Auth": {

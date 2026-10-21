@@ -389,6 +389,30 @@
       "breadcrumbLabel": "Nawigacja historii zamówień",
       "breadcrumb": "Historia zamówień",
       "title": "Historia zamówień"
+    },
+    "orderDetails": {
+      "breadcrumbLabel": "Nawigacja szczegółów zamówienia",
+      "breadcrumb": "Szczegóły zamówienia",
+      "title": "Szczegóły zamówienia",
+      "orderId": "Numer zamówienia",
+      "date": "Data",
+      "total": "Suma",
+      "status": "Status",
+      "backToList": "Wróć do listy",
+      "productCount": "{count, plural, one {# produkt} few {# produkty} many {# produktów} other {# produktu}}",
+      "product": "Produkt",
+      "price": "Cena",
+      "quantity": "Ilość",
+      "subtotal": "Suma częściowa",
+      "emptyItems": "Nie znaleziono produktów w tym zamówieniu.",
+      "contactDetails": "Dane kontaktowe",
+      "addressUnavailable": "Adres nie został jeszcze dodany",
+      "email": "E-mail",
+      "phone": "Telefon",
+      "progressLabel": "Postęp zamówienia",
+      "progressPending": "Zamówienie przyjęte",
+      "progressPaid": "Opłacone",
+      "progressShipped": "Wysłane"
     }
   },
   "Auth": {
