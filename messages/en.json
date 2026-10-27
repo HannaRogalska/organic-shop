@@ -415,6 +415,9 @@
       "progressShipped": "Shipped"
     }
   },
+  "Sponsors": {
+    "sectionLabel": "Our sponsors"
+  },
   "Auth": {
     "signIn": {
       "breadcrumbLabel": "Sign in page navigation",
