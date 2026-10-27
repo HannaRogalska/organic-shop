@@ -415,6 +415,9 @@
       "progressShipped": "Wysłane"
     }
   },
+  "Sponsors": {
+    "sectionLabel": "Nasi sponsorzy"
+  },
   "Auth": {
     "signIn": {
       "breadcrumbLabel": "Nawigacja strony logowania",
